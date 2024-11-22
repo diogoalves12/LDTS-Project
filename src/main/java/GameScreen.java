@@ -14,7 +14,7 @@ public class GameScreen {
     private static Screen screen;
 
     public GameScreen() throws IOException {
-        TerminalSize terminalSize = new TerminalSize(80, 80);
+        TerminalSize terminalSize = new TerminalSize(80, 30);
 
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
         Terminal terminal = terminalFactory.createTerminal();
@@ -28,6 +28,12 @@ public class GameScreen {
 
     private void drawScreen() throws IOException {
         screen.clear();
+
+        TextGraphics textGraphics = screen.newTextGraphics();
+        textGraphics.setForegroundColor(TextColor.Factory.fromString("#0000FF"));
+
+        textGraphics.putString(34,14,"Hello World");
+
         screen.refresh();
     }
 
@@ -38,6 +44,11 @@ public class GameScreen {
     public void run() throws IOException {
         while(true) {
             drawScreen();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
