@@ -22,7 +22,7 @@ public class Board {
             }
 
             placeMines();
-            NumAjacentMines();
+            numAjacentMines();
         }
     }
 
@@ -34,13 +34,26 @@ public class Board {
             int row = random.nextInt(rows);
             int col = random.nextInt(cols);
 
-            if (!cells[row][col].hasMine()) {
-
+            if (!board[row][col].hasMine()) {
+                board[row][col].setHasMine(true);
+                minesPlaced++;
             }
         }
     }
 
-    private void NumAjacentMines(){
-
+    private void numAjacentMines(){
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                if (board[row][col].hasMine()) {
+                    int adjacentMines = board[row][col].getAdjacentMines();
+                    board[row][col].setAdjacentMines(adjacentMines);
+                }
+            }
+        }
     }
+
+    private void countAdjecentMines(){
+        // to-do: complete code
+    }
+
 }
