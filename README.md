@@ -93,10 +93,8 @@ multiple instances to be created.
   - Board
   - GameScreen
   - main
-
-**Note** - We specifically plan to implement a Game class, to deal with the game rules and flow 
-and user actions. 
-
+  - Game
+  
 ---
 ### **5. Beta Game Screenshot**
 ![early game screenshot](./docs/resources/screenshots/EarlyGameScreenshot.png)
