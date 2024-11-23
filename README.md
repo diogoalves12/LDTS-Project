@@ -98,6 +98,13 @@ multiple instances to be created.
 and user actions. 
 
 ---
+### **5. Beta Game Screenshot**
+![early game screenshot](./docs/resources/screenshots/EarlyGameScreenshot.png)
+
+**Note:** Currently, the game is unable to process user input. This screenshot only illustrates
+how the board is drawn (rendered) at this stage of the game. The '#' represent the yet hidden cells and the red '*' represent
+the mines. The mines are not hidden in this screenshot, as we wanted to verify if our methods were working correctly.
+
 ### **5. Diagramas UML**
 
 ### **6. Mockups**
