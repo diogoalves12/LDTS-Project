@@ -12,9 +12,11 @@ import java.io.IOException;
 public class GameScreen {
 
     private static Screen screen;
+    private Board board;
 
     public GameScreen() throws IOException {
-        TerminalSize terminalSize = new TerminalSize(80, 30);
+        this.board = new Board(30,30,10);
+        TerminalSize terminalSize = new TerminalSize(board.getCols()* 2 + 2, board.getRows() + 2);
 
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
         Terminal terminal = terminalFactory.createTerminal();
@@ -24,6 +26,7 @@ public class GameScreen {
         screen.setCursorPosition(null); // remover depois, vamos precisar do cursor
         screen.startScreen();
         screen.doResizeIfNecessary();
+
     }
 
     private void drawScreen() throws IOException {
@@ -32,8 +35,21 @@ public class GameScreen {
         TextGraphics textGraphics = screen.newTextGraphics();
         textGraphics.setForegroundColor(TextColor.Factory.fromString("#0000FF"));
 
-        textGraphics.putString(34,14,"Hello World");
 
+        for(int row = 0; row < board.getRows(); row++) {
+            for(int col = 0; col < board.getCols(); col++) {
+                Cell cell = board.getCell(row, col);
+                String show;
+                if(cell.hasMine()){
+                    textGraphics.setForegroundColor(TextColor.Factory.fromString("#FF0000"));
+                    show = "*";
+                } else {
+                    textGraphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
+                    show = "#";
+                }
+                textGraphics.putString(col * 2 + 1, row + 1 , show);
+            }
+        }
         screen.refresh();
     }
 

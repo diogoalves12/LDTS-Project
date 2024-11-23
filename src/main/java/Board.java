@@ -20,10 +20,9 @@ public class Board {
             for (int col = 0; col < cols; col++) {
                 board[row][col] = new Cell();
             }
-
-            placeMines();
-            numAjacentMines();
         }
+        placeMines();
+        numAjacentMines();
     }
 
     private void placeMines () {
@@ -56,4 +55,16 @@ public class Board {
         // to-do: complete code
     }
 
+
+    public int getRows(){
+        return rows;
+    }
+
+    public int getCols(){
+        return cols;
+    }
+
+    public Cell getCell(int row, int col){
+        return board[row][col];
+    }
 }
