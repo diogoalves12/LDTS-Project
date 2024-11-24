@@ -107,6 +107,7 @@ how the board is drawn (rendered) at this stage of the game. The '#' represent t
 the mines. The mines are not hidden in this screenshot, as we wanted to verify if our methods were working correctly.
 
 ### **5. Diagramas UML**
+![early game UML Diagram](./docs/resources/UML%20diagrams/Minesweeper.png)
 
 ### **6. Mockups**
 
