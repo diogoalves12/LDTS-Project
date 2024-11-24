@@ -26,6 +26,12 @@ public class CellTest {
     }
 
     @Test
+    public void testRevealCell(){
+        cell.setRevealed(true);
+        Assertions.assertTrue(cell.isRevealed());
+    }
+
+    @Test
     public void testFlaggedCell() {
         cell.setFlagged(true);
         Assertions.assertTrue(cell.isFlagged());
