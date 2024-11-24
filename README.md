@@ -110,7 +110,15 @@ the mines. The mines are not hidden in this screenshot, as we wanted to verify i
 ![early game UML Diagram](./docs/resources/UML%20diagrams/Minesweeper.png)
 
 ### **6. Mockups**
-
+![Start Menu](./docs/resources/Mockups/START_MENU.png)
+![Play Menu](./docs/resources/Mockups/PLAY_MENU.png)
+![Pause Menu](./docs/resources/Mockups/PAUSE_MENU.png)
+![Help Menu](./docs/resources/Mockups/HELP_MENU.png)
+![Easy Level](./docs/resources/Mockups/Lvl_Easy.png)
+![Medium Level](./docs/resources/Mockups/Lvl_Medium.png)
+![Hard Level](./docs/resources/Mockups/Lvl_Hard_2.png)
+![Victory Menu](./docs/resources/Mockups/VICTORY.png))
+![Game Over Menu](./docs/resources/Mockups/GAME_OVER.png)
 ### **7. Testes**
 ![Test Coverage](./docs/resources/screenshots/TestCoverage.png)
 
