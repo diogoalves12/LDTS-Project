@@ -80,11 +80,14 @@ and **Cells** (each with a state: revealed, flagged, mine, etc.).
 (revealing a cell, flagging a cell, and checking win/lose conditions) 
 
 
-**Note** - as we develop the game we will implement other patterns like:
+**Note** - as we develop the game we will try to implement other patterns like:
 - The **Singleton pattern**, for know our code does not implement this patterns
 because classes Like GameScreen, Board, Game are instantiated directly using new, allowing
 multiple instances to be created.
-
+- The **Factory pattern**, we will try to implement this pattern to centralize the creation of cells or boards.
+- The **State pattern**, to manage cell state.
+- The **Template method pattern*, to simplify creating boards with different configurations (size, number of mines, etc.) for dificulty levels.
+  
 ---
 
 #### **4. classes**
