@@ -37,4 +37,10 @@ public class CellTest {
         Assertions.assertTrue(cell.isFlagged());
     }
 
+    @Test
+    public void testAdjacentMinesCell() {
+        cell.setAdjacentMines(5);
+        Assertions.assertEquals(5, cell.getAdjacentMines());
+    }
+
 }
