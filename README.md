@@ -112,3 +112,7 @@ the mines. The mines are not hidden in this screenshot, as we wanted to verify i
 ### **6. Mockups**
 
 ### **7. Testes**
+![Test Coverage](./docs/resources/screenshots/TestCoverage.png)
+
+**Note** - The test coverage is **currently** limited. These results are not **final**, and we plan to improve
+the code coverage as the game develop progresses.
