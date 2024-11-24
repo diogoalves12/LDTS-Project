@@ -20,6 +20,12 @@ public class CellTest {
 
 
     @Test
+    public void testSetMine() {
+        cell.setHasMine(true);
+        Assertions.assertTrue(cell.hasMine());
+    }
+
+    @Test
     public void testFlaggedCell() {
         cell.setFlagged(true);
         Assertions.assertTrue(cell.isFlagged());
