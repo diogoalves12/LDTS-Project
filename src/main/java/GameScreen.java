@@ -29,7 +29,7 @@ public class GameScreen {
 
     }
 
-    private void drawScreen() throws IOException {
+    protected void drawScreen() throws IOException {
         screen.clear();
 
         TextGraphics textGraphics = screen.newTextGraphics();
