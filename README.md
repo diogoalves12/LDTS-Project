@@ -106,7 +106,7 @@ multiple instances to be created.
 how the board is drawn (rendered) at this stage of the game. The '#' represent the yet hidden cells and the red '*' represent
 the mines. The mines are not hidden in this screenshot, as we wanted to verify if our methods were working correctly.
 
-### **5. Diagramas UML**
+### **5. UML Diagram**
 ![early game UML Diagram](./docs/resources/UML%20diagrams/Minesweeper.png)
 
 ### **6. Mockups**
