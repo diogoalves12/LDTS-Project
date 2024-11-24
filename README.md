@@ -56,7 +56,7 @@ This project **applies** and **will aim to apply** the fallowing design patterns
 - **Problem in context:** The **Minesweeper** game is complex, involving a lot of 
 components, and so we need to organize our code the best way possible. As the complexity
 of the game increases, we need a simple structure. To ensure that the code is 
-easy to maintain, extend, and read. A well-structured code makes it easier to debug add new features.
+easy to maintain, extend, and read. A well-structured code makes it easier to debug and add new features.
 
 
 - **The Pattern:** The **MVC (Model-VIew-Controller)** pattern is ideal for this situation.
@@ -74,10 +74,10 @@ actions and updating the model.
 and **Cells** (each with a state: revealed, flagged, mine, etc.). 
 
   - **View** - Displays the model data to the user. It is responsible for drawing the game elements
-(board, mines, hidden cells, adjacent mines counts)
+(board, mines, hidden cells, adjacent mines counts).
   
   - **Controller** - Manages the fame rules and flow. Interpreting the **Game** states 
-(revealing a cell, flagging a cell, and checking win/lose conditions) 
+(revealing a cell, flagging a cell, and checking win/lose conditions). 
 
 
 **Note** - as we develop the game we will try to implement other patterns like:
@@ -90,7 +90,7 @@ multiple instances to be created.
   
 ---
 
-#### **4. classes**
+### **4. Classes**
 - **In development:**
   - Cell 
   - Board
@@ -119,6 +119,7 @@ the mines. The mines are not hidden in this screenshot, as we wanted to verify i
 ![Hard Level](./docs/resources/Mockups/Lvl_Hard_2.png)
 ![Victory Menu](./docs/resources/Mockups/VICTORY.png))
 ![Game Over Menu](./docs/resources/Mockups/GAME_OVER.png)
+
 ### **7. Testes**
 ![Test Coverage](./docs/resources/screenshots/TestCoverage.png)
 
