@@ -64,6 +64,10 @@ public class Board {
         return cols;
     }
 
+    public int getNumMines(){
+        return numMines;
+    }
+
     public Cell getCell(int row, int col){
         return board[row][col];
     }
