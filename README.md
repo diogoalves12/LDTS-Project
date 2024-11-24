@@ -86,7 +86,7 @@ because classes Like GameScreen, Board, Game are instantiated directly using new
 multiple instances to be created.
 - The **Factory pattern**, we will try to implement this pattern to centralize the creation of cells or boards.
 - The **State pattern**, to manage cell state.
-- The **Template method pattern*, to simplify creating boards with different configurations (size, number of mines, etc.) for dificulty levels.
+- The **Template method pattern**, to simplify creating boards with different configurations (size, number of mines, etc.) for dificulty levels.
   
 ---
 
