@@ -17,4 +17,12 @@ public class CellTest {
         Assertions.assertFalse(cell.isRevealed());
         Assertions.assertEquals(0, cell.getAdjacentMines());
     }
+
+
+    @Test
+    public void testFlaggedCell() {
+        cell.setFlagged(true);
+        Assertions.assertTrue(cell.isFlagged());
+    }
+
 }
