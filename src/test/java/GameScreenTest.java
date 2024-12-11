@@ -3,7 +3,7 @@ import com.googlecode.lanterna.screen.Screen;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import view.GameScreen;
+import view.game.GameViewer;
 
 import java.lang.reflect.Field;
 
@@ -13,7 +13,7 @@ public class GameScreenTest {
     private Screen mockScreen;
     private Board mockBoard;
     private TextGraphics mockTextGraphics;
-    private GameScreen gameScreen;
+    private GameViewer gameScreen;
 
     @BeforeEach
     public void setUp() throws Exception {
@@ -26,7 +26,7 @@ public class GameScreenTest {
 
         when(mockScreen.newTextGraphics()).thenReturn(mockTextGraphics);
 
-        gameScreen = new GameScreen();
+        gameScreen = new GameViewer();
 
         setPrivateField(gameScreen, "board", mockBoard);
         setPrivateField(gameScreen, "screen", mockScreen);

@@ -1,4 +1,4 @@
-package view;
+package view.game;
 
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
@@ -11,12 +11,12 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 
 import java.io.IOException;
 
-public class GameScreen {
+public class GameViewer {
 
     private static Screen screen;
     private Board board;
 
-    public GameScreen() throws IOException {
+    public GameViewer() throws IOException {
         this.board = new Board(30,30,10);
         TerminalSize terminalSize = new TerminalSize(board.getCols()* 2 + 2, board.getRows() + 2);
 
