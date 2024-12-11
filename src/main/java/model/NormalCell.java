@@ -1,4 +1,6 @@
 package model;
 
-public class NormalCell {
+public class NormalCell extends Cell {
+
+
 }
