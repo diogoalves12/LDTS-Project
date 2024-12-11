@@ -5,7 +5,7 @@ public class CellFactory {
         if (hasMine) {
             return new MineCell(row, col);
         } else {
-            return NormalCell(row, col);
+            return new NormalCell(row, col);
         }
     }
 
