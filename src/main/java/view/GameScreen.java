@@ -1,3 +1,5 @@
+package view;
+
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.screen.TerminalScreen;

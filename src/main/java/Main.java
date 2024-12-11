@@ -1,3 +1,5 @@
+import view.GameScreen;
+
 import java.io.IOException;
 
 public class Main {

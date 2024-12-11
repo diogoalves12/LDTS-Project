@@ -3,6 +3,7 @@ import com.googlecode.lanterna.screen.Screen;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import view.GameScreen;
 
 import java.lang.reflect.Field;
 
