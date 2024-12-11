@@ -1,4 +1,4 @@
-package model;
+package model.game;
 
 public class Board {
     private static Board instance;
@@ -6,17 +6,17 @@ public class Board {
     private int rows;
     private int cols;
 
-    private Board() {
-        this.rows = 0;
-        this.cols = 0;
+    private Board(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
         board = new Cell[rows][cols];
 
         initializeBoard();
     }
 
-    public static Board getInstance() {
+    public static Board getInstance(int rows, int cols) {
         if (instance == null) {
-            instance = new Board();
+            instance = new Board(rows, cols);
         }
         return instance;
     }
