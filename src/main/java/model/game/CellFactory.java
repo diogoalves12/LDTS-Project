@@ -1,4 +1,4 @@
-package model;
+package model.game;
 
 public class CellFactory {
     public static Cell createCell(boolean hasMine, int row, int col) {
