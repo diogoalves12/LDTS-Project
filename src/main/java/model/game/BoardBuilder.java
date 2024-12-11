@@ -7,15 +7,14 @@ public class BoardBuilder{
     private Board board;
     private int rows, cols;
 
-    public BoardBuilder(Setup setup) {
-        this.rows = setup.getBoardRows();
-        this.cols = setup.getBoardRows();
+    public BoardBuilder(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
         this.board = Board.getInstance(rows, cols);
     }
 
-    public void placeMines (int freq) {
+    public Board buildBoard(int freq) {
         Random random = new Random();
-
         for(int x  = 0; x < rows; x++) {
             for(int y = 0; y < cols; y++) {
                 if(GaussianBombInitializer(random,freq)) {
@@ -23,7 +22,7 @@ public class BoardBuilder{
                 }
             }
         }
-
+        return this.board;
     }
 
     private boolean GaussianBombInitializer(Random rand, int freq) {
