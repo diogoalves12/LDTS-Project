@@ -1,11 +1,11 @@
 package model;
 
 public class CellFactory {
-    public static Cell createCell(boolean hasMine) {
+    public static Cell createCell(boolean hasMine, int row, int col) {
         if (hasMine) {
-            return new MineCell();      // MineCell() yet to be implemented
+            return new MineCell(row, col);
         } else {
-            return NormalCell();        // NormalCell() yet to be implemented
+            return NormalCell(row, col);
         }
     }
 
