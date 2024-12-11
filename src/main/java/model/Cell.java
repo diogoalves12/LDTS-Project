@@ -1,55 +1,47 @@
 package model;
 
-public class Cell {
-    private boolean hasMine;
-    private boolean revealed;
-    private boolean flagged;
-    private int adjacentMines;
+public abstract class Cell {
 
-    public Cell(boolean hasMine, boolean revealed, boolean flagged) {
-        this.hasMine = hasMine;
-        this.revealed = revealed;
-        this.flagged = flagged;
-        this.adjacentMines = 0;
-    }
+    private boolean isRevealed;
+    private boolean isFlagged;
+    private final int row;
+    private final int col;
 
-    public Cell() {
-        this.hasMine = false;
-        this.revealed = false;
-        this.flagged = false;
-        this.adjacentMines = 0;
-    }
-
-    public void setHasMine(boolean hasMine) {
-        this.hasMine = hasMine;
-    }
-
-    public void setRevealed(boolean revealed) {
-        this.revealed = revealed;
-    }
-
-    public void setFlagged(boolean flagged) {
-        this.flagged = flagged;
-    }
-
-    public void setAdjacentMines(int adjacentMines) {
-        this.adjacentMines = adjacentMines;
-    }
-
-    public boolean hasMine() {
-        return hasMine;
+    public Cell(int row, int col) {
+        this.row = row;
+        this.col = col;
+        this.isRevealed = false;
+        this.isFlagged = false;
     }
 
     public boolean isRevealed() {
-        return revealed;
+        return isRevealed;
+    }
+
+    public void reveal() {
+        if (!isRevealed) {
+            isRevealed = true;
+        }
     }
 
     public boolean isFlagged() {
-        return flagged;
+        return isFlagged;
     }
 
-    public int getAdjacentMines() {
-        return adjacentMines;
+    public void flag() {
+        if(!isFlagged()) {
+            isFlagged = true;
+        }
     }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public abstract boolean hasMine();
 
 }
