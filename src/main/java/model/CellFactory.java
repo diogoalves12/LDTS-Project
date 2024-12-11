@@ -1,3 +1,5 @@
+package model;
+
 public class CellFactory {
     public static Cell createCell(boolean hasMine) {
         if (hasMine) {
