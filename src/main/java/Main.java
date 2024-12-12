@@ -6,7 +6,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import model.Setup;
 import model.game.Board;
 import model.game.BoardBuilder;
-import view.game.GameViewer;
+import view.game.BoardViewer;
 
 import java.io.IOException;
 
@@ -30,7 +30,7 @@ public class Main {
             screen.startScreen();
             screen.doResizeIfNecessary();
 
-            GameViewer viewer = new GameViewer(board, screen);
+            BoardViewer viewer = new BoardViewer(board, screen);
 
             while (true) {
                 viewer.draw();
