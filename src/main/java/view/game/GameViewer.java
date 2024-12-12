@@ -1,71 +1,49 @@
 package view.game;
 
 import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-import com.googlecode.lanterna.screen.TerminalScreen;
-import com.googlecode.lanterna.terminal.Terminal;
-import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.googlecode.lanterna.screen.Screen;
+import model.game.Board;
+import model.game.Cell;
+import model.game.MineCell;
+import model.game.NormalCell;
+import view.Viewer;
 
 
 import java.io.IOException;
 
-public class GameViewer {
+public class GameViewer extends Viewer<Board>{
 
-    private static Screen screen;
-    private Board board;
-
-    public GameViewer() throws IOException {
-        this.board = new Board(30,30,10);
-        TerminalSize terminalSize = new TerminalSize(board.getCols()* 2 + 2, board.getRows() + 2);
-
-        DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
-        Terminal terminal = terminalFactory.createTerminal();
-
-        screen = new TerminalScreen(terminal);
-
-        screen.setCursorPosition(null); // remover depois, vamos precisar do cursor
-        screen.startScreen();
-        screen.doResizeIfNecessary();
-
+    public GameViewer(Board board, Screen screen) {
+        super(board, screen);
     }
 
-    protected void drawScreen() throws IOException {
+    @Override
+    public void draw() throws IOException {
+        Screen screen = getScreen();
+        TextGraphics textGraphics = getTextGraphics();
+        Board board = getModel();
+
         screen.clear();
 
-        TextGraphics textGraphics = screen.newTextGraphics();
-        textGraphics.setForegroundColor(TextColor.Factory.fromString("#0000FF"));
+        for(int row = 0; row < board.getRows(); row++){
+            for(int col = 0; col < board.getCols(); col++){
+                Cell cell = board.getCell(row,col);
+
+                String display = " ";
+                String ColorHex = "#AAAAAA";
+
+                if(!cell.isRevealed()) {
+                    display = "#";
+                    ColorHex = "#FFFFFF";
+                } else if (cell.hasMine()) {
+                    display = "*";
+                    ColorHex = "#FF0000";
+                } else if (!cell.hasMine()){
 
 
-        for(int row = 0; row < board.getRows(); row++) {
-            for(int col = 0; col < board.getCols(); col++) {
-                Cell cell = board.getCell(row, col);
-                String show;
-                if(cell.hasMine()){
-                    textGraphics.setForegroundColor(TextColor.Factory.fromString("#FF0000"));
-                    show = "*";
-                } else {
-                    textGraphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
-                    show = "#";
+
                 }
-                textGraphics.putString(col * 2 + 1, row + 1 , show);
-            }
-        }
-        screen.refresh();
-    }
-
-    private void processKey(){
-        // To do
-    }
-
-    public void run() throws IOException {
-        while(true) {
-            drawScreen();
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
         }
     }
