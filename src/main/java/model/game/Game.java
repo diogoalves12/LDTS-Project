@@ -4,26 +4,27 @@ import model.Setup;
 
 public class Game {
 
-    private Board board;
-    Setup setup;
+    private final Board board;
+    private final Setup setup;
 
     public Game(Setup setup) {
         this.setup = setup;
-        int freq;
-        switch (setup.getDifficulty()){
-            case EASY:
-                freq = 8;
-                break;
-            case NORMAL:
-                freq = 6;
-                break;
-            case HARD:
-                freq = 5;
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid difficulty");
-        }
-        this.board = new BoardBuilder(setup.getBoardRows(),setup.getBoardRows()).buildBoard(freq);
+        int freq = calculateMineFrequency();
+
+        Board.initialize(setup.getBoardRows(), setup.getBoardCols());
+        BoardBuilder builder = new BoardBuilder(null);
+        builder.buildBoard(freq);
+
+        this.board = Board.getInstance();
+    }
+
+    private int calculateMineFrequency(){
+        return switch (setup.getDifficulty()) {
+            case EASY -> 8;
+            case NORMAL -> 6;
+            case HARD -> 5;
+            default -> throw new IllegalArgumentException("Invalid difficulty");
+        };
     }
 
     public Board getBoard() {
@@ -41,9 +42,6 @@ public class Game {
     public int getColumns(){
         return setup.getBoardRows();
     }
-
-
-
 
 }
 
