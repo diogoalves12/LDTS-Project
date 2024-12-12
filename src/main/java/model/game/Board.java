@@ -1,31 +1,33 @@
 package model.game;
 
 public class Board {
-    private static Board instance;
+    private static volatile Board instance;
     private final Cell[][] board;
-    private int rows;
-    private int cols;
+    private final int rows;
+    private final int cols;
 
     private Board(int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
         board = new Cell[rows][cols];
-
         initializeBoard();
     }
 
     public static Board getInstance(int rows, int cols) {
         if (instance == null) {
-            instance = new Board(rows, cols);
+            synchronized (Board.class) {
+                if( instance == null){
+                    instance = new Board(rows, cols);
+                }
+            }
         }
         return instance;
     }
 
     private void initializeBoard() {
-
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
-                board[row][col] = new NormalCell(row, col);
+                board[row][col] = CellFactory.createCell(false, row, col);
             }
         }
 
