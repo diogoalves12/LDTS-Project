@@ -6,31 +6,50 @@ import com.googlecode.lanterna.terminal.Terminal;
 import model.Setup;
 import model.game.Board;
 import model.game.BoardBuilder;
+import model.menu.MenuModel;
+import view.Viewer;
 import view.game.BoardViewer;
+import view.menu.MenuViewer;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args){
         try{
-            Setup setup = new Setup(10,10, Setup.Difficulty.NORMAL);
+            //Setup setup = new Setup(10,10, Setup.Difficulty.NORMAL);
 
-            Board.initialize(setup.getBoardRows(), setup.getBoardCols());
-            Board board = Board.getInstance();
+            // Board.initialize(setup.getBoardRows(), setup.getBoardCols());
+            // Board board = Board.getInstance();
 
-            BoardBuilder builder = new BoardBuilder(null);
-            builder.buildBoard(6);
+            // BoardBuilder builder = new BoardBuilder(null);
+            // builder.buildBoard(6);
 
-            TerminalSize terminalSize = new TerminalSize(board.getCols() * 2 + 2, board.getRows() + 2);
-            DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
-            Terminal terminal = terminalFactory.createTerminal();
-            Screen screen = new TerminalScreen(terminal);
+            // TerminalSize terminalSize = new TerminalSize(board.getCols() * 2 + 2, board.getRows() + 2);
+            // DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
+            // Terminal terminal = terminalFactory.createTerminal();
+            // Screen screen = new TerminalScreen(terminal);
 
-            screen.setCursorPosition(null);
+            //screen.setCursorPosition(null);
+            //screen.startScreen();
+            //screen.doResizeIfNecessary();
+
+            //BoardViewer viewer = new BoardViewer(board, screen);
+
+            Screen screen = new TerminalScreen(new DefaultTerminalFactory().createTerminal());
             screen.startScreen();
             screen.doResizeIfNecessary();
+            screen.setCursorPosition(null);
 
-            BoardViewer viewer = new BoardViewer(board, screen);
+            List<String> options = new ArrayList<>();
+            options.add("Start Game");
+            options.add("Options");
+            options.add("Exit");
+
+            MenuModel menu = new MenuModel(options);
+
+            Viewer<MenuModel> viewer = new MenuViewer(menu, screen);
 
             while (true) {
                 viewer.draw();
