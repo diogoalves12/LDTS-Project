@@ -1,14 +1,7 @@
 package view;
 
-import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.screen.TerminalScreen;
-import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-import com.googlecode.lanterna.terminal.Terminal;
-import model.Setup;
+import com.googlecode.lanterna.graphics.TextGraphics;
 
 import java.io.IOException;
 
@@ -18,41 +11,29 @@ public abstract class Viewer<T> {
     private TextGraphics textGraphics;
 
 
-    protected Viewer(T model, Screen screen) {
+    public Viewer(T model, Screen screen) {
         this.model = model;
-    }
-
-    public void drawScreen(){
-        try {
-            TerminalSize size = new TerminalSize(50, 25);
-
-            DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(size);
-            Terminal terminal = terminalFactory.createTerminal();
-
-            Screen screen = new TerminalScreen(terminal);
-            screen.setCursorPosition(null);
-            screen.startScreen();
-            screen.doResizeIfNecessary();
-            textGraphics = screen.newTextGraphics();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-
+        this.screen = screen;
+        this.textGraphics = screen.newTextGraphics();
     }
 
     public T getModel() {
         return model;
     }
 
-    public void draw() throws IOException {
-
+    public Screen getScreen() {
+        return screen;
     }
 
+    public TextGraphics getTextGraphics() {
+        return textGraphics;
+    }
 
+    public abstract void draw() throws IOException;
 
+    protected void refreshScreen() throws IOException {
+        screen.refresh();
+    }
 }
 
 
