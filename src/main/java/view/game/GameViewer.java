@@ -40,13 +40,16 @@ public class GameViewer extends Viewer<Board>{
                     display = "*";
                     ColorHex = "#FF0000";
                 } else if (!cell.hasMine()){
-
-
-
+                    // yet to implement the number of adjacent mines
+                    display = "#";
+                    ColorHex = "FFFFFF";
                 }
+
+                textGraphics.setForegroundColor(TextColor.Factory.fromString(ColorHex));
+                textGraphics.putString(col * 2 + 1, row + 1, display);
             }
         }
+        refreshScreen();
     }
-
 
 }
