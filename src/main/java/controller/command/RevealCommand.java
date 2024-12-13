@@ -14,7 +14,7 @@ public class RevealCommand extends GameCommand{
 
     @Override
     public void execute() {
-        game.revealCell(row,col);           //yet to be implemented
+        game.getBoard().getCell(row, col).reveal();          //yet to be implemented
     }
 
 }
