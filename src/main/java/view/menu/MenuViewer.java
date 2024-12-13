@@ -18,7 +18,7 @@ public class MenuViewer extends Viewer<MenuModel> {
     @Override
     public void draw() throws IOException {
         Screen screen = getScreen();
-        TextGraphics textGraphics = getTextGraphics();
+        TextGraphics textGraphics = getGraphics();
         MenuModel menu = getModel();
 
         screen.clear();

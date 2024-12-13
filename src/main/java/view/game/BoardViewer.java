@@ -19,7 +19,7 @@ public class BoardViewer extends Viewer<Board>{
     @Override
     public void draw() throws IOException {
         Screen screen = getScreen();
-        TextGraphics textGraphics = getTextGraphics();
+        TextGraphics textGraphics = getGraphics();
         Board board = getModel();
 
         screen.clear();
@@ -47,7 +47,7 @@ public class BoardViewer extends Viewer<Board>{
                 textGraphics.putString(col * 2 + 1, row + 1, display);
             }
         }
-        refreshScreen();
+        refresh();
     }
 
 }
