@@ -1,4 +1,5 @@
 package controller.state;
 
-public class ControllerState {
+public abstract class ControllerState<T> {
+
 }
