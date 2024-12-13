@@ -1,5 +1,7 @@
 package model.game;
 
+import model.Position;
+
 public class Board {
     private static volatile Board instance;
     private final Cell[][] board;
@@ -41,6 +43,12 @@ public class Board {
 
     }
 
+    public void addCell(Position position, Cell cell) {
+        if(inBounds(position)){
+            board[position.getRow()][position.getCol()] = cell;
+        }
+    }
+
     public int getRows(){
         return rows;
     }
@@ -49,20 +57,16 @@ public class Board {
         return cols;
     }
 
-    public void addCell(int row, int col, Cell cell) {
-        if(inBounds(row,col)){
-            board[row][col] = cell;
-        }
-    }
-
-    public Cell getCell(int row, int col) {
-        if(inBounds(row,col)){
-            return board[row][col];
+    public Cell getCell(Position position) {
+        if(inBounds(position)){
+            return board[position.getRow()][position.getCol()];
         }
         return null;
     }
 
-    private boolean inBounds(int row, int col) {
+    private boolean inBounds(Position position) {
+        int row = position.getRow();
+        int col = position.getCol();
         return (row >= 0 && row < rows ) && (col >= 0 && col < cols);
     }
 
