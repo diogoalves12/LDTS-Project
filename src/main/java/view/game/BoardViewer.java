@@ -13,8 +13,8 @@ import java.io.IOException;
 
 public class BoardViewer extends View<Board> {
 
-    public BoardViewer(Board board, Screen screen) {
-        super(board, screen);
+    public BoardViewer(Board board) {
+        super(board);
     }
 
     @Override

@@ -2,7 +2,6 @@ package view.menu;
 
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
 import model.menu.MenuModel;
 import view.View;
 
@@ -11,34 +10,44 @@ import java.util.List;
 
 public class MenuView extends View<MenuModel> {
 
-    public MenuView(MenuModel menu, Screen screen){
-        super(menu,screen);
+    public MenuView(MenuModel menu){
+        super(menu);
     }
 
     @Override
     public void draw() throws IOException {
-        Screen screen = getScreen();
-        TextGraphics textGraphics = getGraphics();
-        MenuModel menu = getModel();
+        TextGraphics graphics = getGraphics();
 
-        screen.clear();
-        textGraphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
-        textGraphics.putString(32,1,"Minesweeper");
+        clear();
 
-        textGraphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
-        textGraphics.putString(32,5,"=Start Menu=");
+        drawCentered(graphics, 32, "Minesweeper", "#FFFFFF");
 
-        List<String> options = menu.getOptions();
+        drawCentered(graphics,32, "= Start Menu = ", "#FFFFFF");
 
-        for(int i = 0; i < options.size(); i++){
-            String Text = options.get(i);
-            String ColorHex = menu.isSelected(i) ? "#00FF00" : "#FFFFFF";
-
-            textGraphics.setForegroundColor(TextColor.Factory.fromString(ColorHex));
-            textGraphics.putString(32,6 + i,Text);
-        }
+        drawMenu(graphics);
 
         refresh();
 
+    }
+
+    private void drawCentered(TextGraphics graphics, int row, String text, String colorHex) {
+        int col = (graphics.getSize().getColumns() - text.length()) / 2;
+
+        graphics.setForegroundColor(TextColor.Factory.fromString(colorHex));
+        graphics.putString(col, row, text);
+    }
+
+    private void drawMenu(TextGraphics graphics){
+        MenuModel menu = getModel();
+
+        List<String> options = menu.getOptions();
+        int selected = menu.getSelected();
+
+        for(int i = 0; i < options.size(); i++){
+            String color = (i == selected) ? "#00FF00" : "#FFFFFF";
+
+            drawCentered(graphics, 34 + i, options.get(i), color);
+
+        }
     }
 }

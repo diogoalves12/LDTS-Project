@@ -35,7 +35,7 @@ public class Main {
             screen.startScreen();
             screen.doResizeIfNecessary();
 
-            BoardViewer viewer = new BoardViewer(board, screen);
+            BoardViewer viewer = new BoardViewer(board);
 
             // Screen screen = new TerminalScreen(new DefaultTerminalFactory().createTerminal());
             // screen.startScreen();

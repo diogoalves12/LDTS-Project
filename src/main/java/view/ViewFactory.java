@@ -12,6 +12,6 @@ public class ViewFactory {
     }
 
     public static View<Board> createBoardViewer(Board board, Screen screen) {
-        return new BoardViewer(board, screen);
+        return new BoardViewer(board);
     }
 }
