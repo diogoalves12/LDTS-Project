@@ -14,6 +14,6 @@ public class FlagCommand extends GameCommand {
 
     @Override
     public void execute() {
-        game.toggleFlag(row,col);         //yet to be implemented;
+        game.getBoard().getCell(row,col).flag();
     }
 }
