@@ -1,5 +1,6 @@
 package model.game;
 
+import model.Position;
 import model.Setup;
 import java.util.Random;
 
@@ -19,7 +20,8 @@ public class BoardBuilder{
         for(int x  = 0; x < rows; x++) {
             for(int y = 0; y < cols; y++) {
                 if(randomMinesPlacement(freq)) {
-                    board.addCell(x, y, CellFactory.createCell(true, x, y));
+                    Position position = new Position(x, y);
+                    board.addCell(position, CellFactory.createCell(true, x, y));
                 }
             }
         }

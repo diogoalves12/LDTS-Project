@@ -1,21 +1,15 @@
 package model.game;
 
+import model.Position;
+
 public abstract class Cell {
 
-    private boolean isRevealed;
-    private boolean isFlagged;
-    private final int row;
-    private final int col;
+    private final Position position;
+    private boolean isRevealed = false;
+    private boolean isFlagged = false;
 
     public Cell(int row, int col) {
-        this.row = row;
-        this.col = col;
-        this.isRevealed = false;
-        this.isFlagged = false;
-    }
-
-    public boolean isRevealed() {
-        return isRevealed;
+        this.position = new Position(row, col);
     }
 
     public void reveal() {
@@ -24,23 +18,31 @@ public abstract class Cell {
         }
     }
 
-    public boolean isFlagged() {
-        return isFlagged;
-    }
-
     public void flag() {
         if(!isFlagged()) {
             isFlagged = true;
         }
     }
 
-    public int getRow() {
-        return row;
+    public boolean isRevealed() {
+        return isRevealed;
     }
 
-    public int getCol() {
-        return col;
+    public boolean isFlagged() {
+        return isFlagged;
     }
+
+    public void toggleFlagged() {
+        isFlagged = !isFlagged;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public int getRow() { return position.getRow(); }
+
+    public int getCol() {return position.getCol(); }
 
     public abstract boolean hasMine();
 

@@ -3,32 +3,32 @@ package view.game;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
+import model.Position;
 import model.game.Board;
 import model.game.Cell;
-import model.game.MineCell;
-import model.game.NormalCell;
-import view.Viewer;
+import view.View;
 
 
 import java.io.IOException;
 
-public class GameViewer extends Viewer<Board>{
+public class BoardViewer extends View<Board> {
 
-    public GameViewer(Board board, Screen screen) {
+    public BoardViewer(Board board, Screen screen) {
         super(board, screen);
     }
 
     @Override
     public void draw() throws IOException {
         Screen screen = getScreen();
-        TextGraphics textGraphics = getTextGraphics();
+        TextGraphics textGraphics = getGraphics();
         Board board = getModel();
 
         screen.clear();
 
         for(int row = 0; row < board.getRows(); row++){
             for(int col = 0; col < board.getCols(); col++){
-                Cell cell = board.getCell(row,col);
+                Position position = new Position(row,col);
+                Cell cell = board.getCell(position);
 
                 String display = " ";
                 String ColorHex = "#AAAAAA";
@@ -49,7 +49,7 @@ public class GameViewer extends Viewer<Board>{
                 textGraphics.putString(col * 2 + 1, row + 1, display);
             }
         }
-        refreshScreen();
+        refresh();
     }
 
 }
