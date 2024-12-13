@@ -38,7 +38,7 @@ public class MenuView extends View<MenuModel> {
             textGraphics.putString(32,6 + i,Text);
         }
 
-        screen.refresh();
+        refresh();
 
     }
 }
