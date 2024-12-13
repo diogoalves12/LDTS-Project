@@ -1,5 +1,6 @@
 package controller.command;
 
+import model.Position;
 import model.game.Game;
 
 public class RevealCommand extends GameCommand{
@@ -14,7 +15,8 @@ public class RevealCommand extends GameCommand{
 
     @Override
     public void execute() {
-        game.getBoard().getCell(row, col).reveal();          //yet to be implemented
+
+        game.getBoard().getCell(new Position(row,col)).reveal();          //yet to be implemented
     }
 
 }

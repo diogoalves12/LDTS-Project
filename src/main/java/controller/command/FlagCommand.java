@@ -1,5 +1,6 @@
 package controller.command;
 
+import model.Position;
 import model.game.Game;
 
 public class FlagCommand extends GameCommand {
@@ -14,6 +15,6 @@ public class FlagCommand extends GameCommand {
 
     @Override
     public void execute() {
-        game.getBoard().getCell(row,col).flag();
+        game.getBoard().getCell(new Position(row,col)).flag();
     }
 }

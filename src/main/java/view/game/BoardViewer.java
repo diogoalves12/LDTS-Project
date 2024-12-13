@@ -3,6 +3,7 @@ package view.game;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
+import model.Position;
 import model.game.Board;
 import model.game.Cell;
 import view.View;
@@ -26,7 +27,8 @@ public class BoardViewer extends View<Board> {
 
         for(int row = 0; row < board.getRows(); row++){
             for(int col = 0; col < board.getCols(); col++){
-                Cell cell = board.getCell(row,col);
+                Position position = new Position(row,col);
+                Cell cell = board.getCell(position);
 
                 String display = " ";
                 String ColorHex = "#AAAAAA";
