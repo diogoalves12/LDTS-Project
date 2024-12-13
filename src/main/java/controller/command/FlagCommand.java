@@ -2,11 +2,11 @@ package controller.command;
 
 import model.game.Game;
 
-public class RevealCommand extends GameCommand{
+public class FlagCommand extends GameCommand {
     private final int row;
     private final int col;
 
-    public RevealCommand(Game game, int row, int col) {
+    public FlagCommand(Game game, int row, int col) {
         super(game);
         this.row = row;
         this.col = col;
@@ -14,7 +14,6 @@ public class RevealCommand extends GameCommand{
 
     @Override
     public void execute() {
-        game.revealCell(row,col);           //yet to be implemented
+        game.toggleFlag(row,col);         //yet to be implemented;
     }
-
 }
