@@ -4,14 +4,14 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 import model.menu.MenuModel;
-import view.Viewer;
+import view.View;
 
 import java.io.IOException;
 import java.util.List;
 
-public class MenuViewer extends Viewer<MenuModel> {
+public class MenuView extends View<MenuModel> {
 
-    public MenuViewer(MenuModel menu, Screen screen){
+    public MenuView(MenuModel menu, Screen screen){
         super(menu,screen);
     }
 

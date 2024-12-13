@@ -4,14 +4,14 @@ import com.googlecode.lanterna.screen.Screen;
 import model.game.Board;
 import view.game.BoardViewer;
 
-public class ViewerFactory {
+public class ViewFactory {
     private final Screen screen;
 
-    public ViewerFactory(Screen screen) {
+    public ViewFactory(Screen screen) {
         this.screen = screen;
     }
 
-    public static Viewer<Board> createBoardViewer(Board board, Screen screen) {
+    public static View<Board> createBoardViewer(Board board, Screen screen) {
         return new BoardViewer(board, screen);
     }
 }

@@ -1,15 +1,9 @@
-import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-import com.googlecode.lanterna.terminal.Terminal;
-import model.Setup;
-import model.game.Board;
-import model.game.BoardBuilder;
 import model.menu.MenuModel;
-import view.Viewer;
-import view.game.BoardViewer;
-import view.menu.MenuViewer;
+import view.View;
+import view.menu.MenuView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,7 +43,7 @@ public class Main {
 
             MenuModel menu = new MenuModel(options);
 
-            Viewer<MenuModel> viewer = new MenuViewer(menu, screen);
+            View<MenuModel> viewer = new MenuView(menu, screen);
 
             while (true) {
                 viewer.draw();

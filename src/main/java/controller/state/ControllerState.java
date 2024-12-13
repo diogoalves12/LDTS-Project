@@ -1,9 +1,8 @@
 package controller.state;
 
-import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import model.Setup;
-import view.Viewer;
+import view.View;
 
 import java.io.IOException;
 
@@ -19,7 +18,7 @@ public abstract class ControllerState<T> {
 
     }
 
-    public abstract Viewer<T> getViewer();
+    public abstract View<T> getViewer();
 
     public void draw(TextGraphics textGraphics) throws IOException {
         this.getViewer().draw();

@@ -5,12 +5,12 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 import model.game.Board;
 import model.game.Cell;
-import view.Viewer;
+import view.View;
 
 
 import java.io.IOException;
 
-public class BoardViewer extends Viewer<Board>{
+public class BoardViewer extends View<Board> {
 
     public BoardViewer(Board board, Screen screen) {
         super(board, screen);

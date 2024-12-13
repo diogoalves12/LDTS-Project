@@ -5,13 +5,13 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 
 import java.io.IOException;
 
-public abstract class Viewer<T> {
+public abstract class View<T> {
     private final T model;
     protected Screen screen;
     protected TextGraphics graphics;
 
 
-    public Viewer(T model, Screen screen) {
+    public View(T model, Screen screen) {
         this.model = model;
         this.screen = screen;
         this.graphics = initializeGraphics(screen);
