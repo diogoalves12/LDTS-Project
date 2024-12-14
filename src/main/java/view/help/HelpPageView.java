@@ -15,12 +15,28 @@ public class HelpPageView extends View<HelpModel> {
     @Override
     public void draw() throws IOException {
         clear();
-
         // yet to implement
         drawTitle();
         drawContent();
         refresh();
 
     }
+
+
+    private void drawTitle() {
+
+    }
+
+    private void drawContent() {
+        HelpModel model = getModel();
+
+        for(int i = 0; i < model.getTotalSections(); i ++){
+            String section = model.getSection(i);
+            graphics.putString(2, i + 3, section);
+        }
+    }
+
+
+
 
 }
