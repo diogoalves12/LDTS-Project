@@ -19,7 +19,7 @@ public class Game {
     private Board initBoard(){
         int freq = calculateMineFrequency();
         Board.initialize(setup.getBoardRows(), setup.getBoardCols());
-        BoardBuilder builder = new BoardBuilder(null);
+        BoardBuilder builder = new BoardBuilder();
         builder.buildBoard(freq);
         return Board.getInstance();
     }
