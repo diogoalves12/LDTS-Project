@@ -18,11 +18,13 @@ public abstract class ControllerState<T> {
 
     }
 
-    public abstract View<T> getViewer();
-
     public void draw(TextGraphics textGraphics) throws IOException {
         this.getViewer().draw();
     }
+
+    public abstract View<T> getViewer();
+
+
 
 
 }
