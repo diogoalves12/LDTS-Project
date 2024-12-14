@@ -1,20 +1,24 @@
 package controller.state;
 
 import model.Setup;
+import model.game.Board;
 import model.game.Game;
 import view.View;
+import view.game.BoardViewer;
 
-public class GameState extends ControllerState<Game> {
+public class GameState extends ControllerState<Board> {
     private final Game game;
+    private final BoardViewer viewer;
 
     public GameState(Setup setup) {
         super(setup);
         this.game = new Game(setup);
+        this.viewer = new BoardViewer(game.getBoard());
     }
 
     @Override
-    public View<Game> getViewer() {
-        return null;
+    public View<Board> getViewer() {
+        return viewer;
     }
 
     @Override
