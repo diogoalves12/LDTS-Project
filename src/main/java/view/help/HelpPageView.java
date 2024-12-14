@@ -1,5 +1,6 @@
 package view.help;
 
+import com.googlecode.lanterna.TextColor;
 import model.help.HelpModel;
 import view.View;
 
@@ -15,7 +16,6 @@ public class HelpPageView extends View<HelpModel> {
     @Override
     public void draw() throws IOException {
         clear();
-        // yet to implement
         drawTitle();
         drawContent();
         refresh();
@@ -24,6 +24,9 @@ public class HelpPageView extends View<HelpModel> {
 
 
     private void drawTitle() {
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
+        int center = (WIDTH - DEFAULT_TITLE.length()) / 2;
+        graphics.putString(center, 1, DEFAULT_TITLE);
 
     }
 
