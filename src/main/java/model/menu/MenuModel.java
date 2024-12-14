@@ -4,10 +4,10 @@ import java.util.List;
 
 public class MenuModel {
 
-    public enum Option {PLAY, OPTIONS, QUIT}
+    public enum Option {PLAY, HELP, QUIT}
 
 
-    private final List<Option> options = List.of(Option.PLAY, Option.OPTIONS, Option.QUIT);
+    private final List<Option> options = List.of(Option.PLAY, Option.HELP, Option.QUIT);
     private int selected;
 
     public MenuModel() {

@@ -22,8 +22,10 @@ public class MenuState  extends ControllerState<MenuModel>{
     @Override
     public ControllerState<?> changeState() {
         return switch (menuModel.getSelectedOption()) {
-            case PLAY -> new GameState(setup);  // para implementar
-        }
+            case PLAY -> new GameState(setup);    // para implementar
+            case HELP -> new HelpState();    // para implementar
+            case QUIT -> null;
+        };
 
     }
 
