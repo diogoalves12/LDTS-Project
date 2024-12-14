@@ -47,7 +47,7 @@ public class MenuView extends View<MenuModel> {
         List<MenuModel.Option> options = menu.getOptions();
         int selected = menu.getSelected();
 
-        int menuStartRow = startRow - (options.size() / 2); // Center the menu options vertically.
+        int menuStartRow = startRow - (options.size() / 2);
         for (int i = 0; i < options.size(); i++) {
             String optionText = options.get(i).name();
             String color = (i == selected) ? SELECTED_COLOR : DEFAULT_COLOR;

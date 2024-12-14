@@ -40,9 +40,14 @@ public class BoardViewer extends View<Board> {
                     display = "*";
                     ColorHex = "#FF0000";
                 } else if (!cell.hasMine()){
-                    // yet to implement the number of adjacent mines
-                    display = "#";
-                    ColorHex = "FFFFFF";
+                    int adjacentMines = board.getAdjacentMines(position);
+                    if(adjacentMines > 0) {
+                        display = String.valueOf(adjacentMines);
+                        ColorHex = "#00FF00";
+                    } else {
+                        display = " ";
+                        ColorHex = "#FFFFFF";
+                    }
                 }
 
                 textGraphics.setForegroundColor(TextColor.Factory.fromString(ColorHex));

@@ -4,6 +4,13 @@ import java.util.List;
 
 public class MenuModel {
 
+    public void previousOption() {
+    }
+
+    public void nextOption() {
+
+    }
+
     public enum Option {PLAY, HELP, QUIT}
 
 
