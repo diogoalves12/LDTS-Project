@@ -1,35 +1,38 @@
 package model.menu;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MenuModel {
-    private final List<String> options;
+
+    public enum Option {PLAY, OPTIONS, QUIT}
+
+
+    private final List<Option> options = List.of(Option.PLAY, Option.OPTIONS, Option.QUIT);
     private int selected;
 
-    public MenuModel(List<String> options) {
-        this.options =  new ArrayList<>();
-        this.options.add("Play");
-        this.options.add("Help");
-        this.options.add("Quit");
+    public MenuModel() {
         this.selected = 0;
     }
 
-    public List<String> getOptions() {
+    public List<Option> getOptions() {
         return options;
     }
 
-    public boolean isSelected(int index) {
-        return index == selected;
+    public Option getSelectedOption() { return options.get(selected);}
+
+    public int getSelected() {
+        return selected;
     }
 
     public void select(int index) {
         if(index >= 0 && index < options.size()) {
             selected = index;
+        } else {
+            throw new IllegalArgumentException("Invalid index: " + index);
         }
     }
 
-    public int getSelected() {
-        return selected;
-    }
+    public void next() { selected = (selected + 1) % options.size(); }
+
+    public void previous() { selected = (selected - 1 + options.size()) % options.size(); }
 }

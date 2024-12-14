@@ -1,70 +1,57 @@
-import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.screen.TerminalScreen;
-import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-import com.googlecode.lanterna.terminal.Terminal;
-import model.Setup;
-import model.game.Board;
-import model.game.BoardBuilder;
+import com.googlecode.lanterna.input.KeyStroke;
 import model.menu.MenuModel;
-import view.View;
-import view.game.BoardViewer;
 import view.menu.MenuView;
+import view.View;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
-    public static void main(String[] args){
-        try{
-            Setup setup = new Setup(30,30, Setup.Difficulty.NORMAL);
+    public static void main(String[] args) {
+        try {
+            // Create the MenuModel
+            MenuModel menuModel = new MenuModel();
 
-            Board.initialize(setup.getBoardRows(), setup.getBoardCols());
-            Board board = Board.getInstance();
+            // Initialize MenuView with setup screen
+            View<MenuModel> menuView = new MenuView(menuModel);
+            menuView.setupScreen();
 
-            BoardBuilder builder = new BoardBuilder(null);
-            builder.buildBoard(6);
+            // Retrieve the screen for user interaction
+            menuView.getScreen().startScreen();
 
-            TerminalSize terminalSize = new TerminalSize(board.getCols() * 2 + 2, board.getRows() + 2);
-            DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
-            Terminal terminal = terminalFactory.createTerminal();
-            Screen screen = new TerminalScreen(terminal);
+            // Input handling and drawing loop
+            boolean running = true;
+            while (running) {
+                // Draw the menu
+                menuView.draw();
 
-            screen.setCursorPosition(null);
-            screen.startScreen();
-            screen.doResizeIfNecessary();
+                // Poll for user input
+                KeyStroke keyStroke = menuView.getScreen().pollInput();
 
-            BoardViewer viewer = new BoardViewer(board);
-
-            // Screen screen = new TerminalScreen(new DefaultTerminalFactory().createTerminal());
-            // screen.startScreen();
-            // screen.doResizeIfNecessary();
-            // screen.setCursorPosition(null);
-
-            // List<String> options = new ArrayList<>();
-            // options.add("Start Game");
-            // options.add("Options");
-            // options.add("Exit");
-
-            // MenuModel menu = new MenuModel(options);
-
-            // View<MenuModel> viewer = new MenuView(menu, screen);
-
-            while (true) {
-                viewer.draw();
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                if (keyStroke != null) {
+                    switch (keyStroke.getKeyType()) {
+                        case ArrowUp -> menuModel.previous(); // Navigate up in the menu
+                        case ArrowDown -> menuModel.next(); // Navigate down in the menu
+                        case Enter -> {
+                            // Handle selection (e.g., show which option is selected)
+                            MenuModel.Option selectedOption = menuModel.getSelectedOption();
+                            System.out.println("Selected: " + selectedOption);
+                            if (selectedOption == MenuModel.Option.QUIT) {
+                                running = false; // Exit if Quit is selected
+                            }
+                        }
+                        case Escape -> running = false; // Press Escape to exit
+                    }
                 }
+
+                // Avoid high CPU usage
+                Thread.sleep(50);
             }
 
-        } catch (IOException e) {
+            // Close the screen when exiting
+            menuView.getScreen().close();
+
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-
         }
-
-
     }
 }
