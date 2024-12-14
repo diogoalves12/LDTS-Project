@@ -1,12 +1,12 @@
 package model;
 
-public class Setup {
+public class GameSetup {
     public enum Difficulty {EASY, NORMAL, HARD}
 
     int boardRows, boardCols;
     Difficulty difficulty;
 
-    public Setup(int boardRows, int boardCols, Difficulty difficulty) {
+    public GameSetup(int boardRows, int boardCols, Difficulty difficulty) {
         this.boardRows = boardRows;
         this.boardCols = boardCols;
         this.difficulty = difficulty;
@@ -35,7 +35,7 @@ public class Setup {
         this.difficulty = difficulty;
     }
 
-    public Setup getSetup(){
+    public GameSetup getSetup(){
         return this;
     }
 

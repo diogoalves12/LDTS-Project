@@ -1,7 +1,7 @@
 package model.game;
 
 import model.Position;
-import model.Setup;
+
 import java.util.Random;
 
 public class BoardBuilder{

@@ -1,13 +1,13 @@
 package model.game;
 
-import model.Setup;
+import model.GameSetup;
 
 public class Game {
 
     private final Board board;
-    private final Setup setup;
+    private final GameSetup setup;
 
-    public Game(Setup setup) {
+    public Game(GameSetup setup) {
         this.setup = setup;
         int freq = calculateMineFrequency();
 
@@ -31,7 +31,7 @@ public class Game {
         return board;
     }
 
-    public Setup getSetup() {
+    public GameSetup getSetup() {
         return setup;
     }
 
