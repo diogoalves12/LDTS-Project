@@ -11,32 +11,25 @@ public class GameSetup {
         this.boardCols = boardCols;
         this.difficulty = difficulty;
     }
+
     public int getBoardRows() {
         return boardRows;
-    }
-
-    public void setBoardRows(int boardRows) {
-        this.boardRows = boardRows;
     }
 
     public int getBoardCols() {
         return boardCols;
     }
 
-    public void setBoardCols(int boardCols) {
-        this.boardCols = boardCols;
-    }
-
     public Difficulty getDifficulty() {
         return difficulty;
     }
 
-    public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
-    }
-
-    public GameSetup getSetup(){
-        return this;
+    public int getMineFrequency() {
+        return switch (difficulty) {
+            case EASY -> 8;
+            case NORMAL -> 6;
+            case HARD -> 5;
+        };
     }
 
 }
