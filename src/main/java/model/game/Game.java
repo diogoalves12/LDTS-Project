@@ -4,18 +4,24 @@ import model.GameSetup;
 
 public class Game {
 
+    private static final int EASY_FREQUENCY = 8;
+    private static final int NORMAL_FREQUENCY = 6;
+    private static final int HARD_FREQUENCY = 5;
+
     private final Board board;
     private final GameSetup setup;
 
     public Game(GameSetup setup) {
         this.setup = setup;
-        int freq = calculateMineFrequency();
+        this.board = initBoard();
+    }
 
+    private Board initBoard(){
+        int freq = calculateMineFrequency();
         Board.initialize(setup.getBoardRows(), setup.getBoardCols());
         BoardBuilder builder = new BoardBuilder(null);
         builder.buildBoard(freq);
-
-        this.board = Board.getInstance();
+        return Board.getInstance();
     }
 
     private int calculateMineFrequency(){

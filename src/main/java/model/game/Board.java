@@ -3,16 +3,17 @@ package model.game;
 import model.Position;
 
 public class Board {
-    private static volatile Board instance;
-    private final Cell[][] board;
+
     private final int rows;
     private final int cols;
+    private final Cell[][] board;
+    private static volatile Board instance;
 
     private Board(int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
         board = new Cell[rows][cols];
-        initializeBoard();
+        initBoard();
     }
 
     // Singleton accessor
@@ -34,18 +35,11 @@ public class Board {
         }
     }
 
-    private void initializeBoard() {
+    private void initBoard() {
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 board[row][col] = CellFactory.createCell(false, row, col);
             }
-        }
-
-    }
-
-    public void addCell(Position position, Cell cell) {
-        if(inBounds(position)){
-            board[position.getRow()][position.getCol()] = cell;
         }
     }
 
@@ -55,6 +49,12 @@ public class Board {
 
     public int getCols(){
         return cols;
+    }
+
+    public void addCell(Position position, Cell cell) {
+        if(inBounds(position)){
+            board[position.getRow()][position.getCol()] = cell;
+        }
     }
 
     public Cell getCell(Position position) {
@@ -70,11 +70,12 @@ public class Board {
         return (row >= 0 && row < rows ) && (col >= 0 && col < cols);
     }
 
-    public int getAdjacentMines(Position position) {
+    public int countAdjacentMines(Position position) {
         int count = 0;
 
         for(int i = -1; i <= 1; i++){
             for(int j = -1; j <= 1; j++){
+
                 if(i == 0 && j == 0) continue;
 
                 int newRow = position.getRow() + i;
@@ -88,23 +89,20 @@ public class Board {
                         count++;
                     }
                 }
-
             }
         }
         return count;
     }
 
-
     public void revealEmptyArea(Position position) {
         if(!inBounds(position)) return;
 
         Cell cell = getCell(position);
-
         if(cell == null || cell.isRevealed()) return;
 
         cell.reveal();
 
-        if(getAdjacentMines(position) == 0){
+        if(countAdjacentMines(position) == 0){
             for(int i = -1; i <= 1; i++){
                 for(int j = -1; j <= 1; j++){
                     if(i != 0 || j != 0){
@@ -115,6 +113,5 @@ public class Board {
             }
         }
     }
-
 
 }

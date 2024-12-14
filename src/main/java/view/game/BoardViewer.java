@@ -40,7 +40,7 @@ public class BoardViewer extends View<Board> {
                     display = "*";
                     ColorHex = "#FF0000";
                 } else if (!cell.hasMine()){
-                    int adjacentMines = board.getAdjacentMines(position);
+                    int adjacentMines = board.countAdjacentMines(position);
                     if(adjacentMines > 0) {
                         display = String.valueOf(adjacentMines);
                         ColorHex = "#00FF00";
