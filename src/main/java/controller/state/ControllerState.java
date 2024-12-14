@@ -14,10 +14,6 @@ public abstract class ControllerState<T> {
         this.setup = setup;
     }
 
-    public void changeState(ControllerState<T> nextState){
-
-    }
-
     public void draw(TextGraphics textGraphics) throws IOException {
         this.getViewer().draw();
     }
@@ -25,6 +21,5 @@ public abstract class ControllerState<T> {
     public abstract View<T> getViewer();
 
 
-
-
+    public abstract ControllerState<?> changeState();
 }
