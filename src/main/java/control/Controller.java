@@ -13,7 +13,11 @@ public class Controller {
 
     public Controller(StateFactory factory) {
         GameSetup setup = new GameSetup(20,20, NORMAL);
+        this.state = factory.getMenuState(setup);
     }
 
+    public Game getGame() { return game; }
+
+    public void setGame(Game game) { this.game = game; }
 
 }
