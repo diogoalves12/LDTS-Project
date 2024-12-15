@@ -25,7 +25,7 @@ public abstract class ControllerState<T> {
         this.getViewer().draw();
     }
 
-    protected ControllerState<T> changeState(ControllerState<T> nextState) throws IOException {
+    protected ControllerState<?> changeState(ControllerState<?> nextState) throws IOException {
         if(nextState != this) this.getViewer().close();
         return nextState;
     }
@@ -37,5 +37,5 @@ public abstract class ControllerState<T> {
         return inputKey;
     }
 
-    public abstract void update(Controller controller, InputKey inputkey);
+    public abstract ControllerState<?> update(Controller controller, InputKey inputkey) throws IOException;
 }
