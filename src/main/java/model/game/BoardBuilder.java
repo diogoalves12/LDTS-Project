@@ -1,33 +1,34 @@
 package model.game;
 
 import model.Position;
-import model.Setup;
+
 import java.util.Random;
 
 public class BoardBuilder{
-    private final Random random;
+    private Board board;
+    private Random random;
 
-    public BoardBuilder(Random random) {
-        this.random = (random == null) ? new Random() : random;
+    public BoardBuilder() {
+        board = Board.getInstance();
+        random = new Random();
     }
 
     public void buildBoard(int freq) {
-        Board board = Board.getInstance();
-
-        int rows = board.getRows();
-        int cols = board.getCols();
-
-        for(int x  = 0; x < rows; x++) {
-            for(int y = 0; y < cols; y++) {
-                if(randomMinesPlacement(freq)) {
-                    Position position = new Position(x, y);
-                    board.addCell(position, CellFactory.createCell(true, x, y));
-                }
+        for(int x  = 0; x < board.getRows(); x++) {
+            for(int y = 0; y < board.getCols(); y++) {
+                populateCell(board, new Position(x, y), freq);
             }
         }
     }
 
-    private boolean randomMinesPlacement(int freq) {
+    private void populateCell(Board board, Position position, int freq) {
+        if(isMinePlaced(freq)) {
+            Cell cell = CellFactory.createCell(true, position.getRow(), position.getCol());
+            board.addCell(position, cell);
+        }
+    }
+
+    private boolean isMinePlaced(int freq) {
         return random.nextGaussian() * 10 - freq > 5;
     }
 

@@ -1,17 +1,30 @@
 package view;
 
-import com.googlecode.lanterna.screen.Screen;
 import model.game.Board;
+import model.game.Cursor;
+import model.help.HelpModel;
+import model.menu.MenuModel;
 import view.game.BoardViewer;
+import view.game.CursorViewer;
+import view.help.HelpPageView;
+import view.menu.MenuView;
 
 public class ViewFactory {
-    private final Screen screen;
 
-    public ViewFactory(Screen screen) {
-        this.screen = screen;
+    public static BoardViewer createBoardViewer(Board board) {
+        return new BoardViewer(board);
     }
 
-    public static View<Board> createBoardViewer(Board board, Screen screen) {
-        return new BoardViewer(board, screen);
+    public static MenuView createMenuView(MenuModel model) {
+        return new MenuView(model);
     }
+
+    public static HelpPageView createHelpPageView(HelpModel model)  {
+        return new HelpPageView(model);
+    }
+
+    public static CursorViewer createCursorView(Cursor cursor) {
+        return new CursorViewer(cursor);
+    }
+
 }

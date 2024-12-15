@@ -1,37 +1,30 @@
 package model.game;
 
-import model.Setup;
+import model.GameSetup;
 
 public class Game {
 
     private final Board board;
-    private final Setup setup;
+    private final GameSetup setup;
+    private Cursor cursor;
 
-    public Game(Setup setup) {
+    public Game(GameSetup setup) {
         this.setup = setup;
-        int freq = calculateMineFrequency();
-
-        Board.initialize(setup.getBoardRows(), setup.getBoardCols());
-        BoardBuilder builder = new BoardBuilder(null);
-        builder.buildBoard(freq);
-
-        this.board = Board.getInstance();
+        this.board = initializeBoard();
     }
 
-    private int calculateMineFrequency(){
-        return switch (setup.getDifficulty()) {
-            case EASY -> 8;
-            case NORMAL -> 6;
-            case HARD -> 5;
-            default -> throw new IllegalArgumentException("Invalid difficulty");
-        };
+    private Board initializeBoard() {
+        Board.initialize(setup.getBoardRows(), setup.getBoardCols());
+        BoardBuilder builder = new BoardBuilder();
+        builder.buildBoard(setup.getMineFrequency());
+        return Board.getInstance();
     }
 
     public Board getBoard() {
         return board;
     }
 
-    public Setup getSetup() {
+    public GameSetup getSetup() {
         return setup;
     }
 
@@ -42,6 +35,13 @@ public class Game {
     public int getColumns(){
         return setup.getBoardRows();
     }
+
+    public Cursor getCursor() { return cursor; }
+
+    public int getCursorRow(){ return cursor.getRow(); }
+
+    public int getCursorCol(){ return cursor.getCol(); }
+
 
 }
 
