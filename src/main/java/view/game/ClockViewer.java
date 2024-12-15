@@ -2,17 +2,17 @@ package view.game;
 
 import model.game.GameClock;
 import view.View;
-import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.graphics.TextGraphics;
 
 import java.io.IOException;
 
-public class ClockViewer {
+public class ClockViewer extends View<GameClock> {
 
-    //Falta o extend
 
-    //Relacionar o Relógio com "BorderView"
+    public ClockViewer(GameClock model) { super(model); }
 
-   // @Override
+    @Override
+    public void draw() throws IOException {
 
+
+    }
 }
