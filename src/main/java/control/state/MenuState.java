@@ -8,8 +8,9 @@ import model.menu.MenuModel;
 import view.View;
 import view.menu.MenuView;
 
+import java.io.IOException;
+
 public class MenuState extends ControllerState<MenuModel> {
-    TextGraphics graphics;
     MenuModel model;
     MenuView view;
 
@@ -17,7 +18,6 @@ public class MenuState extends ControllerState<MenuModel> {
         super(setup, factory);
         this.model = model;
         this.view = view;
-        this.graphics = view.getGraphics();
     }
 
 
@@ -25,7 +25,22 @@ public class MenuState extends ControllerState<MenuModel> {
     public View<MenuModel> getViewer() { return view; }
 
     @Override
-    public void update(Controller controller, InputKey inputkey) {
+    public ControllerState<?> update(Controller controller, InputKey inputkey) throws IOException {
+        ControllerState<?> nextState = this;
 
+        switch (inputkey.getInput()) {
+            case UP -> model.previousOption();
+            case DOWN -> model.nextOption();
+            case ENTER -> {
+                switch (model.getSelected()){
+                    case 0 -> nextState =  null;   //factory.getGameState();
+                    case 1 -> nextState = null;    //factory.getHelpState();
+                    case 3 ->  nextState = null;
+                }
+            }
+            case QUIT -> nextState = null;
+        }
+        return changeState(nextState);
     }
+
 }
