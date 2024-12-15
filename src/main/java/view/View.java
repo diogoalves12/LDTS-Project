@@ -16,7 +16,7 @@ public abstract class View<T> {
     protected TextGraphics graphics;
 
     public static final int WIDTH = 60;
-    public static final int HEIGHT = 35;
+    public static final int HEIGHT = 40;
 
 
     public View(T model) {

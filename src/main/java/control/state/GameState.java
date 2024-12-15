@@ -37,9 +37,11 @@ public class GameState extends ControllerState<Game> {
             case LEFT -> game.getCursor().moveLeft();
             case RIGHT -> game.getCursor().moveRight();
             case ENTER -> {
-
                 Position pos = game.getCursor().getPosition();
                 boolean reveal = game.getCell(pos).isRevealed();
+
+                System.out.println("Cursor position: " + pos.toString());
+                System.out.println("Cell found: " + (game.getCell(pos) != null));
 
                 if(reveal) {
                     System.out.println("Célula já revelada!");
@@ -50,7 +52,7 @@ public class GameState extends ControllerState<Game> {
                     if(hasMine) {
                         nextState = factory.getMenuState(setup);
                     } else {
-                        game.getBoard().revealEmptyArea(pos);
+                        if(game.getCell(pos) != null) game.getBoard().revealEmptyArea(pos);
                     }
 
                 }

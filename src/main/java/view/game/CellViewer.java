@@ -21,23 +21,5 @@ public class CellViewer extends View<Cell> {
 
     @Override
     public void draw() throws IOException {
-        Cell cell = getModel();
-        String colorHex = COLOR_DEFAULT;
-        String display = DISPLAY_EMPTY;
-
-        if (!cell.isRevealed()) {
-            colorHex = COLOR_UNREVEALED;
-            display = DISPLAY_UNREVEALED;
-        } else if (cell.hasMine()) {
-            colorHex = COLOR_MINE;
-            display = DISPLAY_MINE;
-        } else {
-            int adjacentMines = getAdjacentMineCount();
-            if (adjacentMines > 0) {
-                colorHex = COLOR_ADJACENT;
-                display = String.valueOf(adjacentMines);
-            }
-        }
     }
-
 }

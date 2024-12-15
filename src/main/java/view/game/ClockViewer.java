@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.time.Clock;
 
 public class ClockViewer extends View<GameClock> {
-
+    private static final int RIGHT_PADDING = 5;
 
     public ClockViewer(GameClock model) { super(model);
     }
@@ -24,7 +24,7 @@ public class ClockViewer extends View<GameClock> {
 
         // drawBorder();
         int rightPadding = 10;
-        graphics.putString(size.getColumns() - rightPadding, 0, time);
+        graphics.putString(size.getColumns() - RIGHT_PADDING, 0, time);
 
         refresh();
 

@@ -1,6 +1,5 @@
 package view.game;
 
-import model.game.Board;
 import model.game.Game;
 import view.View;
 
@@ -9,6 +8,7 @@ import java.io.IOException;
 import static view.ViewFactory.*;
 
 public class GameViewer extends View<Game> {
+
     private BoardViewer boardViewer;
     private ClockViewer clockViewer;
     private CursorViewer cursorViewer;
@@ -36,4 +36,5 @@ public class GameViewer extends View<Game> {
 
         refresh();
     }
+
 }
