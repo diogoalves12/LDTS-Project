@@ -48,11 +48,13 @@ public abstract class View<T> {
     public T getModel() { return model; }
 
     public Screen getScreen() {
-        if(screen == null) setupScreen();
         return screen;
     }
 
-    public TextGraphics getGraphics() { return graphics; }
+    public TextGraphics getGraphics() {
+        if(graphics == null) setupScreen();
+        return graphics;
+    }
 
     public abstract void draw() throws IOException;
 
@@ -70,6 +72,11 @@ public abstract class View<T> {
 
     public InputKey getCommand() throws IOException {
         return new InputKey().processInput(screen);
+    }
+
+    public void setScreen(Screen screen) {
+        this.screen = screen;
+        this.graphics = screen.newTextGraphics();
     }
 }
 

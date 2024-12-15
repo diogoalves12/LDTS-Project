@@ -16,7 +16,6 @@ public class ClockViewer extends View<GameClock> {
 
     @Override
     public void draw() throws IOException {
-        TextGraphics graphics = getGraphics();
 
         GameClock model = getModel();
         String time = model.getElapsedSeconds() + "s";
@@ -34,7 +33,6 @@ public class ClockViewer extends View<GameClock> {
     }
 
     private void drawBorder(){
-        TextGraphics graphics = getGraphics();
         TerminalSize size = getSize();
 
         for(int col = 0; col < size.getColumns(); col++){

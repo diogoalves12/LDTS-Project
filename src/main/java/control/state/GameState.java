@@ -55,7 +55,7 @@ public class GameState extends ControllerState<Game> {
 
                 }
             }
-            default -> throw new IllegalStateException("Unexpected value: " + inputkey);
+            default -> {}
         }
 
 

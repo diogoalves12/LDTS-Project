@@ -1,8 +1,6 @@
 package view.game;
 
 import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
 import model.Position;
 import model.game.Board;
 import model.game.Cell;
@@ -18,8 +16,6 @@ public class BoardViewer extends View<Board> {
 
     @Override
     public void draw() throws IOException {
-        Screen screen = getScreen();
-        TextGraphics textGraphics = getGraphics();
         Board board = getModel();
 
         for(int row = 0; row < board.getRows(); row++){
@@ -46,9 +42,8 @@ public class BoardViewer extends View<Board> {
                         ColorHex = "#FFFFFF";
                     }
                 }
-
-                textGraphics.setForegroundColor(TextColor.Factory.fromString(ColorHex));
-                textGraphics.putString(col * 2 + 1, row + 1, display);
+                graphics.setForegroundColor(TextColor.Factory.fromString(ColorHex));
+                graphics.putString(col * 2 + 1, row + 1, display);
             }
         }
         refresh();
