@@ -7,6 +7,7 @@ public class Game {
     private final Board board;
     private final GameSetup setup;
     private Cursor cursor;
+    private GameClock clock;
 
     public Game(GameSetup setup) {
         this.setup = setup;
@@ -41,6 +42,8 @@ public class Game {
     public int getCursorRow(){ return cursor.getRow(); }
 
     public int getCursorCol(){ return cursor.getCol(); }
+
+    public GameClock getClock() { return clock; }
 
 
 }
