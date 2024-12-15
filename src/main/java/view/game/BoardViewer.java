@@ -6,7 +6,9 @@ import com.googlecode.lanterna.screen.Screen;
 import model.Position;
 import model.game.Board;
 import model.game.Cell;
+import model.game.GameClock;
 import view.View;
+import view.ViewFactory;
 
 
 import java.io.IOException;
@@ -50,6 +52,7 @@ public class BoardViewer extends View<Board> {
                     }
                 }
 
+                ViewFactory.createClockView();
                 textGraphics.setForegroundColor(TextColor.Factory.fromString(ColorHex));
                 textGraphics.putString(col * 2 + 1, row + 1, display);
             }
