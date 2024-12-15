@@ -33,9 +33,9 @@ public class MenuState extends ControllerState<MenuModel> {
             case DOWN -> model.nextOption();
             case ENTER -> {
                 switch (model.getSelected()){
-                    case 0 -> nextState =  null;   //factory.getGameState();
-                    case 1 -> nextState = null;    //factory.getHelpState();
-                    case 3 ->  nextState = null;
+                    case 0 -> nextState = factory.getGameState(setup);
+                    case 1 -> nextState = factory.getHelpState(setup);
+                    case 2 ->  nextState = null;
                 }
             }
             case QUIT -> nextState = null;
