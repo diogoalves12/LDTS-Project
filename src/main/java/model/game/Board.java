@@ -42,6 +42,16 @@ public class Board {
                     board[row][col] = CellFactory.createCell(false, row, col);
             }
         }
+
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                Cell cell = board[row][col];
+                if (cell != null) {
+                    int adjacentMines = countAdjacentMines(cell.getPosition());
+                    cell.setAdjacentMines(adjacentMines);
+                }
+            }
+        }
     }
 
     public int getRows(){

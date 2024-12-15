@@ -17,14 +17,14 @@ public class CursorViewer extends View<Cursor> {
 
         graphics.setForegroundColor(TextColor.Factory.fromString("#F000FF"));
 
-        int row = getModel().getRow();
-        int col = getModel().getCol();
+        int row = getModel().getPosition().getRow();
+        int col = getModel().getPosition().getCol();
 
         int terminalWidth = getSize().getColumns();
         int terminalHeight = getSize().getRows();
 
-        int boardWidth = getModel().getCol() * 2;
-        int boardHeight = getModel().getRow();
+        int boardWidth = getModel().getPosition().getCol() * 2;
+        int boardHeight = getModel().getPosition().getRow();
 
         int startX = (terminalWidth - boardWidth) / 2;
         int startY = (terminalHeight - boardHeight) / 2;

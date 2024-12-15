@@ -1,5 +1,6 @@
 package model.game;
 
+import com.googlecode.lanterna.TerminalSize;
 import model.GameSetup;
 import model.Position;
 
@@ -15,7 +16,7 @@ public class Game {
     public Game(GameSetup setup) {
         this.setup = setup;
         this.board = initializeBoard();
-        this.cursor = new Cursor(0,0);
+        this.cursor = new Cursor(new TerminalSize(setup.getBoardRows(), setup.getBoardCols()), new Position(0, 0));
         this.clock = new GameClock(Clock.systemUTC());
     }
 
@@ -44,9 +45,9 @@ public class Game {
 
     public Cursor getCursor() { return cursor; }
 
-    public int getCursorRow(){ return cursor.getRow(); }
+    public int getCursorRow(){ return cursor.getPosition().getRow(); }
 
-    public int getCursorCol(){ return cursor.getCol(); }
+    public int getCursorCol(){ return cursor.getPosition().getCol(); }
 
     public GameClock getClock() { return clock; }
 

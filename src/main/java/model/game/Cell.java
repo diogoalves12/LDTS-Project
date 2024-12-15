@@ -7,6 +7,7 @@ public abstract class Cell {
     private final Position position;
     private boolean isRevealed = false;
     private boolean isFlagged = false;
+    private int adjacentMines;
 
     public Cell(int row, int col) {
         this.position = new Position(row, col);
@@ -43,6 +44,10 @@ public abstract class Cell {
     public int getRow() { return position.getRow(); }
 
     public int getCol() {return position.getCol(); }
+
+    public void setAdjacentMines(int adjacentMines) { this.adjacentMines = adjacentMines;}
+
+    public int getAdjacentMines() { return adjacentMines; }
 
     public abstract boolean hasMine();
 
