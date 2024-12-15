@@ -31,6 +31,12 @@ public abstract class ControllerState<T> {
     }
 
     public InputKey processInput() throws IOException {
+        View<T> viewer = this.getViewer();
+
+        if(viewer.getScreen() == null){
+            viewer.setupScreen();
+        }
+
         draw();
         InputKey inputKey = this.getViewer().getCommand();
         if(inputKey == null) return this.getViewer().getCommand();
