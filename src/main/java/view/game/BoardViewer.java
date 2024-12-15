@@ -1,14 +1,14 @@
 package view.game;
 
-import com.googlecode.lanterna.TextColor;
 import model.Position;
 import model.game.Board;
-import model.game.Cell;
 import view.View;
+import view.ViewFactory;
 
 import java.io.IOException;
 
 public class BoardViewer extends View<Board> {
+    private CellViewer viewer;
 
     public BoardViewer(Board board) {
         super(board);
@@ -16,46 +16,26 @@ public class BoardViewer extends View<Board> {
 
     @Override
     public void draw() throws IOException {
-        Board board = getModel();
-
         int terminalWidth = getSize().getColumns();
         int terminalHeight = getSize().getRows();
 
-        int boardWidth = board.getCols() * 2;
-        int boardHeight = board.getRows() + 1;
-
+        int boardWidth = getModel().getCols() * 2;
+        int boardHeight = getModel().getRows() + 1;
         int startX = (terminalWidth - boardWidth) / 2;
         int startY = (terminalHeight - boardHeight) / 2;
 
-        for(int row = 0; row < board.getRows(); row++){
-            for(int col = 0; col < board.getCols(); col++){
-                Position position = new Position(row,col);
-                Cell cell = board.getCell(position);
 
-                String display = " ";
-                String ColorHex = "#AAAAAA";
+        for (int row = 0; row < getModel().getRows(); row++) {
+            for (int col = 0; col < getModel().getCols(); col++) {
+                Position position = new Position(row, col);
+                viewer = ViewFactory.createCellView(getModel().getCell(position));
+                viewer.setScreen(getScreen());
 
-                if(!cell.isRevealed()) {
-                    display = "#";
-                    ColorHex = "#FFFFFF";
-                } else if (cell.hasMine()) {
-                    display = "*";
-                    ColorHex = "#FF0000";
-                } else if (!cell.hasMine()){
-                    int adjacentMines = board.countAdjacentMines(position);
-                    if(adjacentMines > 0) {
-                        display = String.valueOf(adjacentMines);
-                        ColorHex = "#00FF00";
-                    } else {
-                        display = " ";
-                        ColorHex = "#FFFFFF";
-                    }
-                }
-                graphics.setForegroundColor(TextColor.Factory.fromString(ColorHex));
-                graphics.putString(startX + col * 2, startY + row, display);
+
+                viewer.draw();
             }
-        }
-        refresh();
-    }
 
+        }
+
+    }
 }

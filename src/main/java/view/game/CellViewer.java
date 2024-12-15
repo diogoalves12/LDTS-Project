@@ -1,5 +1,6 @@
 package view.game;
 
+import com.googlecode.lanterna.TextColor;
 import model.GameSetup;
 
 import model.game.Board;
@@ -22,34 +23,37 @@ public class CellViewer extends View<Cell> {
         int row  = cell.getRow();
         int col = cell.getCol();
 
-        String empty = " ";
+        String display= " ";
         String color = "#FFFFFF";
 
         if(!cell.isRevealed()){
             if(cell.isFlagged()){
-                empty = "F";
+                display = "F";
                 color = "#FFD700";
             }else{
-                empty = "#";
+                display = "#";
                 color = "#CCCCCC";
             }
 
         } else {
             if(cell.hasMine()){
-                empty = "*";
+                display = "*";
                 color = "#FF0000";
             } else {
                 int adjacentMines = cell instanceof model.game.NormalCell ? cell.getAdjacentMines() : 0;
                 if(adjacentMines > 0){
-                    empty = String.valueOf(adjacentMines);
+                    display = String.valueOf(adjacentMines);
                     color = "#00FF00";
                 } else {
-                    empty = " ";
+                    display = " ";
                     color = "#FFFFFF";
                 }
             }
         }
 
+        getGraphics().setForegroundColor(TextColor.Factory.fromString(color));
+        getGraphics().putString(col, row, display);
+        
     }
 
 }
