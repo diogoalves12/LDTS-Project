@@ -5,6 +5,8 @@ import control.state.StateFactory;
 import model.GameSetup;
 import model.game.Game;
 
+import java.io.IOException;
+
 import static model.GameSetup.Difficulty.NORMAL;
 
 public class Controller {
@@ -20,4 +22,10 @@ public class Controller {
 
     public void setGame(Game game) { this.game = game; }
 
+    public void launch() throws IOException, InterruptedException {
+        while(this.state != null){
+           this.state = this.state.update(this,this.state.processInput());
+           Thread.sleep(35);
+        }
+    }
 }
