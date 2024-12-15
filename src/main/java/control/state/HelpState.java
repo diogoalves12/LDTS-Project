@@ -21,11 +21,24 @@ public class HelpState extends ControllerState<HelpModel> {
 
     @Override
     public View<HelpModel> getViewer() {
-        return null;
+        return viewer;
     }
 
     @Override
     public ControllerState<?> update(Controller controller, InputKey inputkey) throws IOException {
-        return null;
+        ControllerState<?> nextState = this;
+
+        switch (inputkey.getInput()) {
+            case ESCAPE, LEFT -> {
+                nextState = factory.getMenuState(setup);
+            }
+            case QUIT -> {
+                nextState = null;
+            }
+            default -> {}
+
+        }
+        return changeState(nextState);
     }
+
 }
