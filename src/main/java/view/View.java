@@ -78,6 +78,10 @@ public abstract class View<T> {
         this.screen = screen;
         this.graphics = screen.newTextGraphics();
     }
+
+    public TerminalSize sizeScreen(){
+        return new TerminalSize(WIDTH, HEIGHT);
+    }
 }
 
 
