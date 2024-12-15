@@ -50,7 +50,7 @@ public class GameState extends ControllerState<Game> {
                     if(hasMine) {
                         nextState = factory.getMenuState(setup);
                     } else {
-                        game.getCell(pos).reveal();
+                        game.getBoard().revealEmptyArea(pos);
                     }
 
                 }
