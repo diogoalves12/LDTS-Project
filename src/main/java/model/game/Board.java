@@ -38,7 +38,8 @@ public class Board {
     private void initBoard() {
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
-                board[row][col] = CellFactory.createCell(false, row, col);
+                if(board[row][col] == null)
+                    board[row][col] = CellFactory.createCell(false, row, col);
             }
         }
     }
