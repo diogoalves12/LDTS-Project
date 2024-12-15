@@ -14,10 +14,10 @@ public class MenuState extends ControllerState<MenuModel> {
     MenuModel model;
     MenuView view;
 
-    public MenuState(MenuModel model, MenuView view, GameSetup setup, StateFactory factory) {
+    public MenuState(MenuModel model, MenuView viewer, GameSetup setup, StateFactory factory) {
         super(setup, factory);
         this.model = model;
-        this.view = view;
+        this.view = viewer;
     }
 
 
