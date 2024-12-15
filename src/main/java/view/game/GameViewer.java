@@ -13,15 +13,11 @@ public class GameViewer extends View<Game> {
 
     public GameViewer(Game model) {
         super(model);
-
+        setupScreen();
     }
 
     @Override
     public void draw() throws IOException {
-
-        if (getScreen() == null || getGraphics() == null) {
-            throw new IllegalStateException("Screen or Graphics not initialized.");
-        }
 
         clear();
 

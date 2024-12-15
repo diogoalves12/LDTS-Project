@@ -47,7 +47,10 @@ public abstract class View<T> {
 
     public T getModel() { return model; }
 
-    public Screen getScreen() { return screen; }
+    public Screen getScreen() {
+        if(screen == null) setupScreen();
+        return screen;
+    }
 
     public TextGraphics getGraphics() { return graphics; }
 

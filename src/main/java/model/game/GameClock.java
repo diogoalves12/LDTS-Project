@@ -11,7 +11,7 @@ public class GameClock {
 
     public GameClock(Clock clock) {
         this.clock = clock;
-        this.start = null;
+        this.start = getCurrent();
         this.running = false;
     }
 

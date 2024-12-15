@@ -1,6 +1,9 @@
 package model.game;
 
 import model.GameSetup;
+import model.Position;
+
+import java.time.Clock;
 
 public class Game {
 
@@ -12,6 +15,8 @@ public class Game {
     public Game(GameSetup setup) {
         this.setup = setup;
         this.board = initializeBoard();
+        this.cursor = new Cursor(0,0);
+        this.clock = new GameClock(Clock.systemUTC());
     }
 
     private Board initializeBoard() {
@@ -34,7 +39,7 @@ public class Game {
     }
 
     public int getColumns(){
-        return setup.getBoardRows();
+        return setup.getBoardCols();
     }
 
     public Cursor getCursor() { return cursor; }
@@ -45,6 +50,7 @@ public class Game {
 
     public GameClock getClock() { return clock; }
 
+    public Cell getCell(Position position) { return board.getCell(position);}
 
 }
 

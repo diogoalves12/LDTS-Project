@@ -6,6 +6,7 @@ import model.help.HelpModel;
 import model.menu.MenuModel;
 import view.ViewFactory;
 import view.game.BoardViewer;
+import view.game.GameViewer;
 import view.help.HelpPageView;
 import view.menu.MenuView;
 
@@ -19,7 +20,7 @@ public class StateFactory {
 
     public GameState getGameState(GameSetup setup) {
         Game game = new Game(setup);
-        BoardViewer viewer = ViewFactory.createBoardViewer(game.getBoard());
+        GameViewer viewer = ViewFactory.createGameView(game);
         return new GameState(game, viewer, setup, this);
     }
 

@@ -6,16 +6,17 @@ import model.game.GameClock;
 import view.View;
 
 import java.io.IOException;
+import java.time.Clock;
 
 public class ClockViewer extends View<GameClock> {
 
 
-    public ClockViewer(GameClock model) { super(model); }
+    public ClockViewer(GameClock model) { super(model);
+    }
 
     @Override
     public void draw() throws IOException {
         TextGraphics graphics = getGraphics();
-        clear();
 
         GameClock model = getModel();
         String time = model.getElapsedSeconds() + "s";
