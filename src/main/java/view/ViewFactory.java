@@ -2,12 +2,16 @@ package view;
 
 import model.game.Board;
 import model.game.Cursor;
+import model.game.GameClock;
 import model.help.HelpModel;
 import model.menu.MenuModel;
 import view.game.BoardViewer;
+import view.game.ClockViewer;
 import view.game.CursorViewer;
 import view.help.HelpPageView;
 import view.menu.MenuView;
+
+import java.time.Clock;
 
 public class ViewFactory {
 
@@ -25,6 +29,10 @@ public class ViewFactory {
 
     public static CursorViewer createCursorView(Cursor cursor) {
         return new CursorViewer(cursor);
+    }
+
+    public static ClockViewer createClockView(GameClock model) {
+        return new ClockViewer(model);
     }
 
 }
