@@ -6,7 +6,7 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-import controller.CommandKey;
+import control.InputKey;
 
 import java.io.IOException;
 
@@ -65,8 +65,8 @@ public abstract class View<T> {
         if(screen != null) screen.close();
     }
 
-    public CommandKey getCommand() throws IOException {
-        return new CommandKey().getCommand(screen);
+    public InputKey getCommand() throws IOException {
+        return new InputKey().processInput(screen);
     }
 }
 
