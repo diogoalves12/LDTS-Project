@@ -6,7 +6,6 @@ import com.googlecode.lanterna.screen.Screen;
 import java.io.IOException;
 
 public class InputKey {
-
     public enum INPUT {
         UP,
         DOWN,
@@ -37,21 +36,31 @@ public class InputKey {
 
     public InputKey processInput(Screen screen) throws IOException {
         KeyStroke keyStroke = screen.pollInput();
-        if (keyStroke == null) {
-            return this;
-        }
+        if (keyStroke == null) return this;
 
-        InputMapper.mapKeyStroke(this, keyStroke);
+        processKeyStroke(keyStroke);
         return this;
     }
 
-    public void setInput(INPUT input) {
-        this.input = input;
+    private void processKeyStroke(KeyStroke keyStroke) {
+        switch (keyStroke.getKeyType()) {
+            case EOF -> this.input = INPUT.QUIT;
+            case ArrowUp -> this.input = INPUT.UP;
+            case ArrowDown -> this.input = INPUT.DOWN;
+            case ArrowLeft -> this.input = INPUT.LEFT;
+            case ArrowRight -> this.input = INPUT.RIGHT;
+            case Enter -> this.input = INPUT.ENTER;
+            case Escape -> this.input = INPUT.ESCAPE;
+            case Character -> handleCharacterInput(keyStroke.getCharacter());
+        }
     }
 
-    public void setKey(Character key) {
-        this.key = key;
+    private void handleCharacterInput(Character character) {
+        this.key = character;
+        switch (character) {
+            case 'f' -> this.input = INPUT.FLAG;
+            case 'q' -> this.input = INPUT.QUIT;
+            default -> this.input = INPUT.NONE;
+        }
     }
-
 }
-
