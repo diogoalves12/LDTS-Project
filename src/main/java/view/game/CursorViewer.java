@@ -20,8 +20,17 @@ public class CursorViewer extends View<Cursor> {
         int row = getModel().getRow();
         int col = getModel().getCol();
 
-        graphics.putString(col * 2, row, "[");
-        graphics.putString(col * 2 + 2, row, "]");
+        int terminalWidth = getSize().getColumns();
+        int terminalHeight = getSize().getRows();
+
+        int boardWidth = getModel().getCol() * 2;
+        int boardHeight = getModel().getRow();
+
+        int startX = (terminalWidth - boardWidth) / 2;
+        int startY = (terminalHeight - boardHeight) / 2;
+
+        graphics.putString(startX + col * 2 - 1, startY + row, "[");
+        graphics.putString(startX + col * 2 + 1, startY + row, "]");
         graphics.setForegroundColor(TextColor.Factory.fromString("#000000"));
 
         refresh();

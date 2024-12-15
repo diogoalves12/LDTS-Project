@@ -18,6 +18,15 @@ public class BoardViewer extends View<Board> {
     public void draw() throws IOException {
         Board board = getModel();
 
+        int terminalWidth = getSize().getColumns();
+        int terminalHeight = getSize().getRows();
+
+        int boardWidth = board.getCols() * 2;
+        int boardHeight = board.getRows() + 1;
+
+        int startX = (terminalWidth - boardWidth) / 2;
+        int startY = (terminalHeight - boardHeight) / 2;
+
         for(int row = 0; row < board.getRows(); row++){
             for(int col = 0; col < board.getCols(); col++){
                 Position position = new Position(row,col);
@@ -43,7 +52,7 @@ public class BoardViewer extends View<Board> {
                     }
                 }
                 graphics.setForegroundColor(TextColor.Factory.fromString(ColorHex));
-                graphics.putString(col * 2 + 1, row + 1, display);
+                graphics.putString(startX + col * 2, startY + row, display);
             }
         }
         refresh();

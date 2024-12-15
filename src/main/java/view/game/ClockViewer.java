@@ -22,11 +22,9 @@ public class ClockViewer extends View<GameClock> {
 
         TerminalSize size = getSize();
 
-        graphics.putString(size.getColumns() / 2 - "Time:".length() / 2, 2, "Time");
-
-        drawBorder();
-
-        graphics.putString(size.getColumns() / 2 - time.length() / 2, size.getRows() / 2, time);
+        // drawBorder();
+        int rightPadding = 10;
+        graphics.putString(size.getColumns() - rightPadding, 0, time);
 
         refresh();
 

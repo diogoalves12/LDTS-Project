@@ -15,13 +15,13 @@ public class Cursor {
         return  new Position(row,col);
     }
 
-    public void moveUp() { col++; }
+    public void moveUp() { row--; }
 
-    public void moveDown() { col--; }
+    public void moveDown() { row++; }
 
-    public void moveLeft() { row--; }
+    public void moveLeft() { col--; }
 
-    public void moveRight() { row++; }
+    public void moveRight() { col++; }
 
     public int getRow() { return row; }
 
