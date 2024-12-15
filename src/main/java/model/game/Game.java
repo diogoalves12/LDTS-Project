@@ -6,6 +6,7 @@ public class Game {
 
     private final Board board;
     private final GameSetup setup;
+    private Cursor cursor;
 
     public Game(GameSetup setup) {
         this.setup = setup;
@@ -34,6 +35,13 @@ public class Game {
     public int getColumns(){
         return setup.getBoardRows();
     }
+
+    public Cursor getCursor() { return cursor; }
+
+    public int getCursorRow(){ return cursor.getRow(); }
+
+    public int getCursorCol(){ return cursor.getCol(); }
+
 
 }
 
