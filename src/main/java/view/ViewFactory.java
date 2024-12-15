@@ -2,12 +2,14 @@ package view;
 
 import model.game.Board;
 import model.game.Cursor;
+import model.game.Game;
 import model.game.GameClock;
 import model.help.HelpModel;
 import model.menu.MenuModel;
 import view.game.BoardViewer;
 import view.game.ClockViewer;
 import view.game.CursorViewer;
+import view.game.GameViewer;
 import view.help.HelpPageView;
 import view.menu.MenuView;
 
@@ -34,5 +36,7 @@ public class ViewFactory {
     public static ClockViewer createClockView(GameClock model) {
         return new ClockViewer(model);
     }
+
+    public static GameViewer createGameView(Game game) { return new GameViewer(game); }
 
 }
