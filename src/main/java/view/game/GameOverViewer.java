@@ -21,28 +21,31 @@ public class GameOverViewer extends View<GameOver> {
         setBackground();
         drawTitle(col, row + 2);
         drawContent(col,row);
+        refresh();
 
     }
 
     private void setBackground() {
-        TextGraphics graphics = getGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString("#333333"));
         graphics.fill(' ');
     }
 
     private void drawTitle(int col, int row){
         graphics.setForegroundColor(TextColor.Factory.fromString("#FF0000"));
-        graphics.putString(col, row, "GAME OVER");
+        graphics.putString(col + 5, row++, " GGG    AAA   M   M  EEEEE     OOO  V   V EEEEE RRR  ");
+        graphics.putString(col + 5, row++, "G      A   A  MM MM  E        O   O V   V E     R  R ");
+        graphics.putString(col + 5, row++, "G GGG  AAAAA  M M M  EEEE     O   O V   V EEEE  RRR  ");
+        graphics.putString(col + 5, row++, "G   G  A   A  M   M  E        O   O  V V  E     R  R ");
+        graphics.putString(col + 5, row++, " GGG   A   A  M   M  EEEEE     OOO    V   EEEEE R   R");
 
     }
 
     private void drawContent(int col, int row){
-        TextGraphics graphics = getGraphics();
         graphics.setForegroundColor(TextColor.Factory.fromString("#FFFF00"));
 
         for(int i = 0; i < getModel().getTotalSections(); i++) {
             String section = getModel().getSection(i);
-            graphics.putString(col + 2, row + i + 2, section);
+            graphics.putString(col + 10, row + i + 10, section);
 
         }
 
