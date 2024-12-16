@@ -12,7 +12,6 @@ public class GameOver {
     }
 
     private void loadContent(){
-        text.add("Game Over!");
         text.add("You lost!");
         text.add("Better luck next time!");
         text.add("Press 'ESC' to return to the menu.");
