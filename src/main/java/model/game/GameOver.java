@@ -15,7 +15,7 @@ public class GameOver {
         text.add("Game Over!");
         text.add("You lost!");
         text.add("Better luck next time!");
-        text.add("Press 'ESC' to the menu.");
+        text.add("Press 'ESC' to return to the menu.");
     }
 
     public ArrayList<String> text(){
