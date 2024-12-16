@@ -1,12 +1,10 @@
 package view.game;
 
 import com.googlecode.lanterna.TextColor;
-import model.GameSetup;
 
 import model.game.Board;
 import model.game.Cell;
 import view.View;
-import view.ViewFactory;
 
 import java.io.IOException;
 
@@ -17,11 +15,8 @@ public class CellViewer extends View<Cell> {
     }
 
     @Override
-    public void draw() throws IOException {
+    public void draw(int col, int row) throws IOException {
         Cell cell = getModel();
-
-        int row  = cell.getRow();
-        int col = cell.getCol();
 
         String display= " ";
         String color = "#FFFFFF";
@@ -40,7 +35,7 @@ public class CellViewer extends View<Cell> {
                 display = "*";
                 color = "#FF0000";
             } else {
-                int adjacentMines = cell instanceof model.game.NormalCell ? cell.getAdjacentMines() : 0;
+                int adjacentMines = Board.getInstance().countAdjacentMines(cell.getPosition());
                 if(adjacentMines > 0){
                     display = String.valueOf(adjacentMines);
                     color = "#00FF00";

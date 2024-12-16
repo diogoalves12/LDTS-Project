@@ -15,7 +15,7 @@ public class BoardViewer extends View<Board> {
     }
 
     @Override
-    public void draw() throws IOException {
+    public void draw(int col, int row) throws IOException {
         int terminalWidth = getSize().getColumns();
         int terminalHeight = getSize().getRows();
 
@@ -25,14 +25,14 @@ public class BoardViewer extends View<Board> {
         int startY = (terminalHeight - boardHeight) / 2;
 
 
-        for (int row = 0; row < getModel().getRows(); row++) {
-            for (int col = 0; col < getModel().getCols(); col++) {
-                Position position = new Position(row, col);
+        for (int x = 0; x < getModel().getRows(); x++) {
+            for (int y = 0; y < getModel().getCols(); y++) {
+                Position position = new Position(x, y);
                 viewer = ViewFactory.createCellView(getModel().getCell(position));
                 viewer.setScreen(getScreen());
 
 
-                viewer.draw();
+                viewer.draw(y * 2 + col, x + row);
             }
 
         }

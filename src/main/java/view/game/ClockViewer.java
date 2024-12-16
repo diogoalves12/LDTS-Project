@@ -1,12 +1,10 @@
 package view.game;
 
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.graphics.TextGraphics;
 import model.game.GameClock;
 import view.View;
 
 import java.io.IOException;
-import java.time.Clock;
 
 public class ClockViewer extends View<GameClock> {
     private static final int RIGHT_PADDING = 5;
@@ -15,7 +13,7 @@ public class ClockViewer extends View<GameClock> {
     }
 
     @Override
-    public void draw() throws IOException {
+    public void draw(int col, int row) throws IOException {
 
         GameClock model = getModel();
         String time = model.getElapsedSeconds() + "s";

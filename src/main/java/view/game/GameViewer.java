@@ -27,12 +27,12 @@ public class GameViewer extends View<Game> {
     }
 
     @Override
-    public void draw() throws IOException {
+    public void draw(int col, int row) throws IOException {
         clear();
 
-        boardViewer.draw();
-        clockViewer.draw();
-        cursorViewer.draw();
+        boardViewer.draw(col + 2,row + 5);
+        clockViewer.draw(col + 2, row + 1);
+        cursorViewer.draw(col +2, row + 5);
 
         refresh();
     }

@@ -56,7 +56,7 @@ public abstract class View<T> {
         return graphics;
     }
 
-    public abstract void draw() throws IOException;
+    public abstract void draw(int col,int row) throws IOException;
 
     protected void refresh() throws IOException {
         screen.refresh();

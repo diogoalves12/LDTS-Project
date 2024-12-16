@@ -17,7 +17,7 @@ public class MenuView extends View<MenuModel> {
     }
 
     @Override
-    public void draw() throws IOException {
+    public void draw(int col, int row) throws IOException {
         TextGraphics graphics = getGraphics();
         clear();
 
