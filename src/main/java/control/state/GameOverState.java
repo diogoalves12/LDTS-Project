@@ -3,6 +3,7 @@ package control.state;
 import control.Controller;
 import control.InputKey;
 import model.GameSetup;
+import model.game.Board;
 import model.game.GameOver;
 import view.View;
 import view.game.GameOverViewer;
@@ -26,6 +27,16 @@ public class GameOverState extends ControllerState<GameOver> {
 
     @Override
     public ControllerState<?> update(Controller controller, InputKey inputkey) throws IOException {
-        return null;
+        ControllerState<?> nextState = this;
+
+        switch (inputkey.getInput()) {
+            case ESCAPE -> {
+                Board.getInstance().reset();
+                nextState = factory.getMenuState(setup);
+
+            }
+            default -> {}
+        }
+        return changeState(nextState);
     }
 }
