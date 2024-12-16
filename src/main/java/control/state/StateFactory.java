@@ -34,9 +34,9 @@ public class StateFactory {
 
     public GameOverState getGameOverState(GameSetup setup) {
         GameOver model = new GameOver();
-        GameOverViewer viewer = ViewFactory.c
+        GameOverViewer viewer = ViewFactory.createGameOverView(model);
+        return new GameOverState(model, viewer, setup, this);
     }
-
 
 
 }
