@@ -25,7 +25,7 @@ public class Controller {
     public void launch() throws IOException, InterruptedException {
         while(this.state != null){
            this.state = this.state.update(this,this.state.processInput());
-           Thread.sleep(35);
+           Thread.sleep(20);
         }
     }
 }

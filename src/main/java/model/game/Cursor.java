@@ -1,30 +1,39 @@
 package model.game;
 
+import com.googlecode.lanterna.TerminalSize;
 import model.Position;
 
 public class Cursor {
-    private int row;
-    private int col;
+    Position position;
+    TerminalSize size;
 
-    public Cursor(int row, int col) {
-        this.row = row;
-        this.col = col;
+    public Cursor(TerminalSize size, Position position) {
+        this.position = position;
+        this.size = size;
     }
 
     public Position getPosition() {
-        return  new Position(row,col);
+        return  position;
     }
 
-    public void moveUp() { col++; }
+    public void moveDown() {
+        int row = (position.getRow() + 1) % size.getRows();
+        position = new Position(row, position.getCol());
+    }
 
-    public void moveDown() { col--; }
+    public void moveUp() {
+        int row = ((position.getRow() - 1) + size.getRows()) % size.getRows();
+        position = new Position(row, position.getCol());
+    }
 
-    public void moveLeft() { row--; }
 
-    public void moveRight() { row++; }
+    public void moveRight() {
+        int col = (position.getCol() + 1) % size.getColumns();
+        position = new Position(position.getRow(), col);
+    }
 
-    public int getRow() { return row; }
-
-    public int getCol() { return col; }
-
+    public void moveLeft() {
+        int col = ((position.getCol() - 1) + size.getColumns()) % size.getColumns();
+        position = new Position(position.getRow(), col);
+    }
 }

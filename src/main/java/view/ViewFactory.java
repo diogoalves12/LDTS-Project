@@ -1,13 +1,13 @@
 package view;
 
-import model.game.Board;
-import model.game.Cursor;
+import model.game.*;
 import model.help.HelpModel;
 import model.menu.MenuModel;
-import view.game.BoardViewer;
-import view.game.CursorViewer;
+import view.game.*;
 import view.help.HelpPageView;
 import view.menu.MenuView;
+
+import java.time.Clock;
 
 public class ViewFactory {
 
@@ -27,4 +27,9 @@ public class ViewFactory {
         return new CursorViewer(cursor);
     }
 
+    public static ClockViewer createClockView(GameClock model) { return new ClockViewer(model);}
+
+    public static GameViewer createGameView(Game game) { return new GameViewer(game); }
+
+    public static CellViewer createCellView(Cell cell) {return new CellViewer(cell);}
 }

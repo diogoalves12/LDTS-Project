@@ -1,6 +1,5 @@
 package control.state;
 
-import com.googlecode.lanterna.graphics.TextGraphics;
 import control.Controller;
 import control.InputKey;
 import model.GameSetup;
@@ -22,7 +21,7 @@ public abstract class ControllerState<T> {
     public abstract View<T> getViewer();
 
     protected void draw() throws IOException {
-        this.getViewer().draw();
+        this.getViewer().draw(0,0);
     }
 
     protected ControllerState<?> changeState(ControllerState<?> nextState) throws IOException {

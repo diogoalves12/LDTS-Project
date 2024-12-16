@@ -13,14 +13,15 @@ public class CursorViewer extends View<Cursor> {
     }
 
     @Override
-    public void draw() throws IOException {
+    public void draw(int col, int row) throws IOException {
+
         graphics.setForegroundColor(TextColor.Factory.fromString("#F000FF"));
 
-        int row = getModel().getRow();
-        int col = getModel().getCol();
+        int colX = col + getModel().getPosition().getCol() * 2 - 1 ;
+        int rowY = row + getModel().getPosition().getRow();
 
-        graphics.putString(col * 2, row, "[");
-        graphics.putString(col * 2 + 2, row, "]");
+        graphics.putString(colX, rowY, "[");
+        graphics.putString(colX + 2, rowY, "]");
         graphics.setForegroundColor(TextColor.Factory.fromString("#000000"));
 
         refresh();

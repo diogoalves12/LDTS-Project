@@ -16,7 +16,7 @@ public abstract class View<T> {
     protected TextGraphics graphics;
 
     public static final int WIDTH = 60;
-    public static final int HEIGHT = 35;
+    public static final int HEIGHT = 40;
 
 
     public View(T model) {
@@ -47,11 +47,16 @@ public abstract class View<T> {
 
     public T getModel() { return model; }
 
-    public Screen getScreen() { return screen; }
+    public Screen getScreen() {
+        return screen;
+    }
 
-    public TextGraphics getGraphics() { return graphics; }
+    public TextGraphics getGraphics() {
+        if(graphics == null) setupScreen();
+        return graphics;
+    }
 
-    public abstract void draw() throws IOException;
+    public abstract void draw(int col,int row) throws IOException;
 
     protected void refresh() throws IOException {
         screen.refresh();
@@ -68,6 +73,12 @@ public abstract class View<T> {
     public InputKey getCommand() throws IOException {
         return new InputKey().processInput(screen);
     }
+
+    public void setScreen(Screen screen) {
+        this.screen = screen;
+        this.graphics = screen.newTextGraphics();
+    }
+
 }
 
 
