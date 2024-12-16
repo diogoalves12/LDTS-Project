@@ -1,4 +1,31 @@
 package control.state;
 
-public class GameOverState {
+import control.Controller;
+import control.InputKey;
+import model.GameSetup;
+import model.game.GameOver;
+import view.View;
+import view.game.GameOverViewer;
+
+import java.io.IOException;
+
+public class GameOverState extends ControllerState<GameOver> {
+    GameOver model;
+    GameOverViewer viewer;
+
+    public GameOverState(GameOver model, GameOverViewer viewer, GameSetup setup, StateFactory factory) {
+        super(setup, factory);
+        this.model = model;
+        this.viewer = viewer;
+    }
+
+    @Override
+    public View<GameOver> getViewer() {
+        return viewer;
+    }
+
+    @Override
+    public ControllerState<?> update(Controller controller, InputKey inputkey) throws IOException {
+        return null;
+    }
 }
