@@ -4,6 +4,7 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import control.Controller;
 import control.InputKey;
 import model.GameSetup;
+import model.game.Board;
 import model.menu.MenuModel;
 import view.View;
 import view.menu.MenuView;
@@ -32,6 +33,7 @@ public class MenuState extends ControllerState<MenuModel> {
             case UP -> model.previousOption();
             case DOWN -> model.nextOption();
             case ENTER -> {
+
                 switch (model.getSelected()){
                     case 0 -> nextState = factory.getGameState(setup);
                     case 1 -> nextState = factory.getHelpState(setup);
