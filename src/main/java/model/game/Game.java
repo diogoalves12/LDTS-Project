@@ -18,6 +18,7 @@ public class Game {
         this.board = initializeBoard();
         this.cursor = new Cursor(new TerminalSize(setup.getBoardRows(), setup.getBoardCols()), new Position(0, 0));
         this.clock = new GameClock(Clock.systemUTC());
+        clock.startClock();
     }
 
     private Board initializeBoard() {
