@@ -2,10 +2,12 @@ package control.state;
 
 import model.GameSetup;
 import model.game.Game;
+import model.game.GameOver;
 import model.help.HelpModel;
 import model.menu.MenuModel;
 import view.ViewFactory;
 import view.game.BoardViewer;
+import view.game.GameOverViewer;
 import view.game.GameViewer;
 import view.help.HelpPageView;
 import view.menu.MenuView;
@@ -28,6 +30,11 @@ public class StateFactory {
         HelpModel model = new HelpModel();
         HelpPageView viewer = ViewFactory.createHelpPageView(model);
         return new HelpState(model, viewer, setup, this);
+    }
+
+    public GameOverState getGameOverState(GameSetup setup) {
+        GameOver model = new GameOver();
+        GameOverViewer viewer = ViewFactory.c
     }
 
 
