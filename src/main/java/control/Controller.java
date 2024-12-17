@@ -14,7 +14,7 @@ public class Controller {
     Game game = null;
 
     public Controller(StateFactory factory) {
-        GameSetup setup = new GameSetup(14,14, 6 , NORMALhiy );
+        GameSetup setup = new GameSetup(14,14, 6 , NORMAL);
         this.state = factory.getMenuState(setup);
     }
 
