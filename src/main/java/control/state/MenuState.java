@@ -32,10 +32,16 @@ public class MenuState extends ControllerState<MenuModel> {
         switch (inputkey.getInput()) {
             case UP -> model.previousOption();
             case DOWN -> model.nextOption();
+            case LEFT -> model.previousDifficulty();
+            case RIGHT ->  model.nextDifficulty();
             case ENTER -> {
 
                 switch (model.getSelected()){
-                    case 0 -> nextState = factory.getGameState(setup);
+                    case 0 -> {
+
+                        GameSetup newSetup = new GameSetup(model.getDifficulty());
+                        nextState = factory.getGameState(newSetup);
+                    }
                     case 1 -> nextState = factory.getHelpState(setup);
                     case 2 ->  nextState = null;
                 }
@@ -44,5 +50,7 @@ public class MenuState extends ControllerState<MenuModel> {
         }
         return changeState(nextState);
     }
+
+
 
 }

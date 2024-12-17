@@ -28,6 +28,7 @@ public class MenuView extends View<MenuModel> {
         drawCentered(new DrawContext(graphics, centerRow - 4, "Minesweeper", DEFAULT_COLOR, totalWidth));
         drawCentered(new DrawContext(graphics, centerRow - 2, "= Start Menu =", DEFAULT_COLOR, totalWidth));
         drawMenu(graphics, centerRow, totalWidth);
+        drawDifficulty(graphics, centerRow + 5, totalWidth);
 
         refresh();
     }
@@ -41,6 +42,14 @@ public class MenuView extends View<MenuModel> {
     private int calculateCenteredCol(DrawContext context) {
         return (context.totalWidth - context.text.length()) / 2;
     }
+
+
+    private void drawDifficulty(TextGraphics graphics, int row, int TotalWidth) {
+        String Text = "Difficulty: " + getModel().getDifficulty().name();
+        drawCentered(new DrawContext(graphics, row, Text, DEFAULT_COLOR, TotalWidth));
+    }
+
+
 
     private void drawMenu(TextGraphics graphics, int startRow, int totalWidth) {
         MenuModel menu = getModel();

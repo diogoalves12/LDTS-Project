@@ -1,5 +1,7 @@
 package model.menu;
 
+import model.GameSetup;
+
 import java.util.List;
 
 public class MenuModel {
@@ -7,9 +9,11 @@ public class MenuModel {
 
     private final List<Option> options = List.of(Option.PLAY, Option.HELP, Option.QUIT);
     private int selected;
+    private GameSetup.Difficulty difficulty;
 
     public MenuModel() {
         this.selected = 0;
+        this.difficulty = GameSetup.Difficulty.NORMAL;
 
     }
 
@@ -33,4 +37,23 @@ public class MenuModel {
 
     public void previousOption() { selected = (selected - 1 + options.size()) % options.size(); }
 
+    public void nextDifficulty(){
+        switch(difficulty){
+            case EASY -> difficulty = GameSetup.Difficulty.NORMAL;
+            case NORMAL -> difficulty = GameSetup.Difficulty.HARD;
+            case HARD -> difficulty = GameSetup.Difficulty.EASY;
+        }
+    }
+
+    public void previousDifficulty(){
+        switch(difficulty){
+            case EASY -> difficulty = GameSetup.Difficulty.HARD;
+            case NORMAL -> difficulty = GameSetup.Difficulty.EASY;
+            case HARD -> difficulty = GameSetup.Difficulty.NORMAL;
+        }
+    }
+
+    public GameSetup.Difficulty getDifficulty(){
+        return difficulty;
+    }
 }
