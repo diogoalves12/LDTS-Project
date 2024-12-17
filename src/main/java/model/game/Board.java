@@ -27,11 +27,7 @@ public class Board {
     // Singleton initializer
     public static void initialize(int rows, int cols){
         synchronized (Board.class) {
-            if( instance == null){
                 instance = new Board(rows, cols);
-            } else {
-                throw new IllegalStateException("Board already initialized");
-            }
         }
     }
 
