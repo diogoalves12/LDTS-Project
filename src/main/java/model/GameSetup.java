@@ -24,21 +24,29 @@ public class GameSetup {
             case EASY: {
                 this.boardRows = 8;
                 this.boardCols = 8;
-                this.mineFrequency = 8;
+                break;
             }
             case NORMAL: {
                 this.boardRows = 14;
                 this.boardCols = 14;
-                this.mineFrequency = 6;
+                break;
             }
             case HARD: {
                 this.boardRows = 20;
                 this.boardCols = 20;
-                this.mineFrequency = 5;
-
+                break;
             }
-        }}
+        }
+    }
 
+
+    public int getMineFrequency() {
+        return switch (difficulty) {
+            case EASY -> 8;
+            case NORMAL -> 6;
+            case HARD -> 5;
+        };
+    }
 
 
     public int getBoardRows() {
@@ -53,14 +61,6 @@ public class GameSetup {
         return difficulty;
     }
 
-
-    public int getMineFrequency() {
-        return switch (difficulty) {
-            case EASY -> 8;
-            case NORMAL -> 6;
-            case HARD -> 5;
-        };
-    }
 
 }
 
