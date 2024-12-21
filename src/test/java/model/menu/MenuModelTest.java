@@ -33,5 +33,16 @@ public class MenuModelTest {
         assertEquals(0, menu.getSelected());
     }
 
+    @Test
+    public void testPreviousOption(){
+        MenuModel menu = new MenuModel();
+        menu.previousOption();
+        assertEquals(2, menu.getSelected());
+        menu.previousOption();
+        assertEquals(1, menu.getSelected());
+        menu.previousOption();
+        assertEquals(0, menu.getSelected());
+    }
+
 
 }
