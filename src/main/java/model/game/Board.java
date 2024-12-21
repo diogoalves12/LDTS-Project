@@ -111,6 +111,26 @@ public class Board {
         }
     }
 
+    public int countCells(){
+        int count = 0;
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                if(board[i][j] != null) count++;
+            }
+        }
+        return count;
+    }
+
+    public int countMines(){
+        int count = 0;
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                if(board[i][j] != null && board[i][j].hasMine()) count++;
+            }
+        }
+        return count;
+    }
+
 
     public void reset(){
         initBoard();
