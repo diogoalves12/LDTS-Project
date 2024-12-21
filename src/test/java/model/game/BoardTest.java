@@ -68,5 +68,20 @@ public class BoardTest {
         assertEquals(2, adjacentMines);
     }
 
+    @Test
+    public void testRevealEmptyArea() {
+        Board.initialize(3,3);
+        Board board = Board.getInstance();
 
+        board.addCell(new Position(0,0), CellFactory.createCell(false, 0, 0));
+        board.addCell(new Position(0,1), CellFactory.createCell(false, 0, 1));
+        board.addCell(new Position(1,1), CellFactory.createCell(true, 0, 2));
+
+        board.revealEmptyArea(new Position(0,0));
+
+        assertTrue(board.getCell(new Position(0,0)).isRevealed());
+        assertTrue(board.getCell(new Position(0,1)).isRevealed());
+        assertFalse(board.getCell(new Position(2,2)).isRevealed());
+
+    }
 }
