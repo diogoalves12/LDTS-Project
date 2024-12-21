@@ -44,5 +44,27 @@ public class MenuModelTest {
         assertEquals(0, menu.getSelected());
     }
 
+    @Test
+    public void testNextDifficulty(){
+        MenuModel menu = new MenuModel();
+        menu.nextDifficulty();
+        assertEquals(GameSetup.Difficulty.HARD, menu.getDifficulty());
+        menu.nextDifficulty();
+        assertEquals(GameSetup.Difficulty.EASY, menu.getDifficulty());
+        menu.nextDifficulty();
+        assertEquals(GameSetup.Difficulty.NORMAL, menu.getDifficulty());
+    }
+
+    @Test
+    public void testPreviousDifficulty(){
+        MenuModel menu = new MenuModel();
+        menu.previousDifficulty();
+        assertEquals(GameSetup.Difficulty.EASY, menu.getDifficulty());
+        menu.previousDifficulty();
+        assertEquals(GameSetup.Difficulty.HARD, menu.getDifficulty());
+        menu.previousDifficulty();
+        assertEquals(GameSetup.Difficulty.NORMAL, menu.getDifficulty());
+    }
+
 
 }
