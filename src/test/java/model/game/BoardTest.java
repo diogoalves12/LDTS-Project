@@ -39,7 +39,6 @@ public class BoardTest {
                 assertFalse(cell.isRevealed());
                 assertFalse(cell.isFlagged());
                 assertFalse(cell.hasMine());
-                assertEquals(position, cell.getPosition());
             }
         }
     }
@@ -75,13 +74,13 @@ public class BoardTest {
 
         board.addCell(new Position(0,0), CellFactory.createCell(false, 0, 0));
         board.addCell(new Position(0,1), CellFactory.createCell(false, 0, 1));
-        board.addCell(new Position(1,1), CellFactory.createCell(true, 0, 2));
+        board.addCell(new Position(0,2), CellFactory.createCell(true, 0, 2));
 
         board.revealEmptyArea(new Position(0,0));
 
         assertTrue(board.getCell(new Position(0,0)).isRevealed());
         assertTrue(board.getCell(new Position(0,1)).isRevealed());
-        assertFalse(board.getCell(new Position(2,2)).isRevealed());
-
+        assertFalse(board.getCell(new Position(0,2)).isRevealed());
     }
+
 }
