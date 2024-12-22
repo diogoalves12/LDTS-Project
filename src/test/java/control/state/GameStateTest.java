@@ -1,9 +1,7 @@
-package control;
+package control.state;
 
-import control.state.ControllerState;
-import control.state.GameOverState;
-import control.state.GameState;
-import control.state.StateFactory;
+import control.Controller;
+import control.InputKey;
 import model.GameSetup;
 import model.Position;
 import model.game.Board;
