@@ -28,6 +28,18 @@ public class Game {
         return Board.getInstance();
     }
 
+    public boolean hasWon() {
+        for (int row = 0; row < board.getRows(); row++) {
+            for (int col = 0; col < board.getCols(); col++) {
+                Cell cell = board.getCell(new Position(row, col));
+                if (cell != null && !cell.hasMine() && !cell.isRevealed()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public Board getBoard() {
         return board;
     }

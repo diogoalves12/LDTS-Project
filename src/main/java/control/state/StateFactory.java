@@ -38,5 +38,11 @@ public class StateFactory {
         return new GameOverState(model, viewer, setup, this);
     }
 
+    public GameWinState getGameWinState(GameSetup setup) {
+        GameOver model = new GameOver();
+        GameOverViewer viewer = new GameOverViewer(model);
+        return new GameWinState(model, viewer, setup, this);
+    }
+
 
 }

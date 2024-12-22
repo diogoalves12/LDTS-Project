@@ -18,6 +18,9 @@ public class GameOverState extends ControllerState<GameOver> {
         super(setup, factory);
         this.model = model;
         this.viewer = viewer;
+
+        model.loadContent(false);
+        model.setHasWon(false);
     }
 
     @Override

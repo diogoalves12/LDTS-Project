@@ -53,6 +53,11 @@ public class GameState extends ControllerState<Game> {
                         nextState = factory.getGameOverState(setup);
                     } else {
                         if(game.getCell(pos) != null) game.getBoard().revealEmptyArea(pos);
+
+                        if(game.hasWon()) {
+                            nextState = factory.getGameWinState(setup);
+                        }
+
                     }
 
                 }
