@@ -22,7 +22,7 @@ public class StateFactory {
 
     public GameState getGameState(GameSetup setup) {
         Game game = new Game(setup);
-        GameViewer viewer = ViewFactory.createGameView(game);
+        GameViewer viewer = new GameViewer(game, new ViewFactory());
         return new GameState(game, viewer, setup, this);
     }
 
