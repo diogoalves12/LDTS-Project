@@ -17,8 +17,16 @@ public class Position {
         return col;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Position pos) {
+            return (row == pos.row && col == pos.col);
+        }
+        return false;
+    }
 
     public String toString() {
         return "(" + row + "," + col + ")";
     }
+
 }

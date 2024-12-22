@@ -2,10 +2,10 @@ package view.game;
 
 import model.game.Game;
 import view.View;
+import view.ViewFactory;
 
 import java.io.IOException;
 
-import static view.ViewFactory.*;
 
 public class GameViewer extends View<Game> {
 
@@ -13,13 +13,13 @@ public class GameViewer extends View<Game> {
     private ClockViewer clockViewer;
     private CursorViewer cursorViewer;
 
-    public GameViewer(Game model) {
+    public GameViewer(Game model, ViewFactory factory) {
         super(model);
         setupScreen();
 
-        this.boardViewer = createBoardViewer(model.getBoard());
-        this.clockViewer = createClockView(model.getClock());
-        this.cursorViewer = createCursorView(model.getCursor());
+        this.boardViewer = factory.createBoardViewer(model.getBoard());
+        this.clockViewer = factory.createClockView(model.getClock());
+        this.cursorViewer = factory.createCursorView(model.getCursor());
 
         boardViewer.setScreen(this.screen);
         clockViewer.setScreen(this.screen);
