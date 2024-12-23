@@ -52,6 +52,7 @@ public class InputKey {
             case Enter -> this.input = INPUT.ENTER;
             case Escape -> this.input = INPUT.ESCAPE;
             case Character -> handleCharacterInput(keyStroke.getCharacter());
+            default -> {}
         }
     }
 

@@ -76,7 +76,6 @@ public class MenuView extends View<MenuModel> {
         int selected = menu.getSelected();
 
         int menuStartRow = startRow - (options.size() / 2);
-        int rowSpace =  startRow - (options.size() / 2);
         for (int i = 0; i < options.size(); i++) {
             String optionText = options.get(i).name();
             String color = (i == selected) ? SELECTED_COLOR : DEFAULT_COLOR;

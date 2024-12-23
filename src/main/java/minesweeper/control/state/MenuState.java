@@ -45,6 +45,7 @@ public class MenuState extends ControllerState<MenuModel> {
                 }
             }
             case QUIT -> nextState = null;
+            default -> {}
         }
         return changeState(nextState);
     }

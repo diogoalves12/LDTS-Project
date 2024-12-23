@@ -63,7 +63,6 @@ public class GameState extends ControllerState<Game> {
             case ESCAPE -> nextState = factory.getMenuState(setup);
             case FLAG -> {
                 Position pos = game.getCursor().getPosition();
-                boolean flag = game.getCell(pos).isFlagged();
                 game.getCell(pos).toggleFlagged();
 
             }

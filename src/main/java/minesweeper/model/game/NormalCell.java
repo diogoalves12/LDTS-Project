@@ -8,10 +8,12 @@ public class NormalCell extends Cell {
         adjacentMines = 0;
     }
 
+    @Override
     public void setAdjacentMines(int adjacentMines) {
         this.adjacentMines = adjacentMines;
     }
 
+    @Override
     public int getAdjacentMines() {
         return adjacentMines;
     }
