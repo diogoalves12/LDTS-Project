@@ -15,7 +15,7 @@ public abstract class View<T> {
     protected Screen screen;
     protected TextGraphics graphics;
 
-    public static final int WIDTH = 60;
+    public static final int WIDTH = 80;
     public static final int HEIGHT = 40;
 
 
