@@ -236,25 +236,8 @@ The Factory pattern is implemented here [StateFactory](src/main/java/control/sta
 
 
 ---
+#### **Know code SmellsS**
 
-### **4. Classes**
-- **In development:**
-  - Cell 
-  - Board
-  - GameScreen
-  - main
-  - Game
-  
----
-### **5. Beta Game Screenshot**
-![early game screenshot](./docs/resources/screenshots/EarlyGameScreenshot.png)
-
-**Note:** Currently, the game is unable to process user input. This screenshot only illustrates
-how the board is drawn (rendered) at this stage of the game. The '#' represent the yet hidden cells and the red '*' represent
-the mines. The mines are not hidden in this screenshot, as we wanted to verify if our methods were working correctly.
-
-### **5. UML Diagram**
-![early game UML Diagram](./docs/resources/UML%20diagrams/Minesweeper.png)
 
 ### **6. Mockups**
 ![Start Menu](./docs/resources/Mockups/START_MENU.png)
@@ -267,8 +250,7 @@ the mines. The mines are not hidden in this screenshot, as we wanted to verify i
 ![Victory Menu](./docs/resources/Mockups/VICTORY.png))
 ![Game Over Menu](./docs/resources/Mockups/GAME_OVER.png)
 
-### **7. Testes**
-![Test Coverage](./docs/resources/screenshots/TestCoverage.png)
+### **Testing**
 
-**Note** - The test coverage is **currently** limited. These results are not **final**, and we plan to improve
-the code coverage as the game develop progresses.
+
+### **Self evaluation**
