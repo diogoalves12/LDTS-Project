@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id "net.ltgt.errorprone" version "4.1.0"
 }
 
 group = 'com.diogoalves12.hero'
@@ -16,6 +17,8 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:3.7.7'
     testImplementation 'net.jqwik:jqwik:1.7.0'
     implementation group: 'com.googlecode.lanterna', name: 'lanterna', version: '3.1.2'
+
+    errorprone "com.google.errorprone:error_prone_core:2.30.0"
 }
 
 application {
