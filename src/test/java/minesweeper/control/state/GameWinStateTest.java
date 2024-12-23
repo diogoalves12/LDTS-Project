@@ -37,7 +37,7 @@ class GameWinStateTest {
     }
 
     @Test
-    void testUpdateESCAPE() throws IOException {
+    void testESCAPE() throws IOException {
         MenuState mockMenuState = mock(MenuState.class);
         when(mockFactory.getMenuState(mockSetup)).thenReturn(mockMenuState);
         Controller mockController = mock(Controller.class);
@@ -51,7 +51,7 @@ class GameWinStateTest {
     }
 
     @Test
-    void testUpdateQUIT() throws IOException {
+    void testQUIT() throws IOException {
         Controller mockController = mock(Controller.class);
         InputKey inputKey = mock(InputKey.class);
         when(inputKey.getInput()).thenReturn(InputKey.INPUT.QUIT);
