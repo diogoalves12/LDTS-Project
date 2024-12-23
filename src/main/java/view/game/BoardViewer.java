@@ -31,16 +31,4 @@ public class BoardViewer extends View<Board> {
         }
     }
 
-    private void fillBackground() {
-        int terminalWidth = getSize().getColumns();
-        int terminalHeight = getSize().getRows();
-
-        graphics.setBackgroundColor(TextColor.Factory.fromString("#2E3B44"));
-
-        for (int x = 0; x < terminalHeight; x++) {
-            for (int y = 0; y < terminalWidth; y++) {
-                graphics.putString(y, x, " ");
-            }
-        }
-    }
 }

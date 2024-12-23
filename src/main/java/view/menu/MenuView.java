@@ -22,6 +22,7 @@ public class MenuView extends View<MenuModel> {
     public void draw(int col, int row) throws IOException {
         TextGraphics graphics = getGraphics();
         clear();
+        fillBackground();
 
         int totalHeight = graphics.getSize().getRows();
         int totalWidth = graphics.getSize().getColumns();

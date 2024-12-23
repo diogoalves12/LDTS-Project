@@ -17,6 +17,7 @@ public class HelpPageView extends View<HelpModel> {
     @Override
     public void draw(int col, int row) throws IOException {
         clear();
+        fillBackground();
         drawTitle();
         drawContent();
         refresh();
