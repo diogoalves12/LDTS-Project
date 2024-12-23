@@ -9,7 +9,7 @@ public class GameSetupTest {
 
     @Test
     public void testBoardSetup() {
-        GameSetup setup = new GameSetup(20,20,5,GameSetup.Difficulty.HARD);
+        GameSetup setup = new GameSetup(20,20,GameSetup.Difficulty.HARD);
         assertEquals(20, setup.getBoardRows());
         assertEquals(20, setup.getBoardCols());
         assertEquals(5, setup.getMineFrequency());

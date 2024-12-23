@@ -27,7 +27,7 @@ class ControllerTest {
         mockFactory = mock(StateFactory.class);
         mockState = mock(ControllerState.class);
         mockGame = mock(Game.class);
-        setup = new GameSetup(14, 14, 6, NORMAL);
+        setup = new GameSetup(14, 14, NORMAL);
     }
 
     @Test
