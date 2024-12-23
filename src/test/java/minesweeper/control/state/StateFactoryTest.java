@@ -2,6 +2,8 @@ package minesweeper.control.state;
 
 import minesweeper.control.state.*;
 import minesweeper.model.GameSetup;
+import minesweeper.model.game.Game;
+import minesweeper.view.game.GameViewer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,15 +26,19 @@ public class StateFactoryTest {
     @Test
     void testGetGameState() {
         GameSetup setup = mock(GameSetup.class);
-        StateFactory factory = spy(new StateFactory());
+        StateFactory factory = mock(StateFactory.class);
 
-        GameState mockState = mock(GameState.class);
-        doReturn(mockState).when(factory).getGameState(setup);
+        Game mockGame = mock(Game.class);
+        GameViewer mockViewer = mock(GameViewer.class);
+
+        when(factory.getGameState(setup)).thenReturn(new GameState(mockGame, mockViewer, setup, factory));
 
         GameState result = factory.getGameState(setup);
 
         assertNotNull(result);
-        assertEquals(mockState, result);
+        assertNotNull(result.game);
+        assertNotNull(result.viewer);
+        assertEquals(setup, result.setup);
     }
 
 
@@ -54,6 +60,18 @@ public class StateFactoryTest {
         GameSetup setup = mock(GameSetup.class);
 
         GameOverState result = factory.getGameOverState(setup);
+
+        assertNotNull(result);
+        assertNotNull(result.factory);
+        assertEquals(setup, result.setup);
+    }
+
+    @Test
+    void testGetGameWinState() {
+        StateFactory factory = new StateFactory();
+        GameSetup setup = mock(GameSetup.class);
+
+        GameWinState result = factory.getGameWinState(setup);
 
         assertNotNull(result);
         assertNotNull(result.factory);
