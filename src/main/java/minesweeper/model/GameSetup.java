@@ -8,13 +8,11 @@ public class GameSetup {
     }
 
     int boardRows, boardCols;
-    private int mineFrequency;
     Difficulty difficulty;
 
-    public GameSetup(int boardRows, int boardCols, int mineFrequency ,Difficulty difficulty) {
+    public GameSetup(int boardRows, int boardCols,Difficulty difficulty) {
         this.boardRows = boardRows;
         this.boardCols = boardCols;
-        this.mineFrequency = mineFrequency;
         this.difficulty = difficulty;
     }
 
