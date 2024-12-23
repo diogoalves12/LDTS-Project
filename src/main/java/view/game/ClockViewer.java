@@ -1,6 +1,7 @@
 package view.game;
 
 import com.googlecode.lanterna.TerminalSize;
+import com.googlecode.lanterna.TextColor;
 import model.game.GameClock;
 import view.View;
 
@@ -22,6 +23,7 @@ public class ClockViewer extends View<GameClock> {
 
         // drawBorder();
         int rightPadding = 10;
+        graphics.setBackgroundColor(TextColor.Factory.fromString("#2E3B44"));
         graphics.putString(size.getColumns() - RIGHT_PADDING, 0, time);
 
         refresh();

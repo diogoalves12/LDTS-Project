@@ -17,7 +17,7 @@ public class BoardViewer extends View<Board> {
 
     @Override
     public void draw(int col, int row) throws IOException {
-        fillBackground(col, row);
+        fillBackground();
 
         for (int x = 0; x < getModel().getRows(); x++) {
             for (int y = 0; y < getModel().getCols(); y++) {
@@ -31,7 +31,7 @@ public class BoardViewer extends View<Board> {
         }
     }
 
-    private void fillBackground(int col, int row) {
+    private void fillBackground() {
         int terminalWidth = getSize().getColumns();
         int terminalHeight = getSize().getRows();
 
