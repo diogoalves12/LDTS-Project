@@ -2,11 +2,11 @@
 
 ---
 
-This project is inspired by the classical Microsoft minesweeper minesweeper, released in 1990.
+This project is inspired by the classical Microsoft minesweeper, released in 1990.
 The main objective is to **reveal all non-mine cells on the board** while avoiding the
 hidden mines.
   
-The minesweeper ends when the player successfully reveals all the cells that do not contain mines, achieving 
+The game ends when the player successfully reveals all the cells that do not contain mines, achieving 
 victory, or when a cell containing a mine is revealed, resulting in a loss.
 
 #### **This project was developed by:** 
@@ -18,7 +18,7 @@ victory, or when a cell containing a mine is revealed, resulting in a loss.
 
 ### **1. Objectives**
 
-The main objective is to develop a functional and modular text-based minesweeper, adhering to 
+The main objective is to develop a functional and modular text-based game, adhering to 
 **Design Patterns** and **SOLID Principles** to ensure the code is scalable and maintainable.
 
 ---
@@ -33,12 +33,12 @@ The main objective is to develop a functional and modular text-based minesweeper
 - Calculation of the **number of adjacent mines** for each cell.
 - Logic for **Revealing cells** and chain reactions.
 - Ability to **flag** and **unflag** suspicious cells. 
-- A **Timer** to track the minesweeper's duration.
+- A **Timer** to track the game's duration.
 - Game-ending conditions:
   - **Victory**: All non-mine cells are revealed.
   - **Defeat**: A mine is revealed.
-- Core methods for **rendering** the minesweeper elements(Board, Cells, Clock, Cursor).
-- Methods for **rendering** the various minesweeper states (Menu, Help Page, Victory, Defeat).
+- Core methods for **rendering** the game elements(Board, Cells, Clock, Cursor).
+- Methods for **rendering** the various game states (Menu, Help Page, Victory, Defeat).
 
 
 ### **Features to be Implement**
@@ -52,16 +52,16 @@ This project **applies** and **will aim to apply** the fallowing design patterns
   
 ### **Structure**
 
-- **Problem in context:** The **minesweeper** minesweeper is complex, involving a lot of 
+- **Problem in context:** The **game** minesweeper is complex, involving a lot of 
 components, and so we need to organize our code the best way possible. As the complexity
-of the minesweeper increases, we need a simple structure. To ensure that the code is 
+of the game increases, we need a simple structure. To ensure that the code is 
 easy to maintain, extend, and read. A well-structured code makes it easier to debug and add new features.
 
 
 - **The Pattern:** The **MVC (Model-VIew-Controller)** pattern is ideal for this situation.
-It separates the minesweeper into 3 components:
+It separates the game into 3 components:
 
-  - **Model** - Contains the logic of the minesweeper.
+  - **Model** - Contains the logic of the game.
   - **View** -  Responsible for displaying the model data and receiving user input. 
   - **Controller** - Acts as the mediator between the model and view, interpreting user 
 actions and updating the model.
@@ -84,7 +84,7 @@ actions and updating the model.
   
 ### **Board Creation**
 
-- **Problem in context:** The Board class represents the central data structure holding the minesweeper grid and its state. 
+- **Problem in context:** The Board class represents the central data structure holding the game grid and its state. 
 Without proper restrictions, multiple instances of the Board could be created unintentionally, leading to 
 inconsistent behavior. For instance, one part of the application might reference a Board where some cells are revealed,
 while another part references a different instance. This can cause synchronization issues, as components like the 
@@ -96,7 +96,7 @@ provides a global point of access to that instance, solving the problem.
 
 
 - **Implementation:** The Singleton pattern was implemented in the `Board` class as fallows:
-  - Ensures that only one instance exists throughout the minesweeper by implementing a private constructor to prevent direct
+  - Ensures that only one instance exists throughout the game by implementing a private constructor to prevent direct
 instantiation.
   - Provides a way to access the single instance of the board.
   - Ensures that no instance is accessible before initialization, enforcing controlled instantiation.
@@ -148,7 +148,7 @@ problem of managing object instantiation, ensuring decoupling, consistency and f
 
 ## **Viewer Creation**
 
-- **Problem in context:** If the viewer creation logic is embedded directly into the different parts of the minesweeper 
+- **Problem in context:** If the viewer creation logic is embedded directly into the different parts of the game 
 (for example, directly using `new BoardViewer(board)`), the code becomes repetitive and tightly coupled to specific 
 view implementations. This is problematic if you want to decouple logic from UI creation.
 
@@ -179,14 +179,14 @@ as well as mocking viewer objects in client testing scenarios.
 ### **Game State Management**
 
 - **Problem in Context:**
-  The minesweeper progresses through different states, such as **menu**, **playing**, **minesweeper over**, **victory**, and **help**.
+  The game progresses through different states, such as **menu**, **playing**, **game over**, **victory**, and **help**.
 Each of these states requires distinct behaviors, logic, and transitions. Without a clear state management strategy, 
 implementing these behaviors can result in tightly coupled, hard-to-maintain controller logic. Making it difficult 
 to add or modify states.
 
 
-- **Applied Patterns:** To address these challenges, we utilized **two design patterns** for managing the minesweeper states:
-  - **State Pattern**: For encapsulating the behavior and logic of each minesweeper state into separate classes.
+- **Applied Patterns:** To address these challenges, we utilized **two design patterns** for managing the game states:
+  - **State Pattern**: For encapsulating the behavior and logic of each game state into separate classes.
   - **Factory Pattern**: For centralizing the creation of the state objects via the `FactoryState`, ensuring consistent 
   initialization and better separation of concerns.
 
@@ -194,16 +194,16 @@ to add or modify states.
 **Description:** 
 
 
-The **State Pattern** enables the minesweeper controller to delegate behavior and logic dynamically to
-different state objects. Each minesweeper state is encapsulated into its own class, inheriting from a common abstract class. 
+The **State Pattern** enables the game controller to delegate behavior and logic dynamically to
+different state objects. Each game state is encapsulated into its own class, inheriting from a common abstract class. 
 
 
 - **Implementation:** Each state is represented by a class, such as:
     - `MenuState`: Manages menu-related logic.
     - `HelpState`: Manages logic for showing help and instructions.
-    - `GameState`: Manages the minesweeper's active play logic.
-    - `GameOverState`: Handles the minesweeper-over defeat behavior.
-    - `GameWinState` : Handles the minesweeper-over victory behavior.
+    - `GameState`: Manages the game's active play logic.
+    - `GameOverState`: Handles the game-over defeat behavior.
+    - `GameWinState` : Handles the game-over victory behavior.
     - `ControllerState<T>` : Abstract class that ensures consistency in each state.
 
 
@@ -214,7 +214,7 @@ These classes share a common abstract base (`ControllerState<T>`), ensuring cons
 
 The **Factory Pattern** is used to manage the instantiation of state objects through the `StateFactory`. 
 This factory encapsulates the logic of initializing states and their dependencies, ensuring a consistent approach to 
-creating minesweeper states.
+creating game states.
 
 
 - **Implementation:** The StateFactory class provides methods to instantiate various states, such as:
@@ -229,7 +229,7 @@ The `StateFactory` centralizes the construction of dependencies (linking models 
 
 ![State UML](./docs/resources/UML%20diagrams/StateFactory.png)
 
-**How the Patterns Interact:** The **State Pattern** and **Factory Pattern** work together to create a robust, modular state management system for the minesweeper.
+**How the Patterns Interact:** The **State Pattern** and **Factory Pattern** work together to create a robust, modular state management system for the game.
 
 
 The Factory pattern is implemented here [StateFactory](src/main/java/control/state/StateFactory.java) and here [State](src/main/java/control/state).
