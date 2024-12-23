@@ -2,10 +2,6 @@ package minesweeper.model.game;
 
 import minesweeper.model.GameSetup;
 import minesweeper.model.Position;
-import minesweeper.model.game.Board;
-import minesweeper.model.game.Cell;
-import minesweeper.model.game.Cursor;
-import minesweeper.model.game.Game;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -54,7 +50,6 @@ public class GameTest {
 
     @Test
     public void testCursorMethods() {
-        Cursor cursor = game.getCursor();
         int row = game.getCursorRow();
         int col = game.getCursorCol();
         assertEquals(0, row);

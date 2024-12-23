@@ -4,14 +4,7 @@ import minesweeper.model.game.Board;
 import minesweeper.model.game.Cursor;
 import minesweeper.model.game.Game;
 import minesweeper.model.game.GameClock;
-import minesweeper.view.game.BoardViewer;
-import minesweeper.view.game.ClockViewer;
-import minesweeper.view.game.CursorViewer;
-import minesweeper.view.game.GameViewer;
-import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
 import org.junit.jupiter.api.BeforeEach;
-import minesweeper.view.View;
 import minesweeper.view.ViewFactory;
 
 import java.io.IOException;
@@ -24,17 +17,12 @@ public class GameViewerTest {
     private CursorViewer cursorViewerMock;
     private GameViewer gameViewer;
 
-    private Game gameMock;
-
     ViewFactory factory;
 
     @BeforeEach
     void setUp() throws IOException {
-        Screen screenMock = mock(Screen.class);
-        TextGraphics graphicsMock = mock(TextGraphics.class);
-        View viewMock = mock(View.class);
 
-        gameMock = mock(Game.class);
+        Game gameMock = mock(Game.class);
         factory = mock(ViewFactory.class);
         boardViewerMock = mock(BoardViewer.class);
         clockViewerMock = mock(ClockViewer.class);

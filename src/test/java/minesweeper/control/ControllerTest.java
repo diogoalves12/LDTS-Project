@@ -1,7 +1,5 @@
 package minesweeper.control;
 
-import minesweeper.control.Controller;
-import minesweeper.control.state.ControllerState;
 import minesweeper.control.state.MenuState;
 import minesweeper.control.state.StateFactory;
 import minesweeper.model.GameSetup;
@@ -11,23 +9,18 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static minesweeper.model.GameSetup.Difficulty.NORMAL;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ControllerTest {
 
     private StateFactory mockFactory;
-    private ControllerState<Object> mockState;
     private Game mockGame;
-    private GameSetup setup;
 
     @BeforeEach
     void setUp() {
         mockFactory = mock(StateFactory.class);
-        mockState = mock(ControllerState.class);
         mockGame = mock(Game.class);
-        setup = new GameSetup(14, 14, NORMAL);
     }
 
     @Test

@@ -1,9 +1,6 @@
 package minesweeper.model.game;
 
 import minesweeper.model.Position;
-import minesweeper.model.game.Board;
-import minesweeper.model.game.BoardBuilder;
-import minesweeper.model.game.Cell;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,7 +30,6 @@ public class BoardBuilderTest {
         boardBuilder.buildBoard(freq);
 
         Board board = Board.getInstance();
-        int mines = board.countMines();
 
         assertTrue(board.countMines() > 0);
         assertTrue(board.countMines() < board.getCols() * board.getRows());

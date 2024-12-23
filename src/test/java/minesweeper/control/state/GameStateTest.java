@@ -2,10 +2,6 @@ package minesweeper.control.state;
 
 import minesweeper.control.Controller;
 import minesweeper.control.InputKey;
-import minesweeper.control.state.ControllerState;
-import minesweeper.control.state.GameOverState;
-import minesweeper.control.state.GameState;
-import minesweeper.control.state.StateFactory;
 import minesweeper.model.GameSetup;
 import minesweeper.model.Position;
 import minesweeper.model.game.Board;
@@ -29,6 +25,10 @@ class GameStateTest {
     private StateFactory mockFactory;
     private GameState gameState;
 
+    private Cursor mockCursor;
+    private Cell mockCell;
+    private Board mockBoard;
+
     @BeforeEach
     void setUp() {
         mockGame = mock(Game.class);
@@ -36,8 +36,11 @@ class GameStateTest {
         mockSetup = mock(GameSetup.class);
         mockFactory = mock(StateFactory.class);
 
-        Cursor mockCursor = mock(Cursor.class);
+        mockCursor = mock(Cursor.class);
         when(mockGame.getCursor()).thenReturn(mockCursor);
+
+        mockCell = mock(Cell.class);
+        mockBoard = mock(Board.class);
 
         gameState = new GameState(mockGame, mockViewer, mockSetup, mockFactory);
     }
@@ -55,7 +58,7 @@ class GameStateTest {
 
         gameState.update(mockController, inputKey);
 
-        verify(mockGame.getCursor()).moveUp();
+        verify(mockCursor).moveUp();
     }
 
     @Test
@@ -65,19 +68,17 @@ class GameStateTest {
         when(inputKey.getInput()).thenReturn(InputKey.INPUT.ENTER);
 
         Position position = mock(Position.class);
-        when(mockGame.getCursor().getPosition()).thenReturn(position);
+        when(mockCursor.getPosition()).thenReturn(position);
 
-        Cell mockCell = mock(Cell.class);
         when(mockGame.getCell(position)).thenReturn(mockCell);
-        when(mockGame.getCell(position).isRevealed()).thenReturn(false);
-        when(mockGame.getCell(position).hasMine()).thenReturn(false);
+        when(mockCell.isRevealed()).thenReturn(false);
+        when(mockCell.hasMine()).thenReturn(false);
 
-        Board mockBoard = mock(Board.class);
         when(mockGame.getBoard()).thenReturn(mockBoard);
 
         gameState.update(mockController, inputKey);
 
-        verify(mockGame.getBoard()).revealEmptyArea(position);
+        verify(mockBoard).revealEmptyArea(position);
     }
 
     @Test
@@ -87,11 +88,10 @@ class GameStateTest {
         when(inputKey.getInput()).thenReturn(InputKey.INPUT.ENTER);
 
         Position position = mock(Position.class);
-        when(mockGame.getCursor().getPosition()).thenReturn(position);
+        when(mockCursor.getPosition()).thenReturn(position);
 
-        Cell mockCell = mock(Cell.class);
         when(mockGame.getCell(position)).thenReturn(mockCell);
-        when(mockGame.getCell(position).hasMine()).thenReturn(true);
+        when(mockCell.hasMine()).thenReturn(true);
 
         GameOverState nextState = mock(GameOverState.class);
         when(mockFactory.getGameOverState(mockSetup)).thenReturn(nextState);
