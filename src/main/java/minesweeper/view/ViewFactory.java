@@ -1,7 +1,6 @@
 package minesweeper.view;
 
 import minesweeper.model.game.*;
-import minesweeper.view.game.*;
 import minesweeper.model.help.HelpModel;
 import minesweeper.model.menu.MenuModel;
 import minesweeper.view.help.HelpPageView;

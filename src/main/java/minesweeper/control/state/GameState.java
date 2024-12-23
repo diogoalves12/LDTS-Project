@@ -6,7 +6,7 @@ import minesweeper.model.GameSetup;
 import minesweeper.model.Position;
 import minesweeper.model.game.Game;
 import minesweeper.view.View;
-import minesweeper.view.game.GameViewer;
+import minesweeper.view.GameViewer;
 
 import java.io.IOException;
 

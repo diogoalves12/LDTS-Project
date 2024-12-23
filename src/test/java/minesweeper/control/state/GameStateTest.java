@@ -10,7 +10,7 @@ import minesweeper.model.game.Cursor;
 import minesweeper.model.game.Game;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import minesweeper.view.game.GameViewer;
+import minesweeper.view.GameViewer;
 
 import java.io.IOException;
 

@@ -6,8 +6,8 @@ import minesweeper.model.game.GameOver;
 import minesweeper.model.help.HelpModel;
 import minesweeper.model.menu.MenuModel;
 import minesweeper.view.ViewFactory;
-import minesweeper.view.game.GameOverViewer;
-import minesweeper.view.game.GameViewer;
+import minesweeper.view.GameOverViewer;
+import minesweeper.view.GameViewer;
 import minesweeper.view.help.HelpPageView;
 import minesweeper.view.menu.MenuView;
 

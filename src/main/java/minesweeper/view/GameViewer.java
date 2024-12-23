@@ -1,8 +1,6 @@
-package minesweeper.view.game;
+package minesweeper.view;
 
 import minesweeper.model.game.Game;
-import minesweeper.view.View;
-import minesweeper.view.ViewFactory;
 
 import java.io.IOException;
 

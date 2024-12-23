@@ -1,9 +1,8 @@
 package minesweeper.control.state;
 
-import minesweeper.control.state.*;
 import minesweeper.model.GameSetup;
 import minesweeper.model.game.Game;
-import minesweeper.view.game.GameViewer;
+import minesweeper.view.GameViewer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

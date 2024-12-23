@@ -1,11 +1,10 @@
-package minesweeper.view.game;
+package minesweeper.view;
 
 import minesweeper.model.game.Board;
 import minesweeper.model.game.Cursor;
 import minesweeper.model.game.Game;
 import minesweeper.model.game.GameClock;
 import org.junit.jupiter.api.BeforeEach;
-import minesweeper.view.ViewFactory;
 
 import java.io.IOException;
 

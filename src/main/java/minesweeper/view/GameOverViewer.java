@@ -1,4 +1,4 @@
-package minesweeper.view.game;
+package minesweeper.view;
 
 import com.googlecode.lanterna.TextColor;
 import minesweeper.model.game.GameOver;

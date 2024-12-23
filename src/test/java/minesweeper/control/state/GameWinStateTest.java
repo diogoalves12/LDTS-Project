@@ -4,7 +4,7 @@ import minesweeper.control.Controller;
 import minesweeper.control.InputKey;
 import minesweeper.model.GameSetup;
 import minesweeper.model.game.GameOver;
-import minesweeper.view.game.GameOverViewer;
+import minesweeper.view.GameOverViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

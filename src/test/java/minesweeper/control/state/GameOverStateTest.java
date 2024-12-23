@@ -2,14 +2,10 @@ package minesweeper.control.state;
 
 import minesweeper.control.Controller;
 import minesweeper.control.InputKey;
-import minesweeper.control.state.ControllerState;
-import minesweeper.control.state.GameOverState;
-import minesweeper.control.state.MenuState;
-import minesweeper.control.state.StateFactory;
 import minesweeper.model.GameSetup;
 import minesweeper.model.game.Board;
 import minesweeper.model.game.GameOver;
-import minesweeper.view.game.GameOverViewer;
+import minesweeper.view.GameOverViewer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
