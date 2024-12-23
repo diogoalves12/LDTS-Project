@@ -30,9 +30,19 @@ public class GameViewer extends View<Game> {
     public void draw(int col, int row) throws IOException {
         clear();
 
-        boardViewer.draw(col + 2,row + 5);
+        int terminalWidth = getSize().getColumns();
+        int terminalHeight = getSize().getRows();
+
+        int boardWidth = getModel().getBoard().getCols() * 2;
+        int boardHeight = getModel().getBoard().getRows() + 1;
+
+        int startX = (terminalWidth - boardWidth) / 2;
+        int startY = (terminalHeight - boardHeight) / 2;
+
+
+        boardViewer.draw(startX, startY);
         clockViewer.draw(col + 2, row + 1);
-        cursorViewer.draw(col +2, row + 5);
+        cursorViewer.draw(startX, startY);
 
         refresh();
     }
