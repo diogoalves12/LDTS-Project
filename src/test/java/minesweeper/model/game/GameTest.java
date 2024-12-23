@@ -73,10 +73,45 @@ public class GameTest {
         assertTrue(game.getClock().isRunning());
     }
 
+    @Test
+    public void testHasWonFalse() {
+        when(mockBoard.getRows()).thenReturn(10);
+        when(mockBoard.getCols()).thenReturn(10);
+
+        for (int row = 0; row < 10; row++) {
+            for (int col = 0; col < 10; col++) {
+                Position position = new Position(row, col);
+                Cell mockCell = mock(Cell.class);
+
+                if (row == 0 && col == 0) {
+                    when(mockCell.hasMine()).thenReturn(false);
+                    when(mockCell.isRevealed()).thenReturn(false);
+                } else {
+                    when(mockCell.hasMine()).thenReturn(false);
+                    when(mockCell.isRevealed()).thenReturn(true);
+                }
+
+                when(mockBoard.getCell(position)).thenReturn(mockCell);
+            }
+        }
+
+        assertFalse(game.hasWon());
+    }
+
 
     @Test
     public void testGetSetup() {
         assertEquals(mockSetup, game.getSetup());
+    }
+
+    @Test
+    public void testGetCursorRow() {
+        assertEquals(0, game.getCursorRow());
+    }
+
+    @Test
+    public void testGetCursorCol() {
+        assertEquals(0, game.getCursorCol());
     }
 
 }
