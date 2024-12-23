@@ -7,7 +7,8 @@ import view.View;
 import java.io.IOException;
 
 public class HelpPageView extends View<HelpModel> {
-    private static final String DEFAULT_TITLE = "HELP";
+    private static final int CONTENT_PADDING_LEFT = 2;
+    private static final int CONTENT_PADDING_TOP = 1;
 
     public HelpPageView(HelpModel model) {
         super(model);
@@ -22,24 +23,25 @@ public class HelpPageView extends View<HelpModel> {
 
     }
 
-
     private void drawTitle() {
-        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
-        int center = (WIDTH - DEFAULT_TITLE.length()) / 2;
-        graphics.putString(center, 1, DEFAULT_TITLE);
+        String[] title = getModel().getAsciiTitle();
+
+        graphics.setForegroundColor(TextColor.Factory.fromString("#00F7FF"));
+
+        for(int i = 0; i < title.length; i ++){
+            graphics.putString(CONTENT_PADDING_LEFT, CONTENT_PADDING_TOP + i, title[i]);
+        }
 
     }
 
     private void drawContent() {
         HelpModel model = getModel();
 
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
         for(int i = 0; i < model.getTotalSections(); i ++){
             String section = model.getSection(i);
-            graphics.putString(2, i + 3, section);
+            graphics.putString(CONTENT_PADDING_LEFT, 10 + i * 2 , section);
         }
     }
-
-
-
 
 }
