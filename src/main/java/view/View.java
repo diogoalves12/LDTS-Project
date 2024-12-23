@@ -1,6 +1,7 @@
 package view;
 
 import com.googlecode.lanterna.TerminalSize;
+import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.TerminalScreen;
@@ -15,7 +16,7 @@ public abstract class View<T> {
     protected Screen screen;
     protected TextGraphics graphics;
 
-    public static final int WIDTH = 60;
+    public static final int WIDTH = 80;
     public static final int HEIGHT = 40;
 
 
@@ -77,6 +78,11 @@ public abstract class View<T> {
     public void setScreen(Screen screen) {
         this.screen = screen;
         this.graphics = screen.newTextGraphics();
+    }
+
+    protected void fillBackground() {
+        graphics.setBackgroundColor(TextColor.Factory.fromString("#2E3B44"));
+        graphics.fill(' ');
     }
 
 }

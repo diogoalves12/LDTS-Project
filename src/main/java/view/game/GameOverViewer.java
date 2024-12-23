@@ -18,16 +18,11 @@ public class GameOverViewer extends View<GameOver> {
     @Override
     public void draw(int col, int row) throws IOException {
         clear();
-        setBackground();
+        fillBackground();
         drawTitle(col, row);
         drawContent(col,row + 7);
         refresh();
 
-    }
-
-    private void setBackground() {
-        graphics.setBackgroundColor(TextColor.Factory.fromString("#333333"));
-        graphics.fill(' ');
     }
 
     private void drawTitle(int col, int row){
@@ -49,8 +44,5 @@ public class GameOverViewer extends View<GameOver> {
         }
 
     }
-
-
-
 
 }

@@ -98,4 +98,20 @@ public class MenuModelTest {
         assertEquals(GameSetup.Difficulty.NORMAL, menu.getDifficulty());
     }
 
+    @Test
+    public void testAsciiTitle() {
+        MenuModel menu = new MenuModel();
+        String[] expectedAsciiTitle = {
+                "        _            __                                   ",
+                "  /\\/\\ (_)_ __   ___/ ___      _____  ___ _ __   ___ _ __ ",
+                " /    \\| | '_ \\ / _ \\ \\\\ \\ /\\ / / _ \\/ _ | '_ \\ / _ | '__|",
+                "/ /\\/\\ | | | | |  ___\\ \\\\ V  V |  __|  __| |_) |  __| |   ",
+                "\\/    \\|_|_| |_|\\___\\__/ \\_/\\_/ \\___|\\___| .__/ \\___|_|   ",
+                "                                         |_|              "
+        };
+        assertEquals(expectedAsciiTitle.length, menu.getAsciiTitle().length);
+        for (int i = 0; i < expectedAsciiTitle.length; i++) {
+            assertEquals(expectedAsciiTitle[i], menu.getAsciiTitle()[i]);
+        }
+    }
 }

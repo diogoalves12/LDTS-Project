@@ -20,6 +20,7 @@ public class CellViewer extends View<Cell> {
 
         String display= " ";
         String color = "#FFFFFF";
+        String backGroundColor = "#2E3B44";
 
         if(!cell.isRevealed()){
             if(cell.isFlagged()){
@@ -28,6 +29,7 @@ public class CellViewer extends View<Cell> {
             }else{
                 display = "#";
                 color = "#CCCCCC";
+                backGroundColor = "#2E3B44";
             }
 
         } else {
@@ -38,7 +40,7 @@ public class CellViewer extends View<Cell> {
                 int adjacentMines = Board.getInstance().countAdjacentMines(cell.getPosition());
                 if(adjacentMines > 0){
                     display = String.valueOf(adjacentMines);
-                    color = "#00FF00";
+                    color = "#00F7FF";
                 } else {
                     display = " ";
                     color = "#FFFFFF";
@@ -46,6 +48,7 @@ public class CellViewer extends View<Cell> {
             }
         }
 
+        getGraphics().setBackgroundColor(TextColor.Factory.fromString(backGroundColor));
         getGraphics().setForegroundColor(TextColor.Factory.fromString(color));
         getGraphics().putString(col, row, display);
         

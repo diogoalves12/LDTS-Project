@@ -9,8 +9,10 @@ import java.io.IOException;
 import java.util.List;
 
 public class MenuView extends View<MenuModel> {
-    private static final String DEFAULT_COLOR = "#FFFFFF";
-    private static final String SELECTED_COLOR = "#00FF00";
+    private static final String DEFAULT_COLOR = "#FFFFFF";   // branco
+    private static final String SELECTED_COLOR = "#FF00F7";  // rosa
+    private static final String TITLE_COLOR = "#00F7FF";     // ciano
+    private static final String TITLE_TEXT = "Minesweeper";
 
     public MenuView(MenuModel menu) {
         super(menu);
@@ -20,36 +22,53 @@ public class MenuView extends View<MenuModel> {
     public void draw(int col, int row) throws IOException {
         TextGraphics graphics = getGraphics();
         clear();
+        fillBackground();
 
         int totalHeight = graphics.getSize().getRows();
         int totalWidth = graphics.getSize().getColumns();
         int centerRow = totalHeight / 2;
 
-        drawCentered(new DrawContext(graphics, centerRow - 4, "Minesweeper", DEFAULT_COLOR, totalWidth));
-        drawCentered(new DrawContext(graphics, centerRow - 2, "= Start Menu =", DEFAULT_COLOR, totalWidth));
+        draw3DTitle(graphics, centerRow - 6, totalWidth);
+
+        drawCentered(graphics, centerRow - 4, "---- Start Menu ----", DEFAULT_COLOR, totalWidth);
+
         drawMenu(graphics, centerRow, totalWidth);
+
         drawDifficulty(graphics, centerRow + 5, totalWidth);
 
         refresh();
     }
 
-    private void drawCentered(DrawContext context) {
-        int col = calculateCenteredCol(context);
-        context.graphics.setForegroundColor(TextColor.Factory.fromString(context.color));
-        context.graphics.putString(col, context.row, context.text);
+    private void drawCentered(TextGraphics graphics, int row, String text, String color, int totalWidth) {
+        int col = (totalWidth - text.length()) / 2;
+        graphics.setForegroundColor(TextColor.Factory.fromString(color));
+        graphics.putString(col, row, text);
     }
-
-    private int calculateCenteredCol(DrawContext context) {
-        return (context.totalWidth - context.text.length()) / 2;
-    }
-
 
     private void drawDifficulty(TextGraphics graphics, int row, int TotalWidth) {
-        String Text = "Difficulty: " + getModel().getDifficulty().name();
-        drawCentered(new DrawContext(graphics, row, Text, DEFAULT_COLOR, TotalWidth));
+        String difficulty = getModel().getDifficulty().name();
+        String color;
+        switch(difficulty.toLowerCase()){
+            case "easy" -> color = "#00FF00";
+            case "normal" -> color = "#FFD700";
+            case "hard" -> color = "#FF4500";
+            default -> color = DEFAULT_COLOR;
+        }
+
+        String Text = "Difficulty: " + difficulty;
+        drawCentered(graphics, row + 5, Text, color, TotalWidth);
     }
 
+    private void draw3DTitle(TextGraphics graphics, int row, int totalWidth) {
+        String[] asciiTitle = getModel().getAsciiTitle();
+        int col = (totalWidth - TITLE_TEXT.length()) / 2;
 
+        graphics.setForegroundColor(TextColor.Factory.fromString(TITLE_COLOR));
+        for (int i = 0; i < asciiTitle.length; i++) {
+            graphics.putString(col - 22, row + i - 10, asciiTitle[i]);
+        }
+
+    }
 
     private void drawMenu(TextGraphics graphics, int startRow, int totalWidth) {
         MenuModel menu = getModel();
@@ -57,26 +76,18 @@ public class MenuView extends View<MenuModel> {
         int selected = menu.getSelected();
 
         int menuStartRow = startRow - (options.size() / 2);
+        int rowSpace =  startRow - (options.size() / 2);
         for (int i = 0; i < options.size(); i++) {
             String optionText = options.get(i).name();
             String color = (i == selected) ? SELECTED_COLOR : DEFAULT_COLOR;
-            drawCentered(new DrawContext(graphics, menuStartRow + i, optionText, color, totalWidth));
+
+            if(i == selected){
+                optionText = ">   " + optionText + "   <";
+            }
+
+            drawCentered(graphics, menuStartRow + i * 2, optionText, color, totalWidth);
         }
+
     }
 
-    private static class DrawContext {
-        final TextGraphics graphics;
-        final int row;
-        final String text;
-        final String color;
-        final int totalWidth;
-
-        DrawContext(TextGraphics graphics, int row, String text, String color, int totalWidth) {
-            this.graphics = graphics;
-            this.row = row;
-            this.text = text;
-            this.color = color;
-            this.totalWidth = totalWidth;
-        }
-    }
 }

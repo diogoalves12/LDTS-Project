@@ -11,6 +11,15 @@ public class MenuModel {
     private int selected;
     private GameSetup.Difficulty difficulty;
 
+    private static final String[] ASCII_TITLE = {
+            "        _            __                                   ",
+            "  /\\/\\ (_)_ __   ___/ ___      _____  ___ _ __   ___ _ __ ",
+            " /    \\| | '_ \\ / _ \\ \\\\ \\ /\\ / / _ \\/ _ | '_ \\ / _ | '__|",
+            "/ /\\/\\ | | | | |  ___\\ \\\\ V  V |  __|  __| |_) |  __| |   ",
+            "\\/    \\|_|_| |_|\\___\\__/ \\_/\\_/ \\___|\\___| .__/ \\___|_|   ",
+            "                                         |_|              "
+    };
+
     public MenuModel() {
         this.selected = 0;
         this.difficulty = GameSetup.Difficulty.NORMAL;
@@ -55,5 +64,9 @@ public class MenuModel {
 
     public GameSetup.Difficulty getDifficulty(){
         return difficulty;
+    }
+
+    public String[] getAsciiTitle() {
+        return ASCII_TITLE;
     }
 }

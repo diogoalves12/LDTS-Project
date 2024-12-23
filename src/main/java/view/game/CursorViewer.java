@@ -14,7 +14,7 @@ public class CursorViewer extends View<Cursor> {
 
     @Override
     public void draw(int col, int row) throws IOException {
-
+        graphics.setBackgroundColor(TextColor.Factory.fromString("#2E3B44"));
         graphics.setForegroundColor(TextColor.Factory.fromString("#F000FF"));
 
         int colX = col + getModel().getPosition().getCol() * 2 - 1 ;
