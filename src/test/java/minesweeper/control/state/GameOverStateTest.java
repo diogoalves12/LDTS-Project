@@ -68,4 +68,44 @@ public class GameOverStateTest {
         verifyNoInteractions(mockFactory);
     }
 
+    @Test
+    void testLoadContentAndSetsHasWon() {
+        GameOver mockGameOver = mock(GameOver.class);
+        GameOverViewer mockViewer = mock(GameOverViewer.class);
+        StateFactory mockFactory = mock(StateFactory.class);
+
+        GameOverState state = new GameOverState(mockGameOver, mockViewer, new GameSetup(10, 10, GameSetup.Difficulty.EASY), mockFactory);
+
+        verify(mockGameOver, times(1)).loadContent(false);
+        verify(mockGameOver, times(1)).setHasWon(false);
+    }
+
+    @Test
+    void testReset() throws IOException {
+        GameOver mockGameOver = mock(GameOver.class);
+        GameOverViewer mockViewer = mock(GameOverViewer.class);
+        StateFactory mockFactory = mock(StateFactory.class);
+        MenuState mockMenuState = mock(MenuState.class);
+
+        when(mockFactory.getMenuState(any(GameSetup.class))).thenReturn(mockMenuState);
+
+        Controller mockController = mock(Controller.class);
+        InputKey inputKey = mock(InputKey.class);
+
+        when(inputKey.getInput()).thenReturn(InputKey.INPUT.ESCAPE);
+
+        GameOverState state = new GameOverState(
+                mockGameOver,
+                mockViewer,
+                new GameSetup(10, 10, GameSetup.Difficulty.EASY),
+                mockFactory
+        );
+
+        Board.initialize(5,5);
+        ControllerState<?> resultState = state.update(mockController, inputKey);
+
+        verify(mockFactory).getMenuState(any(GameSetup.class));
+        assertEquals(mockMenuState, resultState);
+    }
+
 }

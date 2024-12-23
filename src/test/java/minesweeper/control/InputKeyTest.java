@@ -121,4 +121,30 @@ public class InputKeyTest {
 
         assertEquals(InputKey.INPUT.NONE, result.getInput());
     }
+
+    @Test
+    void testUnrecognizedInput() throws IOException {
+        Screen screen = mock(Screen.class);
+        KeyStroke keyStroke = new KeyStroke('x', false, false);
+        when(screen.pollInput()).thenReturn(keyStroke);
+
+        InputKey result = inputKey.processInput(screen);
+
+        assertEquals(InputKey.INPUT.NONE, result.getInput());
+        assertEquals('x', result.getKey());
+    }
+
+    @Test
+    void testUnrecognizedInput2() throws IOException {
+        Screen screen = mock(Screen.class);
+        KeyStroke keyStroke = new KeyStroke(KeyType.Tab);
+        when(screen.pollInput()).thenReturn(keyStroke);
+
+        InputKey result = inputKey.processInput(screen);
+
+        assertEquals(InputKey.INPUT.NONE, result.getInput());
+        assertEquals(' ', result.getKey());
+    }
+
+
 }
