@@ -1,8 +1,8 @@
-## **LTDS - minesweeper**
+## **LTDS - Minesweeper**
 
 ---
 
-This project is inspired by the classical Microsoft minesweeper, released in 1990.
+This project is inspired by the classical Microsoft Minesweeper game, released in 1990.
 The main objective is to **reveal all non-mine cells on the board** while avoiding the
 hidden mines.
   
@@ -52,7 +52,7 @@ This project **applies** and **will aim to apply** the fallowing design patterns
   
 ### **Structure**
 
-- **Problem in context:** The **game** minesweeper is complex, involving a lot of 
+- **Problem in context:** The **Minesweeper** game is complex, involving a lot of 
 components, and so we need to organize our code the best way possible. As the complexity
 of the game increases, we need a simple structure. To ensure that the code is 
 easy to maintain, extend, and read. A well-structured code makes it easier to debug and add new features.
