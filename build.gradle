@@ -2,9 +2,10 @@ plugins {
     id 'java'
     id 'application'
     id "net.ltgt.errorprone" version "4.1.0"
+    id 'info.solidsoft.pitest' version '1.15.0'
 }
 
-group = 'com.diogoalves12.hero'
+group = 'com.diogoalves12.minesweeper'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -12,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation platform('org.junit:junit-bom:5.6.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation 'org.mockito:mockito-core:3.7.7'
     testImplementation 'net.jqwik:jqwik:1.7.0'
@@ -22,9 +23,18 @@ dependencies {
 }
 
 application {
-    mainClass = 'Main'
+    mainClass = 'minesweeper.Main'
 }
 
 test {
     useJUnitPlatform()
+}
+
+pitest {
+    pitestVersion = '1.15.0'
+    junit5PluginVersion = '1.0.0'
+    targetClasses = ['minesweeper.model.*', 'minesweeper.control.*']
+    targetTests = ['*Test']
+    excludedClasses = []
+
 }
