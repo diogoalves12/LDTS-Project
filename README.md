@@ -24,23 +24,23 @@ For a more detailed version of this description click [here](./docs/README.md).
 
 The following screenshots illustrate the general look of our game, as well as the divergent functionalities:
 
-Game preview:
+### **Game preview:**
 
 ![]()
 
-Menu:
+## **Menu:**
 
 ![Start menu](./docs/resources/screenshots/StartMenu.png)
 
 ![Help page](./docs/resources/screenshots/HelpPage.png)
 
-Difficulties:
+### **Difficulties:**
 
 ![Normal](./docs/resources/screenshots/NormalDifficulty.png)
 ![Normal](./docs/resources/screenshots/NormalDifficultyBoard.png)
-
+---
 ![Hard](./docs/resources/screenshots/HardDifficulty.png)
 ![Hard](./docs/resources/screenshots/HardDifficultyBoard.png)
-
+---
 ![Easy](./docs/resources/screenshots/EasyDifficulty.png)
 ![Easy](./docs/resources/screenshots/EasyDifficultyBoard.png)
