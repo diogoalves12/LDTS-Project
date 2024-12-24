@@ -70,7 +70,13 @@ The **MVC (Model-VIew-Controller)** pattern is ideal for this situation. It sepa
   - [Controller](../src/main/java/minesweeper/control): Interprets inputs and orchestrates changes between the Model and View.
 
 
-![MVC UML](resources/UML%20diagrams/MVC.png)
+<p align="center" justify="center">
+  <img src="resources/UML%20diagrams/MVC.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 1. Model, Controller and Viewer pattern design</i></b>
+</p>
+
 
 - **Consequences:**
   - Each component has a clear responsibility, adhering to the Single Responsibility Principle.
@@ -100,8 +106,12 @@ The **MVC (Model-VIew-Controller)** pattern is ideal for this situation. It sepa
   
 - The singleton pattern is implemented here: [Board](../src/main/java/minesweeper/model/game/Board.java)
 
-
-  ![Singleton UML](resources/UML%20diagrams/Singleton.png)
+  <p align="center" justify="center">
+  <img src="resources/UML%20diagrams/Singleton.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 2. Singleton pattern design</i></b>
+</p>
 
   The UML diagram illustrates the Singleton Pattern. The `Board` class contains a private constructor, a static instance variable, and a static `getInstance()` method to provide controlled access.
 
@@ -135,7 +145,12 @@ The **MVC (Model-VIew-Controller)** pattern is ideal for this situation. It sepa
 
 - The Factory pattern is implemented here: [CellFactory](../src/main/java/minesweeper/model/game/CellFactory.java).
 
-![Factory UML](resources/UML%20diagrams/CellFactory.png)
+  <p align="center" justify="center">
+  <img src="resources/UML%20diagrams/CellFactory.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 3. Cell Factory pattern design</i></b>
+</p>
 
 - **Consequences:**
   - Simplifies adding new types of Cell objects.
@@ -163,7 +178,13 @@ The **MVC (Model-VIew-Controller)** pattern is ideal for this situation. It sepa
 
 - The Factory pattern is implemented here: [ViewFactory](../src/main/java/minesweeper/view/ViewFactory.java)
 
-![Factory UML](resources/UML%20diagrams/ViewerFactory.png)
+
+  <p align="center" justify="center">
+  <img src="resources/UML%20diagrams/ViewerFactory.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 4. Viewer Factory pattern design</i></b>
+</p>
 
 - **Consequences:**
   - The client code is no longer responsible for creating specific viewer objects.
@@ -204,7 +225,12 @@ These classes share a common abstract base (`ControllerState<T>`), ensuring cons
 (`changeState()`, `processInput()`, `update()`).
 
 
-![State UML](resources/UML%20diagrams/State.png)
+  <p align="center" justify="center">
+  <img src="resources/UML%20diagrams/State.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 5. State pattern design</i></b>
+</p>
 
 The **Factory Pattern** is used to manage the instantiation of state objects via the `StateFactory`. 
 This factory encapsulates the logic of initializing states and their dependencies, ensuring a consistent approach to 
@@ -222,8 +248,12 @@ creating game states.
 The `Controller` simply requests new states from the `StateFactory` during transitions, such as switching from the menu to the playing state. 
 This centralization allows for easier management of dependencies, linking models with their viewers.
 
-
-![State UML](resources/UML%20diagrams/StateFactory.png)
+  <p align="center" justify="center">
+  <img src="resources/UML%20diagrams/StateFactory.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 6. State Factory pattern design</i></b>
+</p>
 
 **How the Patterns Interact:** The **State Pattern** and **Factory Pattern** work together to create a robust, modular state management system for the game.
 
