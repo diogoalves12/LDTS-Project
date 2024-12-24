@@ -279,6 +279,6 @@ Link to the mutation testing report:
 
 ### **Self evaluation**
 
-- **Diogo Alves:**
-- **Gonçalo Paiva:**
-- **Tiago Ribeiro:**
+- **Diogo Alves: 50%**
+- **Gonçalo Paiva: 20%**
+- **Tiago Ribeiro: 30%**
