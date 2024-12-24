@@ -321,12 +321,16 @@ The Factory pattern and State pattern are implemented here [StateFactory](../src
 
 ---
 #### **Know code Smells**
-  We tried fix all the errors reported by error-prone. No other major code smells identified.
-
-  Long Classes: Board
+  We addressed all the errors and warnings reported by Error Prone, leaving only five warnings unresolved.
 
 
 ### **Testing**
+
+The group utilized several tools and frameworks for testing, including:
+  - JUnit: For creating and executing unit tests.
+  - Mockito: For creating mocks and simulating behaviors.
+  - PIT (Pitest) Mutation Testing: To evaluate the quality of unit tests by identifying deficiencies through code mutations.
+  - jqwik: For property-based testing, although it was implemented to a lesser extent.
 
 Screenshot of coverage report:
 
