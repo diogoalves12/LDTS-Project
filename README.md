@@ -232,21 +232,19 @@ The Factory pattern and State pattern are implemented here [StateFactory](src/ma
 
 ---
 #### **Know code Smells**
+  We tried fix all the errors reported by error-prone. No other major code smells identified.
 
-
-### **6. Mockups**
-
-![Start Menu](./docs/resources/Mockups/START_MENU.png)
-![Play Menu](./docs/resources/Mockups/PLAY_MENU.png)
-![Pause Menu](./docs/resources/Mockups/PAUSE_MENU.png)
-![Help Menu](./docs/resources/Mockups/HELP_MENU.png)
-![Easy Level](./docs/resources/Mockups/Lvl_Easy.png)
-![Medium Level](./docs/resources/Mockups/Lvl_Medium.png)
-![Hard Level](./docs/resources/Mockups/Lvl_Hard_2.png)
-![Victory Menu](./docs/resources/Mockups/VICTORY.png))
-![Game Over Menu](./docs/resources/Mockups/GAME_OVER.png)
 
 ### **Testing**
+
+Screenshot of coverage report:
+
+![Coverage](./docs/resources/screenshots/CoverageScreenShot.png)
+
+
+Link to the mutation testing report:
+
+ - [Mutation Tests](http://localhost:63342/Minesweeper/build/reports/pitest/index.html?_ijt=6c2kr824ltg0kb3ksrskjdph75&_ij_reload=RELOAD_ON_SAVE)
 
 
 
