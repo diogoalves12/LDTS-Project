@@ -76,6 +76,16 @@ The following screenshots illustrate the general look of our game, as well as th
   <b><i>Fig 6. Game Defeat</i></b>
 </p>
 
+### **Flag:**
+
+
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/Flag.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 7. Some flags on the game board</i></b>
+</p>
+
 
 ### **Difficulties:**
 
@@ -86,7 +96,7 @@ The following screenshots illustrate the general look of our game, as well as th
   <img src="./docs/resources/screenshots/NormalDifficulty.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 7. Normal Difficulty</i></b>
+  <b><i>Fig 8. Normal Difficulty</i></b>
 </p>
 
 
@@ -94,7 +104,7 @@ The following screenshots illustrate the general look of our game, as well as th
   <img src="./docs/resources/screenshots/NormalDifficultyBoard.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 8. Normal Difficulty board</i></b>
+  <b><i>Fig 9. Normal Difficulty board</i></b>
 </p>
 
 
