@@ -59,6 +59,24 @@ The following screenshots illustrate the general look of our game, as well as th
 </p>
 
 
+### **Game ending:**
+
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/GameWin.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 5. Game Win</i></b>
+</p>
+
+
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/GameDefeat.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 6. Game Defeat</i></b>
+</p>
+
+
 ### **Difficulties:**
 
 #### Normal:
@@ -68,7 +86,7 @@ The following screenshots illustrate the general look of our game, as well as th
   <img src="./docs/resources/screenshots/NormalDifficulty.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 5. Normal Difficulty</i></b>
+  <b><i>Fig 7. Normal Difficulty</i></b>
 </p>
 
 
@@ -76,46 +94,10 @@ The following screenshots illustrate the general look of our game, as well as th
   <img src="./docs/resources/screenshots/NormalDifficultyBoard.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 6. Normal Difficulty board</i></b>
+  <b><i>Fig 8. Normal Difficulty board</i></b>
 </p>
 
+
+#### To see other difficulties click [here](./docs/DIFFICULTY.md). 
 
 ---
-
-#### Hard:
-
-
- <p align="center" justify="center">
-  <img src="./docs/resources/screenshots/HardDifficulty.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 7. Hard Difficulty board</i></b>
-</p>
-
-
- <p align="center" justify="center">
-  <img src="./docs/resources/screenshots/HardDifficultyBoard.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 8. Hard Difficulty board</i></b>
-</p>
-
-
----
-
-#### Easy:
-
-
- <p align="center" justify="center">
-  <img src="./docs/resources/screenshots/EasyDifficulty.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 9. Easy Difficulty</i></b>
-</p>
-
- <p align="center" justify="center">
-  <img src="./docs/resources/screenshots/EasyDifficultyBoard.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 10. Easy Difficulty board</i></b>
-</p>
