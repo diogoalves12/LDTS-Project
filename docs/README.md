@@ -247,6 +247,8 @@ Link to the mutation testing report:
  - [Mutation Tests](../build/reports/pitest/index.html)
 
 
-
-
 ### **Self evaluation**
+
+- **Diogo Alves:**
+- **Gonçalo Paiva:**
+- **Tiago Ribeiro:**
