@@ -27,26 +27,44 @@ The main objective is to develop a functional and modular text-based game, adher
 ## **2. Features**
 
 ### **Implemented Features:**
-- **Board generation** with configurable dimensions.
+## Features
 
-- **Random placement** of mines across the board using a specific algorithm:
-  - The [isMinePlaced(int freq)](../src/main/java/minesweeper/model/game/BoardBuilder.java) method uses a Gaussian 
-    distribution to probabilistically determine whether a mine is placed, influenced by the freq parameter that 
-    modifies the probability.
-- **Difficulty levels**, with adjustable board dimensions and mine count.
-- **Cell states:** Hidden, Revealed, Flagged.
-- **Ability to count** the number of normal and mine Cells
-- **Adjacent mine count** calculation for each cell:
-  - The [countAdjacentMines()](../src/main/java/minesweeper/model/game/Board.java) method calculates and returns the 
-    number of mines surrounding a given position on the game board by iterating over its 8 neighboring cells, 
-    ensuring validity.
-- Logic for **Revealing cells** and chain reactions:
-  - The [revealEmptyArea()](../src/main/java/minesweeper/model/game/Board.java) method recursively reveals an empty area on the Minesweeper board starting 
-    from a given position, stopping when encountering cells with adjacent mines, already revealed cells, or board boundaries.
-- Ability to **flag/unflag** suspicious cells. 
-- A **Timer** to track the game's duration.
-- **Game states:** Menu, Help Page, Victory, Defeat and Game.
-- Rendering methods for the elements (**board**, **cells**, **clock**, and **cursor**) and states of the game.
+### Implemented Features:
+- **Board Generation**:
+  - Configurable dimensions for a flexible game setup.
+
+- **Mine Placement Algorithm**:
+  - Random placement of mines using a probabilistic approach: The [isMinePlaced(int freq)](../src/main/java/minesweeper/model/game/BoardBuilder.java) 
+    method uses a Gaussian distribution to determine mine placement, with the freq parameter influencing the probability.
+
+- **Difficulty Levels**:
+  - Adjustable board dimensions and mine counts to suit different levels of difficulty.
+
+- **Cell States**:
+  - Cells can be in one of the following states: Hidden, Revealed, or Flagged.
+
+- **Mine and Normal Cell Count**:
+  - Counts the normal and mines cells on the board.
+
+- **Adjacent Mine Count Calculation**:
+  - The [countAdjacentMines()](../src/main/java/minesweeper/model/game/Board.java) method calculates the number of mines surrounding a specific position by
+    Iterating over its 8 neighboring cells, ensuring only valid positions are considered.
+
+- **Revealing Cells and Chain Reactions**:
+  - The [revealEmptyArea()](../src/main/java/minesweeper/model/game/Board.java) method recursively reveals an empty 
+    area on the Minesweeper board starting from a given position, stopping when encountering cells with adjacent mines, already revealed cells, or board boundaries.
+
+- **Flagging Mechanism**:
+  - Ability to flag or unflag suspicious cells.
+
+- **Game Timer**:
+  - Tracks the duration of each game.
+
+- **Game States**:
+  - Includes the following states: Menu, Help Page, Victory, Defeat, and Game.
+
+- **Rendering**:
+  - Rendering methods for the elements (board, cells, clock, and cursor) and states of the game.
 
 
 ### **Features to be Implement**
