@@ -26,28 +26,89 @@ The following screenshots illustrate the general look of our game, as well as th
 
 ### **Game preview:**
 
-![]()
+ <p align="center" justify="center">
+  <img src="./docs/resources/Gifs/GamePreview.gif"/>
+</p>
+<p align="center">
+  <b><i>Fig 1. Game preview gif</i></b>
+</p>
+
 
 ## **Menu:**
 
-![Start menu](./docs/resources/screenshots/StartMenu.png)
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/StartMenu.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 2. Start menu</i></b>
+</p>
 
-![Help page](./docs/resources/screenshots/HelpPage.png)
+
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/HelpPage.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 3. Help page</i></b>
+</p>
+
 
 ### **Difficulties:**
 
 #### Normal:
 
-![Normal](./docs/resources/screenshots/NormalDifficulty.png)
-![Normal](./docs/resources/screenshots/NormalDifficultyBoard.png)
+
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/NormalDifficulty.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 4. Normal Difficulty</i></b>
+</p>
+
+
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/NormalDifficultyBoard.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 5. Normal Difficulty board</i></b>
+</p>
+
+
 ---
 
 #### Hard:
 
-![Hard](./docs/resources/screenshots/HardDifficulty.png)
-![Hard](./docs/resources/screenshots/HardDifficultyBoard.png)
+
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/HardDifficulty.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 6. Hard Difficulty board</i></b>
+</p>
+
+
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/HardDifficultyBoard.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 7. Hard Difficulty board</i></b>
+</p>
+
+
 ---
 
 #### Easy:
-![Easy](./docs/resources/screenshots/EasyDifficulty.png)
-![Easy](./docs/resources/screenshots/EasyDifficultyBoard.png)
+
+
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/EasyDifficulty.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 8. Easy Difficulty</i></b>
+</p>
+
+ <p align="center" justify="center">
+  <img src="./docs/resources/screenshots/EasyDifficultyBoard.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 9. Easy Difficulty board</i></b>
+</p>
