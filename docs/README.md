@@ -34,7 +34,7 @@ The main objective is to develop a functional and modular text-based game, adher
   - Configurable dimensions for a flexible game setup.
 
 - **Mine Placement Algorithm**:
-  - Random placement of mines using a probabilistic approach: The [isMinePlaced(int freq)](../src/main/java/minesweeper/model/game/BoardBuilder.java) 
+  - Random placement of mines using a probabilistic approach: The isMinePlaced(int freq)
     method uses a Gaussian distribution to determine mine placement, with the freq parameter influencing the probability.
 
 - **Difficulty Levels**:
@@ -47,11 +47,11 @@ The main objective is to develop a functional and modular text-based game, adher
   - Counts the normal and mines cells on the board.
 
 - **Adjacent Mine Count Calculation**:
-  - The [countAdjacentMines()](../src/main/java/minesweeper/model/game/Board.java) method calculates the number of mines surrounding a specific position by
+  - The countAdjacentMines() method calculates the number of mines surrounding a specific position by
     Iterating over its 8 neighboring cells, ensuring only valid positions are considered.
 
 - **Revealing Cells and Chain Reactions**:
-  - The [revealEmptyArea()](../src/main/java/minesweeper/model/game/Board.java) method recursively reveals an empty 
+  - The revealEmptyArea() method recursively reveals an empty 
     area on the Minesweeper board starting from a given position, stopping when encountering cells with adjacent mines, already revealed cells, or board boundaries.
 
 - **Flagging Mechanism**:
@@ -322,6 +322,8 @@ The Factory pattern and State pattern are implemented here [StateFactory](../src
 ---
 #### **Know code Smells**
   We tried fix all the errors reported by error-prone. No other major code smells identified.
+
+  Long Classes: Board
 
 
 ### **Testing**
