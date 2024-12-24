@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="minesweeper.control.state.GameStateTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-12-23T23:59:31" hostname="NULL.Home" time="0.037">
+<testsuite name="minesweeper.control.state.GameStateTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-12-24T03:12:57" hostname="NULL.Home" time="0.06">
   <properties/>
-  <testcase name="testToggleFlag()" classname="minesweeper.control.state.GameStateTest" time="0.022"/>
-  <testcase name="testRevealEmptyArea()" classname="minesweeper.control.state.GameStateTest" time="0.002"/>
-  <testcase name="testEscapeToMenu()" classname="minesweeper.control.state.GameStateTest" time="0.0"/>
-  <testcase name="testGameLost()" classname="minesweeper.control.state.GameStateTest" time="0.005"/>
-  <testcase name="testGameWon()" classname="minesweeper.control.state.GameStateTest" time="0.004"/>
-  <testcase name="testMoveCursorDown()" classname="minesweeper.control.state.GameStateTest" time="0.001"/>
+  <testcase name="testToggleFlag()" classname="minesweeper.control.state.GameStateTest" time="0.036"/>
+  <testcase name="testRevealEmptyArea()" classname="minesweeper.control.state.GameStateTest" time="0.003"/>
+  <testcase name="testEscapeToMenu()" classname="minesweeper.control.state.GameStateTest" time="0.001"/>
+  <testcase name="testGameLost()" classname="minesweeper.control.state.GameStateTest" time="0.008"/>
+  <testcase name="testGameWon()" classname="minesweeper.control.state.GameStateTest" time="0.007"/>
+  <testcase name="testMoveCursorDown()" classname="minesweeper.control.state.GameStateTest" time="0.0"/>
   <testcase name="testMoveCursorUP()" classname="minesweeper.control.state.GameStateTest" time="0.001"/>
-  <testcase name="testGetViewer()" classname="minesweeper.control.state.GameStateTest" time="0.0"/>
-  <system-out><![CDATA[Cursor position: Mock for Position, hashCode: 1130258687
+  <testcase name="testGetViewer()" classname="minesweeper.control.state.GameStateTest" time="0.001"/>
+  <system-out><![CDATA[Cursor position: Mock for Position, hashCode: 481624597
 Cell found: true
-Cursor position: Mock for Position, hashCode: 1758876146
+Cursor position: Mock for Position, hashCode: 1892960108
 Cell found: true
-Cursor position: Mock for Position, hashCode: 1928900108
+Cursor position: Mock for Position, hashCode: 1466794784
 Cell found: true
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

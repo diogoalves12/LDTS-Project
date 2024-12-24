@@ -1,4 +1,4 @@
-Jtimestamp = 2024-12-23T23:59:30.781394, PositionTest:testValidPosition = 
+Jtimestamp = 2024-12-24T03:12:56.579857, PositionTest:testValidPosition = 
 S                              |-----------------------jqwik-----------------------
 7tries = 1000                  | # of calls to property
 8checks = 1000                 | # of not rejected calls
@@ -8,10 +8,10 @@
 8edge-cases#mode = MIXIN       | edge cases are mixed in
 =edge-cases#total = 81         | # of all combined edge cases
 Eedge-cases#tried = 81         | # of edge cases tried in current run
-Jseed = 52607224775122691      | random seed to reproduce generated values
+Jseed = 2767825603617181303    | random seed to reproduce generated values
 
 
-Ktimestamp = 2024-12-23T23:59:30.825952, PositionTest:testToStringMethod = 
+Ktimestamp = 2024-12-24T03:12:56.634920, PositionTest:testToStringMethod = 
 S                              |-----------------------jqwik-----------------------
 7tries = 1000                  | # of calls to property
 8checks = 1000                 | # of not rejected calls
@@ -20,13 +20,13 @@
 Bwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
 8edge-cases#mode = MIXIN       | edge cases are mixed in
 =edge-cases#total = 81         | # of all combined edge cases
-Eedge-cases#tried = 73         | # of edge cases tried in current run
-Jseed = -5411915948957671991   | random seed to reproduce generated values
+Eedge-cases#tried = 81         | # of edge cases tried in current run
+Jseed = -4544122116933856512   | random seed to reproduce generated values
 
 
- 9Cursor position: Mock for Position, hashCode: 1130258687
+ 8Cursor position: Mock for Position, hashCode: 481624597
  Cell found: true
-"9Cursor position: Mock for Position, hashCode: 1758876146
+"9Cursor position: Mock for Position, hashCode: 1892960108
 "Cell found: true
-#9Cursor position: Mock for Position, hashCode: 1928900108
+#9Cursor position: Mock for Position, hashCode: 1466794784
 #Cell found: true

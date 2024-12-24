@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="minesweeper.model.game.GameOverTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-12-23T23:59:31" hostname="NULL.Home" time="0.002">
+<testsuite name="minesweeper.model.game.GameOverTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-12-24T03:12:57" hostname="NULL.Home" time="0.003">
   <properties/>
   <testcase name="testGetSection2()" classname="minesweeper.model.game.GameOverTest" time="0.001"/>
-  <testcase name="testGetSectionLoss()" classname="minesweeper.model.game.GameOverTest" time="0.0"/>
+  <testcase name="testGetSectionLoss()" classname="minesweeper.model.game.GameOverTest" time="0.001"/>
   <testcase name="testSetAndCheckHasWon()" classname="minesweeper.model.game.GameOverTest" time="0.0"/>
   <testcase name="testGetTotalSectionsWin()" classname="minesweeper.model.game.GameOverTest" time="0.0"/>
   <testcase name="testLoadContentWin()" classname="minesweeper.model.game.GameOverTest" time="0.0"/>

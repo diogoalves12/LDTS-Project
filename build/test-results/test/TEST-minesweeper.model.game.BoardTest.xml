@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="minesweeper.model.game.BoardTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-12-23T23:59:31" hostname="NULL.Home" time="0.001">
+<testsuite name="minesweeper.model.game.BoardTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-12-24T03:12:57" hostname="NULL.Home" time="0.001">
   <properties/>
   <testcase name="testAddCell()" classname="minesweeper.model.game.BoardTest" time="0.0"/>
   <testcase name="testRevealEmptyArea()" classname="minesweeper.model.game.BoardTest" time="0.0"/>
   <testcase name="testBoardSize()" classname="minesweeper.model.game.BoardTest" time="0.0"/>
-  <testcase name="testInitialization()" classname="minesweeper.model.game.BoardTest" time="0.0"/>
+  <testcase name="testInitialization()" classname="minesweeper.model.game.BoardTest" time="0.001"/>
   <testcase name="testCountAdjacentMines()" classname="minesweeper.model.game.BoardTest" time="0.0"/>
   <testcase name="testCellsInitialization()" classname="minesweeper.model.game.BoardTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

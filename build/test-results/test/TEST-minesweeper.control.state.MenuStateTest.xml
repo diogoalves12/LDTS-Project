@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="minesweeper.control.state.MenuStateTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-12-23T23:59:31" hostname="NULL.Home" time="0.022">
+<testsuite name="minesweeper.control.state.MenuStateTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-12-24T03:12:57" hostname="NULL.Home" time="0.034">
   <properties/>
-  <testcase name="testRightInput()" classname="minesweeper.control.state.MenuStateTest" time="0.01"/>
-  <testcase name="testLeftInput()" classname="minesweeper.control.state.MenuStateTest" time="0.0"/>
-  <testcase name="testQuitInput()" classname="minesweeper.control.state.MenuStateTest" time="0.001"/>
-  <testcase name="testEnterHelpOption()" classname="minesweeper.control.state.MenuStateTest" time="0.004"/>
-  <testcase name="testEnterPlayOption()" classname="minesweeper.control.state.MenuStateTest" time="0.004"/>
+  <testcase name="testRightInput()" classname="minesweeper.control.state.MenuStateTest" time="0.016"/>
+  <testcase name="testLeftInput()" classname="minesweeper.control.state.MenuStateTest" time="0.001"/>
+  <testcase name="testQuitInput()" classname="minesweeper.control.state.MenuStateTest" time="0.0"/>
+  <testcase name="testEnterHelpOption()" classname="minesweeper.control.state.MenuStateTest" time="0.006"/>
+  <testcase name="testEnterPlayOption()" classname="minesweeper.control.state.MenuStateTest" time="0.006"/>
   <testcase name="testUpInput()" classname="minesweeper.control.state.MenuStateTest" time="0.0"/>
-  <testcase name="testEnterQuitOption()" classname="minesweeper.control.state.MenuStateTest" time="0.001"/>
+  <testcase name="testEnterQuitOption()" classname="minesweeper.control.state.MenuStateTest" time="0.0"/>
   <testcase name="testGetViewer()" classname="minesweeper.control.state.MenuStateTest" time="0.0"/>
   <testcase name="testDownInput()" classname="minesweeper.control.state.MenuStateTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

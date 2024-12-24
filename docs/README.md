@@ -259,6 +259,8 @@ This centralization allows for easier management of dependencies, linking models
 
 The Factory pattern and State pattern are implemented here [StateFactory](../src/main/java/minesweeper/control/state/StateFactory.java) and here [State](../src/main/java/minesweeper/control/state).
 
+---
+
 ### **Adherence to SOLID Principles**
 
 
@@ -300,6 +302,7 @@ Screenshot of coverage report:
 
 ![Coverage](resources/screenshots/CoverageScreenShot.png)
 
+![Statistics](resources/screenshots/PITStatistic.png)
 
 Link to the mutation testing report:
 
