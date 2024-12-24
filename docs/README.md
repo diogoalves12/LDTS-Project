@@ -321,7 +321,7 @@ The Factory pattern and State pattern are implemented here [StateFactory](../src
 
 ---
 #### **Know code Smells**
-  We addressed all the errors and warnings reported by Error Prone, leaving only five warnings unresolved.
+  We addressed all the errors and warnings reported by Error Prone, leaving only 2 source code warnings and 3 test code warnings unresolved.
 
 
 ### **Testing**

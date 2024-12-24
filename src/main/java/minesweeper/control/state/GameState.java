@@ -38,9 +38,6 @@ public class GameState extends ControllerState<Game> {
                 Position pos = game.getCursor().getPosition();
                 boolean reveal = game.getCell(pos).isRevealed();
 
-                System.out.println("Cursor position: " + pos.toString());
-                System.out.println("Cell found: " + (game.getCell(pos) != null));
-
                 if(reveal) {
                     System.out.println("Célula já revelada!");
                 } else {
