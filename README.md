@@ -76,14 +76,14 @@ The following screenshots illustrate the general look of our game, as well as th
   <b><i>Fig 6. Game Defeat</i></b>
 </p>
 
-### **Flag:**
+### **Reveal chain reaction and Flag:**
 
 
  <p align="center" justify="center">
-  <img src="./docs/resources/screenshots/Flag.png"/>
+  <img src="./docs/resources/screenshots/RevealChainFlag.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 7. Some flags on the game board</i></b>
+  <b><i>Fig 7. Reveal chain reaction and flagged cells</i></b>
 </p>
 
 
