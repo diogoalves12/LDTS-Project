@@ -36,11 +36,18 @@ The following screenshots illustrate the general look of our game, as well as th
 
 ### **Difficulties:**
 
+#### Normal:
+
 ![Normal](./docs/resources/screenshots/NormalDifficulty.png)
 ![Normal](./docs/resources/screenshots/NormalDifficultyBoard.png)
 ---
+
+#### Hard:
+
 ![Hard](./docs/resources/screenshots/HardDifficulty.png)
 ![Hard](./docs/resources/screenshots/HardDifficultyBoard.png)
 ---
+
+#### Easy:
 ![Easy](./docs/resources/screenshots/EasyDifficulty.png)
 ![Easy](./docs/resources/screenshots/EasyDifficultyBoard.png)
