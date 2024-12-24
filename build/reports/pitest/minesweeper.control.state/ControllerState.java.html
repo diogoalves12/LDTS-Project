@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>ControllerState.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package minesweeper.control.state;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import minesweeper.control.Controller;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import minesweeper.control.InputKey;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import minesweeper.model.GameSetup;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import minesweeper.view.View;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public abstract class ControllerState&#60;T&#62; {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    StateFactory factory;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    GameSetup setup;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public ControllerState(GameSetup setup, StateFactory factory) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.setup = setup;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.factory = factory;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public abstract View&#60;T&#62; getViewer();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    protected void draw() throws IOException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_24'/>
+24
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_24'>1</a>
+<span>
+1. draw : removed call to minesweeper/view/View::draw &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.getViewer().draw(0,0);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    protected ControllerState&#60;?&#62; changeState(ControllerState&#60;?&#62; nextState) throws IOException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_28'/>
+28
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_28'>2</a>
+<span>
+1. changeState : negated conditional &rarr; KILLED<br/>
+2. changeState : removed call to minesweeper/view/View::close &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if(nextState != this) this.getViewer().close();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_29'/>
+29
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_29'>1</a>
+<span>
+1. changeState : replaced return value with null for minesweeper/control/state/ControllerState::changeState &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return nextState;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public InputKey processInput() throws IOException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        View&#60;T&#62; viewer = this.getViewer();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_35'/>
+35
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_35'>1</a>
+<span>
+1. processInput : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if(viewer.getScreen() == null){</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_36'/>
+36
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_36'>1</a>
+<span>
+1. processInput : removed call to minesweeper/view/View::setupScreen &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            viewer.setupScreen();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_39'/>
+39
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_39'>1</a>
+<span>
+1. processInput : removed call to minesweeper/control/state/ControllerState::draw &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        draw();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        InputKey inputKey = this.getViewer().getCommand();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_41'/>
+41
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_41'>2</a>
+<span>
+1. processInput : replaced return value with null for minesweeper/control/state/ControllerState::processInput &rarr; NO_COVERAGE<br/>
+2. processInput : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if(inputKey == null) return this.getViewer().getCommand();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_42'/>
+42
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_42'>1</a>
+<span>
+1. processInput : replaced return value with null for minesweeper/control/state/ControllerState::processInput &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return inputKey;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public abstract ControllerState&#60;?&#62; update(Controller controller, InputKey inputkey) throws IOException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3df978b9_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3df978b9_24'>24</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_24'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>draw<br/><b>Killed by : </b>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testDraw()]</span></span> removed call to minesweeper/view/View::draw &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3df978b9_28'>28</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_28'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>changeState<br/><b>Killed by : </b>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testChangeState()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>changeState<br/><b>Killed by : </b>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testChangeState()]</span></span> removed call to minesweeper/view/View::close &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3df978b9_29'>29</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_29'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>changeState<br/><b>Killed by : </b>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testChangeState()]</span></span> replaced return value with null for minesweeper/control/state/ControllerState::changeState &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3df978b9_35'>35</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_35'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>processInput<br/><b>Killed by : </b>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testProcessInput()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3df978b9_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_36'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>processInput<br/><b>Killed by : </b>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testProcessInput()]</span></span> removed call to minesweeper/view/View::setupScreen &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3df978b9_39'>39</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_39'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>processInput<br/><b>Killed by : </b>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testProcessInput()]</span></span> removed call to minesweeper/control/state/ControllerState::draw &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3df978b9_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_41'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>processInput<br/><b>Killed by : </b>none</span></span> replaced return value with null for minesweeper/control/state/ControllerState::processInput &rarr; NO_COVERAGE</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>processInput<br/><b>Killed by : </b>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testProcessInput()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3df978b9_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3df978b9_42'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>processInput<br/><b>Killed by : </b>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testProcessInput()]</span></span> replaced return value with null for minesweeper/control/state/ControllerState::processInput &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testProcessInput()] (22 ms)</li><li>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testChangeState()] (0 ms)</li><li>minesweeper.control.state.HelpStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.HelpStateTest]/[method:testQuitInput()] (0 ms)</li><li>minesweeper.control.state.MenuStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.MenuStateTest]/[method:testQuitInput()] (0 ms)</li><li>minesweeper.control.state.HelpStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.HelpStateTest]/[method:testUnHandledInput()] (0 ms)</li><li>minesweeper.control.state.GameWinStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameWinStateTest]/[method:testUnhandledInput()] (0 ms)</li><li>minesweeper.control.state.MenuStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.MenuStateTest]/[method:testDownInput()] (0 ms)</li><li>minesweeper.control.state.MenuStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.MenuStateTest]/[method:testLeftInput()] (0 ms)</li><li>minesweeper.control.state.MenuStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.MenuStateTest]/[method:testUpInput()] (0 ms)</li><li>minesweeper.control.state.GameOverStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameOverStateTest]/[method:testUpdateUnHandledInput()] (0 ms)</li><li>minesweeper.control.state.GameStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameStateTest]/[method:testMoveCursorUP()] (0 ms)</li><li>minesweeper.control.state.MenuStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.MenuStateTest]/[method:testEnterQuitOption()] (0 ms)</li><li>minesweeper.control.state.GameStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameStateTest]/[method:testMoveCursorDown()] (0 ms)</li><li>minesweeper.control.state.HelpStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.HelpStateTest]/[method:testEscapeInput()] (0 ms)</li><li>minesweeper.control.state.GameWinStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameWinStateTest]/[method:testQUIT()] (0 ms)</li><li>minesweeper.control.state.GameStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameStateTest]/[method:testEscapeToMenu()] (0 ms)</li><li>minesweeper.control.state.GameWinStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameWinStateTest]/[method:testESCAPE()] (0 ms)</li><li>minesweeper.control.state.GameOverStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameOverStateTest]/[method:testUpdateESCAPE()] (0 ms)</li><li>minesweeper.control.state.MenuStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.MenuStateTest]/[method:testEnterHelpOption()] (5 ms)</li><li>minesweeper.control.state.MenuStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.MenuStateTest]/[method:testEnterPlayOption()] (3 ms)</li><li>minesweeper.control.state.GameStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameStateTest]/[method:testRevealEmptyArea()] (2 ms)</li><li>minesweeper.control.state.HelpStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.HelpStateTest]/[method:testLeftInput()] (10 ms)</li><li>minesweeper.control.state.MenuStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.MenuStateTest]/[method:testRightInput()] (11 ms)</li><li>minesweeper.control.state.GameStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameStateTest]/[method:testGameLost()] (5 ms)</li><li>minesweeper.control.state.GameStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameStateTest]/[method:testGameWon()] (6 ms)</li><li>minesweeper.control.state.GameOverStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameOverStateTest]/[method:testReset()] (17 ms)</li><li>minesweeper.control.state.GameStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.GameStateTest]/[method:testToggleFlag()] (26 ms)</li><li>minesweeper.control.state.ControllerStateTest.[engine:junit-jupiter]/[class:minesweeper.control.state.ControllerStateTest]/[method:testDraw()] (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.15.0
+
+</body>
+</html>

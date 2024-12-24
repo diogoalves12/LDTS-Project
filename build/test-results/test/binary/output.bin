@@ -1,0 +1,32 @@
+Jtimestamp = 2024-12-23T23:59:30.781394, PositionTest:testValidPosition = 
+S                              |-----------------------jqwik-----------------------
+7tries = 1000                  | # of calls to property
+8checks = 1000                 | # of not rejected calls
+Bgeneration = RANDOMIZED       | parameters are randomly generated
+Qafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Bwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+8edge-cases#mode = MIXIN       | edge cases are mixed in
+=edge-cases#total = 81         | # of all combined edge cases
+Eedge-cases#tried = 81         | # of edge cases tried in current run
+Jseed = 52607224775122691      | random seed to reproduce generated values
+
+
+Ktimestamp = 2024-12-23T23:59:30.825952, PositionTest:testToStringMethod = 
+S                              |-----------------------jqwik-----------------------
+7tries = 1000                  | # of calls to property
+8checks = 1000                 | # of not rejected calls
+Bgeneration = RANDOMIZED       | parameters are randomly generated
+Qafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Bwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+8edge-cases#mode = MIXIN       | edge cases are mixed in
+=edge-cases#total = 81         | # of all combined edge cases
+Eedge-cases#tried = 73         | # of edge cases tried in current run
+Jseed = -5411915948957671991   | random seed to reproduce generated values
+
+
+ 9Cursor position: Mock for Position, hashCode: 1130258687
+ Cell found: true
+"9Cursor position: Mock for Position, hashCode: 1758876146
+"Cell found: true
+#9Cursor position: Mock for Position, hashCode: 1928900108
+#Cell found: true

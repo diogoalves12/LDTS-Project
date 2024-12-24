@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="minesweeper.control.InputKeyTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2024-12-23T23:59:31" hostname="NULL.Home" time="0.015">
+  <properties/>
+  <testcase name="testEnterInput()" classname="minesweeper.control.InputKeyTest" time="0.01"/>
+  <testcase name="testUnrecognizedInput()" classname="minesweeper.control.InputKeyTest" time="0.0"/>
+  <testcase name="testArrowDownInput()" classname="minesweeper.control.InputKeyTest" time="0.0"/>
+  <testcase name="testUnrecognizedInput2()" classname="minesweeper.control.InputKeyTest" time="0.0"/>
+  <testcase name="testEscapeInput()" classname="minesweeper.control.InputKeyTest" time="0.0"/>
+  <testcase name="testArrowLeftInput()" classname="minesweeper.control.InputKeyTest" time="0.0"/>
+  <testcase name="testArrowUpInput()" classname="minesweeper.control.InputKeyTest" time="0.0"/>
+  <testcase name="testCharacterFInput()" classname="minesweeper.control.InputKeyTest" time="0.0"/>
+  <testcase name="testNoInput()" classname="minesweeper.control.InputKeyTest" time="0.0"/>
+  <testcase name="testCharacterQInput()" classname="minesweeper.control.InputKeyTest" time="0.0"/>
+  <testcase name="testArrowRightInput()" classname="minesweeper.control.InputKeyTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

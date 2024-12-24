@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="minesweeper.control.state.StateFactoryTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-12-23T23:59:31" hostname="NULL.Home" time="0.001">
+  <properties/>
+  <testcase name="testGetHelpState()" classname="minesweeper.control.state.StateFactoryTest" time="0.0"/>
+  <testcase name="testGetMenuState()" classname="minesweeper.control.state.StateFactoryTest" time="0.0"/>
+  <testcase name="testGetGameWinState()" classname="minesweeper.control.state.StateFactoryTest" time="0.0"/>
+  <testcase name="testGetGameOverState()" classname="minesweeper.control.state.StateFactoryTest" time="0.0"/>
+  <testcase name="testGetGameState()" classname="minesweeper.control.state.StateFactoryTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

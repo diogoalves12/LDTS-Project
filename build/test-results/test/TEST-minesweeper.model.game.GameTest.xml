@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="minesweeper.model.game.GameTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-12-23T23:59:31" hostname="NULL.Home" time="0.022">
+  <properties/>
+  <testcase name="testGetSetup()" classname="minesweeper.model.game.GameTest" time="0.001"/>
+  <testcase name="testGetCell()" classname="minesweeper.model.game.GameTest" time="0.001"/>
+  <testcase name="testGameInitialization()" classname="minesweeper.model.game.GameTest" time="0.0"/>
+  <testcase name="testCursorInitialization()" classname="minesweeper.model.game.GameTest" time="0.001"/>
+  <testcase name="testBoardSetup()" classname="minesweeper.model.game.GameTest" time="0.0"/>
+  <testcase name="testCursorMethods()" classname="minesweeper.model.game.GameTest" time="0.001"/>
+  <testcase name="testGetCursorCol()" classname="minesweeper.model.game.GameTest" time="0.0"/>
+  <testcase name="testGetCursorRow()" classname="minesweeper.model.game.GameTest" time="0.001"/>
+  <testcase name="testClockRunning()" classname="minesweeper.model.game.GameTest" time="0.0"/>
+  <testcase name="testHasWonFalse()" classname="minesweeper.model.game.GameTest" time="0.017"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

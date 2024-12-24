@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="minesweeper.model.game.CursorTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2024-12-23T23:59:31" hostname="NULL.Home" time="0.002">
+  <properties/>
+  <testcase name="testMoveDownWrap()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <testcase name="testMoveRightWrapAround()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <testcase name="testMoveDownInBounds()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <testcase name="testMoveUpWrapAround()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <testcase name="testMoveRightInBounds()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <testcase name="testCursorInitialization()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <testcase name="testCursorBottomRightCorner()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <testcase name="testMoveLeftInBounds()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <testcase name="testCursorTopLeftCorner()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <testcase name="testMoveUpInBounds()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <testcase name="testMoveLeftWrapAround()" classname="minesweeper.model.game.CursorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

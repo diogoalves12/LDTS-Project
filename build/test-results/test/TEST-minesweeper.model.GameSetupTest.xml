@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="minesweeper.model.GameSetupTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-12-23T23:59:31" hostname="NULL.Home" time="0.0">
+  <properties/>
+  <testcase name="testEasyDifficulty()" classname="minesweeper.model.GameSetupTest" time="0.0"/>
+  <testcase name="testBoardSetup()" classname="minesweeper.model.GameSetupTest" time="0.0"/>
+  <testcase name="testHardDifficulty()" classname="minesweeper.model.GameSetupTest" time="0.0"/>
+  <testcase name="testNormalDifficulty()" classname="minesweeper.model.GameSetupTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

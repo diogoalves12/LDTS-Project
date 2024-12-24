@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="minesweeper.model.PositionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-12-23T23:59:30" hostname="NULL.Home" time="0.147">
+  <properties/>
+  <testcase name="testValidPosition" classname="minesweeper.model.PositionTest" time="0.104"/>
+  <testcase name="testToStringMethod" classname="minesweeper.model.PositionTest" time="0.042"/>
+  <system-out><![CDATA[timestamp = 2024-12-23T23:59:30.781394, PositionTest:testValidPosition = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 81         | # of all combined edge cases
+edge-cases#tried = 81         | # of edge cases tried in current run
+seed = 52607224775122691      | random seed to reproduce generated values
+
+
+timestamp = 2024-12-23T23:59:30.825952, PositionTest:testToStringMethod = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 81         | # of all combined edge cases
+edge-cases#tried = 73         | # of edge cases tried in current run
+seed = -5411915948957671991   | random seed to reproduce generated values
+
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
