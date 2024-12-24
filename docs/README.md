@@ -133,7 +133,7 @@ The **MVC (Model-VIew-Controller)** pattern is ideal for this situation. It sepa
   - Ensures flexibility by allowing easy extensions to support new types of Cell objects without modifying existing client code.
 
 
-- The Factory pattern is implemented here: [CellFactory](src/main/java/model/game/CellFactory.java).
+- The Factory pattern is implemented here: [CellFactory](../src/main/java/minesweeper/model/game/CellFactory.java).
 
 ![Factory UML](resources/UML%20diagrams/CellFactory.png)
 
@@ -161,7 +161,7 @@ The **MVC (Model-VIew-Controller)** pattern is ideal for this situation. It sepa
   - Provides flexibility for modifying or extending application views without affecting client code.
   
 
-- The Factory pattern is implemented here: [ViewFactory](src/main/java/view/ViewFactory.java)
+- The Factory pattern is implemented here: [ViewFactory](../src/main/java/minesweeper/view/ViewFactory.java)
 
 ![Factory UML](resources/UML%20diagrams/ViewerFactory.png)
 
@@ -227,7 +227,7 @@ This centralization allows for easier management of dependencies, linking models
 
 **How the Patterns Interact:** The **State Pattern** and **Factory Pattern** work together to create a robust, modular state management system for the game.
 
-The Factory pattern and State pattern are implemented here [StateFactory](src/main/java/control/state/StateFactory.java) and here [State](src/main/java/control/state).
+The Factory pattern and State pattern are implemented here [StateFactory](../src/main/java/minesweeper/control/state/StateFactory.java) and here [State](../src/main/java/minesweeper/control/state).
 
 
 ---
