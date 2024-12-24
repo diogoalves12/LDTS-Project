@@ -259,6 +259,35 @@ This centralization allows for easier management of dependencies, linking models
 
 The Factory pattern and State pattern are implemented here [StateFactory](../src/main/java/minesweeper/control/state/StateFactory.java) and here [State](../src/main/java/minesweeper/control/state).
 
+### **Adherence to SOLID Principles**
+
+
+  **Single Responsibility Principle (SRP):**
+  - Each class has a single responsibility and operates independently.
+  - The MVC pattern helps to fallow this principle. 
+  - Example: The Game class handles the game logic, while the Board class manages the board structure and. The GameClock handles time-tracking functionality.
+
+
+  **Open/Closed Principle (OCP):**
+  - Classes should be open for extension but closed for modification.
+  - Example: The Factory Pattern allows adding new cell types (like NormalCell and MineCell) without changing the existing Board class.
+
+
+  **Liskov Substitution Principle (LSP):**
+  - Subclasses should be substitutable for their parent classes without altering the system’s behavior.
+  - Example: MineCell and NormalCell extend the Cell abstract class, allowing them to be used interchangeably while maintaining specific behaviors.
+  - Example: All states of the game implements the ControllerState abstract class, allowing them to be used interchangeably while maintaining specific behaviors.
+
+
+  **Interface Segregation Principle (ISP):**
+  - Interfaces are designed to focus on specific behaviors rather than bloating a general interface
+  - Example: The ControllerState<T> interface defines essential methods (update, processInput) for different game states, keeping the interface modular and focused.
+
+
+  **Dependency Inversion Principle (DIP):**
+  - High-level modules should not depend on low-level modules; both should depend on abstractions.
+  - Example: The ViewFactory creates view objects based on abstractions, allowing for easier decoupling from specific implementations.
+
 
 ---
 #### **Know code Smells**
