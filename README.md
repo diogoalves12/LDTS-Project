@@ -244,7 +244,7 @@ Screenshot of coverage report:
 
 Link to the mutation testing report:
 
- - [Mutation Tests](http://localhost:63342/Minesweeper/build/reports/pitest/index.html?_ijt=6c2kr824ltg0kb3ksrskjdph75&_ij_reload=RELOAD_ON_SAVE)
+ - [Mutation Tests](./build/reports/pitest/index.html)
 
 
 
