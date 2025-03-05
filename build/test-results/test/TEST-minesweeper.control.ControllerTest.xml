@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="minesweeper.control.ControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-12-24T03:12:56" hostname="NULL.Home" time="0.324">
-  <properties/>
-  <testcase name="testSetAndGetGame()" classname="minesweeper.control.ControllerTest" time="0.278"/>
-  <testcase name="testInitializeState()" classname="minesweeper.control.ControllerTest" time="0.018"/>
-  <testcase name="testLaunch()" classname="minesweeper.control.ControllerTest" time="0.028"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
